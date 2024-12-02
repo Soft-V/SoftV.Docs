@@ -7,7 +7,6 @@ WORKDIR /opt/docusaurus
 COPY . /opt/docusaurus/
 WORKDIR /opt/docusaurus/SoftV.Docs
 RUN npm install
-# RUN npm audit fix
 
 FROM prod as serve
 EXPOSE 5004
