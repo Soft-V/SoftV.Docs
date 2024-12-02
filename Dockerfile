@@ -5,7 +5,7 @@ WORKDIR /opt/docusaurus
 FROM base as prod
 WORKDIR /opt/docusaurus
 COPY . /opt/docusaurus/
-WORKDIR /opt/docusaurus/SoftHub.DocsStolen
+WORKDIR /opt/docusaurus/SoftV.Docs
 RUN npm install
 # RUN npm audit fix
 

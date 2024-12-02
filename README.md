@@ -18,10 +18,10 @@ The repository holds the code and markdown source files for the Soft V documenta
 - [Thanks 💜](#thanks-)
 
 ## Feedback
-We welcome your valuable feedback on the documentation! Please feel free to join our [Community on Telegram](https://t.me/SoftVsupport_bot) and send us a message. We would be delighted to hear from you and assist you with any queries or concerns you may have. 
+We welcome your valuable feedback on the documentation! Please feel free to join our [Bot on Telegram](https://t.me/SoftVsupport_bot) and send us a message. We would be delighted to hear from you and assist you with any queries or concerns you may have. 
 
 ## Documentation Issues
-If you come across any issues with the documentation or have a feature request related explicitly to it, we encourage you to create a new [GitHub issue](https://github.com/AvaloniaUI/avalonia-docs/issues/new). Before creating a new issue, we kindly request that you check for existing issues to avoid duplication. 
+If you come across any issues with the documentation or have a feature request related explicitly to it, we encourage you to create a new [GitHub issue](https://github.com/Soft-V/SoftV.Docs/issues/new). Before creating a new issue, we kindly request that you check for existing issues to avoid duplication. 
 
 ## Contributing
 To contribute to Avalonia UI documentation, you need to fork this repository and submit a pull request for the Markdown and/or image changes that you're proposing.
