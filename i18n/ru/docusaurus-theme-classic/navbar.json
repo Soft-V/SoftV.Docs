@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "Софт В",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Софт В Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documentation": {
+    "message": "Документация",
+    "description": "..."
+  },
+  "item.label.Support": {
+    "message": "Поддержка",
+    "description": "..."
+  }
+}
