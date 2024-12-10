@@ -128,7 +128,7 @@ const services = [
            
             <div className="flex flex-wrap gap-2 text-sm text-gray-200">
               <Link
-                href="https://avaloniaui.net/Privacy"
+                href="https://github.com/Soft-V/SoftV.Policies/blob/main/SoftHub_PrivacyPolicy_ru.md"
                 className="text-inherit hover:text-black hover:underline">
                 <Translate
                   id="theme.footer.privacyPolicy">
@@ -137,7 +137,7 @@ const services = [
               </Link>
               &bull;
               <Link
-                href="https://avaloniaui.net/Tos"
+                href="https://github.com/Soft-V/SoftV.Policies/blob/main/SoftHub_TermsOfUse_ru.md"
                 className="text-inherit hover:text-black hover:underline">
                 <Translate
                   id="theme.footer.termsOfUse">
