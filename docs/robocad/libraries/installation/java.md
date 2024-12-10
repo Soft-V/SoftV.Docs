@@ -8,6 +8,9 @@ title: Java
 
 These guides show you how to install **robocad4J** library.  
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs
     defaultValue="Maven"
     values={[
