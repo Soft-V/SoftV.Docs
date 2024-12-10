@@ -3,8 +3,9 @@ id: get-started
 title: Getting started
 ---
 
-# Welcome to robocadV: The Ultimate Mobile Robotics Simulator
+# Welcome to robocadV
 
+### The Ultimate Mobile Robotics Simulator
 Step into the future of robotics with **robocadV**, the cutting-edge simulator that brings your robotic dreams to life! Whether you're a student, educator, hobbyist, or professional, robocadV offers an immersive and intuitive platform to design, test, and compete with mobile robots like never before.
 
 ### Where Creativity Meets Innovation
