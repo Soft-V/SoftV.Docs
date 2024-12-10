@@ -8,6 +8,9 @@ title: LabVIEW
 
 These guides show you how to install **robocadLV** library.  
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs
     defaultValue="VIPM"
     values={[
