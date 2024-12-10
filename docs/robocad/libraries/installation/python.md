@@ -1,5 +1,5 @@
 ---
-id: index
+id: python
 title: Python
 ---
 
