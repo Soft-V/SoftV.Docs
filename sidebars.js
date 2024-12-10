@@ -14,6 +14,29 @@ const sidebars = {
       },
       'items': [
         'robocad/get-started',
+        {
+          'type': 'category',
+          'label': 'Libraries',
+          'link': {
+            'type': 'doc',
+            'id': 'robocad/libraries/index',
+          },
+          'items': [
+            {
+              'type': 'category',
+              'label': 'Installation',
+              'link': {
+                'type': 'doc',
+                'id': 'robocad/libraries/installation/index',
+              },
+              'items': [
+                'robocad/libraries/installation/python',
+                'robocad/libraries/installation/java',
+                'robocad/libraries/installation/labview',
+              ],
+            },
+          ],
+        },
       ],
     },
     {
