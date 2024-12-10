@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
         </dependency>
         ```  
 
-        You should also use *Java SDK* of version 11 and lang version 11 (you can check it here: *File -> Project Structure*). You should also have target bytecode version of 11. You can do this here: *File -> Settings… -> Build, Execution, Deployment -> Compiler -> Java Compiler*:
+        You should also use *Java SDK* of version 11 and lang version 11 (you can check it here: *File → Project Structure*). You should also have target bytecode version of 11. You can do this here: *File → Settings… → Build, Execution, Deployment → Compiler → Java Compiler*:
         <div style={{textAlign: 'left'}}>
             <img src="/docshome/img/robocad/libraries/installation/intellij2.png" />
         </div>
