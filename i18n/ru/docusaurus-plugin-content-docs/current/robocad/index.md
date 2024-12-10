@@ -5,7 +5,7 @@ title: robocadV
 
 # robocadV
 
-Powerful mobile robotics simulator!
+Мощный симулятор мобильных роботов!
 
 import {DocsCardList} from '../../src/components/DocsCard';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
