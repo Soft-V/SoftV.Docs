@@ -1,6 +1,6 @@
 ---
 id: index
-title: Basics
+title: Основы
 ---
 
 # Основы

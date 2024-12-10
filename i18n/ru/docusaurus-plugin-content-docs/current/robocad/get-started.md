@@ -1,6 +1,6 @@
 ---
 id: get-started
-title: Getting started
+title: Начало работы
 ---
 
 # Добро пожаловать в robocadV: Ультрасовременный симулятор мобильных роботов
