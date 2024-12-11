@@ -1,6 +1,11 @@
 ---
 id: index
 title: robocadV
+keywords:
+  - robocad
+  - robocadV
+  - docs
+  - documentation
 ---
 
 # robocadV

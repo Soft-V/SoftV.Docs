@@ -1,6 +1,18 @@
 ---
 id: welcome
 title: Welcome
+keywords:
+  - robocad
+  - robocadV
+  - docs
+  - documentation
+  - SoftHub
+  - softhub
+  - shufflecad
+  - toolcad
+  - SoftV
+  - soft
+  - download
 ---
 
 Welcome to the documentation for Soft V products.

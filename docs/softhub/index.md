@@ -1,6 +1,14 @@
 ---
 id: index
 title: SoftHub
+keywords:
+  - robocad
+  - robocadV
+  - docs
+  - documentation
+  - SoftHub
+  - softhub
+  - download
 ---
 
 # SoftHub

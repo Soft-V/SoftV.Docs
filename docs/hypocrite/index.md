@@ -1,6 +1,10 @@
 ---
 id: index
 title: Hypocrite
+keywords:
+  - hypocrite
+  - avalonia
+  - wpf
 ---
 
 # Hypocrite

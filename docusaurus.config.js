@@ -10,7 +10,7 @@ const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Soft-V Docs',
-  tagline: 'Developer Documentation Portal',
+  tagline: 'Soft V products documentation / robocadV documentation',
   url: 'https://softv.su',
   baseUrl: '/docshome/',
   organizationName: 'soft-v', // Usually your GitHub org/user name.
