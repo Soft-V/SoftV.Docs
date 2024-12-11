@@ -1,43 +1,43 @@
 # Установка SoftHub
-This guide will show you how to install **SoftHub**.
-To download the SoftHub application, you need to go to https://softv.su/.
-The site looks like the following: 
+Это руководство покажет вам как установить **SoftHub**
+Для скачивания приложения SoftHub, необходимо перейти по ссылке https://softv.su/
+Сайт выглядит следующим образом: 
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started1.png"/>
 </div>
-Next, you need to click on **Programs**.
+Далее необходимо нажать на **Программы**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started2.png"/>
 </div>
-And click on the **Download SoftHub** button.
+И нажать на кнопку **Скачать SoftHub**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started3.png"/>
 </div>
-Next, open the downloaded file, and click **Next >**
+Далее открываем скачанный файл, и нажимаем кнопку **Next >**
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started4.png"/>
 </div>
-Next, you need to select a folder to install SoftHub. 
+Далее нужно выбрать папку для установки SoftHub. 
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started5.png"/>
 </div>
-Click on the **Browse** button.
+Нажмите на кнопку **Browse**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started6.png"/>
 </div>
-Select a folder, and press **OK**.
+Выберите папку, и нажмите на **OK**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started7.png"/>
 </div>
-Now click on the **Next >** button.
+Теперь нажмите на кнопку **Next >**
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started8.png"/>
 </div>
-Next, click on **Install**.
+Следующим нажмите на **Install**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started9.png"/>
 </div>
-Now you can use SoftHub!
+Теперь вы можете использовать SoftHub!
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started10.png"/>
 </div>
