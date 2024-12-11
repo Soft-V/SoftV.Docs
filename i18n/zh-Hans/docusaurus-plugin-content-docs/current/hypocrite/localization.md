@@ -1,6 +1,6 @@
 ---
 id: localization
-title: Localization
+title: 本地化
 ---
 
 # Localization  
