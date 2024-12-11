@@ -45,7 +45,7 @@ const sidebars = {
               'items': [
                 'robocad/libraries/studica/motors',
                 'robocad/libraries/studica/encoders',
-                'robocad/libraries/studica/intrared',
+                'robocad/libraries/studica/infrared',
                 'robocad/libraries/studica/ultrasound',
                 'robocad/libraries/studica/imu',
               ],
