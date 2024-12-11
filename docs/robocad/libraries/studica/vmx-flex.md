@@ -1,11 +1,11 @@
 ---
-id: imu
-title: IMU
+id: vmx-flex
+title: VMX flex ports
 ---
 
-# IMU   
+# VMX flex ports
 
-IMU is used to know robot yaw rotation.
+VMX flex ports are used to get values from buttons and other bool type components.
 
 #### Example:
 
@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # rotate until robot hits 90 degrees angle
+        # move forward until button pressed
         from robocad.studica import RobotVmxTitan
 
         IS_REAL_ROBOT = False
@@ -30,16 +30,14 @@ import TabItem from '@theme/TabItem';
         # wait a bit so robocad inites
         time.sleep(0.1)
         robot.motor_speed_0 = 30
-        robot.motor_speed_1 = 30
-        robot.motor_speed_2 = 30
+        robot.motor_speed_1 = -30
 
-        # wait for rotation completeness
-        while robot.yaw < 90:
+        # wait for button press
+        while not robot.vmx_flex[0]:
             time.sleep(0.1)
 
         robot.motor_speed_0 = 0
         robot.motor_speed_1 = 0
-        robot.motor_speed_2 = 0
 
         time.sleep(0.1)
         robot.stop()
@@ -47,7 +45,7 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     <TabItem value="java">
         ```java
-        // rotate until robot hits 90 degrees angle
+        // move forward until button pressed
         import io.github.softv.studica.RobotVmxTitan;
 
         public class Main {
@@ -59,17 +57,15 @@ import TabItem from '@theme/TabItem';
                 // wait a bit so robocad inites
                 Thread.sleep(100);
                 robot.setMotorSpeed0(30);
-                robot.setMotorSpeed1(30);
-                robot.setMotorSpeed2(30);
+                robot.setMotorSpeed1(-30);
 
-                // wait for rotation completeness
-                while (robot.getYaw() < 90) {
+                // wait for button press
+                while (!robot.getVmxFlex().get(0)) {
                     Thread.sleep(100);
                 }
                 
                 robot.setMotorSpeed0(0);
                 robot.setMotorSpeed1(0);
-                robot.setMotorSpeed2(0);
 
                 Thread.sleep(100);
                 robot.stop();
@@ -83,5 +79,15 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Yaw angle value is between ```-180``` and ```180``` degrees!
+VMX flex ports are read-only!  
+Usually used for buttons.  
+Limits are placed in the order:
+- FlexDIO 0
+- FlexDIO 1
+- FlexDIO 2
+- FlexDIO 3
+- FlexDIO 4
+- FlexDIO 5
+- FlexDIO 6
+- FlexDIO 7
 :::

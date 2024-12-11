@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_1 = -30
 
         # wait for distance
-        while (robot.analog_1 < 2000):
+        while robot.analog_1 < 2000:
             time.sleep(0.1)
 
         robot.motor_speed_0 = 0
@@ -57,7 +57,7 @@ import TabItem from '@theme/TabItem';
                 // wait a bit so robocad inites
                 Thread.sleep(100);
                 robot.setMotorSpeed0(30);
-                robot.setMotorSpeed1(30);
+                robot.setMotorSpeed1(-30);
 
                 // wait for distance
                 while (robot.getAnalog1() < 2000) {

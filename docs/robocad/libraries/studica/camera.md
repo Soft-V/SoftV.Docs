@@ -1,11 +1,11 @@
 ---
-id: imu
-title: IMU
+id: camera
+title: Camera
 ---
 
-# IMU   
+# Camera   
 
-IMU is used to know robot yaw rotation.
+Camera is used to get a real time image from robot.
 
 #### Example:
 
@@ -21,11 +21,17 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # rotate until robot hits 90 degrees angle
+        # rotate for 5 seconds and send camera image to shufflecad
+        from robocad.shufflecad.shufflecad import Shufflecad
+        from robocad.shufflecad.shufflecad_holder import ShuffleVariable, CameraVariable
         from robocad.studica import RobotVmxTitan
 
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
+
+        # shufflecad stuff
+        cv_default_camera: CameraVariable = Shufflecad.add_var(CameraVariable("default"))
+        Shufflecad.start()
         
         # wait a bit so robocad inites
         time.sleep(0.1)
@@ -33,8 +39,9 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_1 = 30
         robot.motor_speed_2 = 30
 
-        # wait for rotation completeness
-        while robot.yaw < 90:
+        st_time = time.time()
+        while time.time() - st_time < 5:
+            cv_default_camera.set_mat(robot.camera_image)
             time.sleep(0.1)
 
         robot.motor_speed_0 = 0
@@ -43,11 +50,13 @@ import TabItem from '@theme/TabItem';
 
         time.sleep(0.1)
         robot.stop()
+        Shufflecad.stop()
         ```
     </TabItem>
     <TabItem value="java">
         ```java
-        // rotate until robot hits 90 degrees angle
+        // rotate for 5 seconds and send camera image to shufflecad
+        import io.github.softv.shufflecad.Shufflecad;
         import io.github.softv.studica.RobotVmxTitan;
 
         public class Main {
@@ -56,23 +65,29 @@ import TabItem from '@theme/TabItem';
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);
 
+                // shufflecad stuff
+                CameraVariable cvDefaultCamera = (CameraVariable)Shufflecad.addVar(new CameraVariable("default"));
+                Shufflecad.start();
+
                 // wait a bit so robocad inites
                 Thread.sleep(100);
                 robot.setMotorSpeed0(30);
                 robot.setMotorSpeed1(30);
                 robot.setMotorSpeed2(30);
 
-                // wait for rotation completeness
-                while (robot.getYaw() < 90) {
+                long stTime = System.currentTimeMillis();
+                while (System.currentTimeMillis() - stTime < 5000) {
+                    cvDefaultCamera.setMat(robot.getCameraImage());
                     Thread.sleep(100);
                 }
-                
+
                 robot.setMotorSpeed0(0);
                 robot.setMotorSpeed1(0);
                 robot.setMotorSpeed2(0);
 
                 Thread.sleep(100);
                 robot.stop();
+                Shufflecad.stop();
             }
         }
         ```
@@ -83,5 +98,5 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Yaw angle value is between ```-180``` and ```180``` degrees!
+Using camera image requires OpenCV library.
 :::

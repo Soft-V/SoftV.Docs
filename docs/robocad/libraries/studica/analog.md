@@ -1,11 +1,11 @@
 ---
-id: imu
-title: IMU
+id: analog
+title: Analog sensors
 ---
 
-# IMU   
+# Analog sensors   
 
-IMU is used to know robot yaw rotation.
+Analog sensors are used to know a voltage from an analog component.
 
 #### Example:
 
@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # rotate until robot hits 90 degrees angle
+        # rotate until robot finds a black line that is connected to analog port 1
         from robocad.studica import RobotVmxTitan
 
         IS_REAL_ROBOT = False
@@ -33,8 +33,8 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_1 = 30
         robot.motor_speed_2 = 30
 
-        # wait for rotation completeness
-        while robot.yaw < 90:
+        # wait for line
+        while robot.analog_1 > 1500:
             time.sleep(0.1)
 
         robot.motor_speed_0 = 0
@@ -47,7 +47,7 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     <TabItem value="java">
         ```java
-        // rotate until robot hits 90 degrees angle
+        // rotate until robot finds a black line that is connected to analog port 1
         import io.github.softv.studica.RobotVmxTitan;
 
         public class Main {
@@ -62,8 +62,8 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed1(30);
                 robot.setMotorSpeed2(30);
 
-                // wait for rotation completeness
-                while (robot.getYaw() < 90) {
+                // wait for line
+                while (robot.getAnalog1() > 1500) {
                     Thread.sleep(100);
                 }
                 
@@ -83,5 +83,6 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Yaw angle value is between ```-180``` and ```180``` degrees!
+Analog ports are used for analog sensors. For example: [Infrared distance sensor](robocad/libraries/studica/infrared).  
+There are only 4 analog ports in VMX. Indexing starts from 1.  
 :::
