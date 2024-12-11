@@ -53,5 +53,5 @@ And press the **Ok** button.
 </div>
 You have successfully logged into your account!
 <div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/auth11.png">
+<img src="/docshome/img/softhub/auth11.png"/>
 </div>
