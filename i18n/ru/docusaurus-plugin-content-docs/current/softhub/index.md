@@ -5,7 +5,7 @@ title: SoftHub
 
 # SoftHub
 
-Некоторый текст
+Здесь описано как работать с SoftHub
 
 import {DocsCardList} from '../../../../../src/components/DocsCard';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

@@ -1,5 +1,5 @@
 ---
-id: get-started
+id: robocad
 title: Robocad
 ---
 
