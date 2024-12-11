@@ -1,11 +1,11 @@
 ---
-id: motors
-title: Motors
+id: imu
+title: IMU
 ---
 
-# Motors   
+# IMU   
 
-Motors are used to move robot and its components.
+IMU is used to know robot yaw rotation.
 
 #### Example:
 
@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # rotate for 5 seconds and stop
+        # rotate until robot hits 90 degrees angle
         from robocad.studica import RobotVmxTitan
 
         IS_REAL_ROBOT = False
@@ -33,7 +33,10 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_1 = 30
         robot.motor_speed_2 = 30
 
-        time.sleep(5)
+        # wait for rotation completeness
+        while (robot.yaw < 90):
+            time.sleep(0.1)
+
         robot.motor_speed_0 = 0
         robot.motor_speed_1 = 0
         robot.motor_speed_2 = 0
@@ -44,7 +47,7 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     <TabItem value="java">
         ```java
-        // rotate for 5 seconds and stop
+        // rotate until robot hits 90 degrees angle
         import io.github.softv.studica.RobotVmxTitan;
 
         public class Main {
@@ -59,7 +62,11 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed1(30);
                 robot.setMotorSpeed2(30);
 
-                Thread.sleep(5000);
+                // wait for rotation completeness
+                while (robot.getYaw() < 90) {
+                    Thread.sleep(100);
+                }
+                
                 robot.setMotorSpeed0(0);
                 robot.setMotorSpeed1(0);
                 robot.setMotorSpeed2(0);
@@ -76,5 +83,5 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Min speed is ```-100``` and max is ```100```!
+Yaw angle value is between ```-180``` and ```180``` degrees!
 :::

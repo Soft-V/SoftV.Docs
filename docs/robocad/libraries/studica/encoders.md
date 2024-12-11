@@ -1,11 +1,11 @@
 ---
-id: motors
-title: Motors
+id: encoders
+title: Encoders
 ---
 
-# Motors   
+# Encoders   
 
-Motors are used to move robot and its components.
+Encoders are used to know motor rotations.
 
 #### Example:
 
@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # rotate for 5 seconds and stop
+        # rotate for 5 seconds, stop and check enc diff
         from robocad.studica import RobotVmxTitan
 
         IS_REAL_ROBOT = False
@@ -29,6 +29,7 @@ import TabItem from '@theme/TabItem';
         
         # wait a bit so robocad inites
         time.sleep(0.1)
+        enc_start = robot.motor_enc_0
         robot.motor_speed_0 = 30
         robot.motor_speed_1 = 30
         robot.motor_speed_2 = 30
@@ -38,13 +39,15 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_1 = 0
         robot.motor_speed_2 = 0
 
+        enc_diff = robot.motor_enc_0 - enc_start
+
         time.sleep(0.1)
         robot.stop()
         ```
     </TabItem>
     <TabItem value="java">
         ```java
-        // rotate for 5 seconds and stop
+        // rotate for 5 seconds, stop and check enc diff
         import io.github.softv.studica.RobotVmxTitan;
 
         public class Main {
@@ -55,6 +58,7 @@ import TabItem from '@theme/TabItem';
 
                 // wait a bit so robocad inites
                 Thread.sleep(100);
+                float encStart = robot.getMotorEnc0();
                 robot.setMotorSpeed0(30);
                 robot.setMotorSpeed1(30);
                 robot.setMotorSpeed2(30);
@@ -63,6 +67,8 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed0(0);
                 robot.setMotorSpeed1(0);
                 robot.setMotorSpeed2(0);
+
+                float encDiff = robot.getMotorEnc0() - encStart;
 
                 Thread.sleep(100);
                 robot.stop();
@@ -75,6 +81,6 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 </Tabs>   
 
-:::note
-Min speed is ```-100``` and max is ```100```!
+:::warning
+Internal encoder implementation can change in time so values would be different!
 :::
