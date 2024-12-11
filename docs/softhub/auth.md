@@ -1,3 +1,8 @@
+---
+id: auth
+title: Authentication
+---
+
 # Authorization in SoftHub
 This guide will show you how to log in to SoftHub.
 Open the SoftHub application.

@@ -1,3 +1,8 @@
+---
+id: robocad
+title: Robocad
+---
+
 # Robocad installation
 This guide will show you how to install Robocad.
 First you need to activate your Robocad license.

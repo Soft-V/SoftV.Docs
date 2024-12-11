@@ -1,3 +1,8 @@
+---
+id: robocad
+title: 机械手
+---
+
 # 安装 Robocad
 本指南将向您介绍如何安装 Robocad。
 首先，您需要激活 Robocad 许可证。

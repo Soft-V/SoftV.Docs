@@ -1,3 +1,8 @@
+---
+id: get-started
+title: 开始
+---
+
 # 安装 SoftHub
 本指南将告诉你如何安装**软汇通**
 要下载 SoftHub 应用程序，请访问 https://softv.su/

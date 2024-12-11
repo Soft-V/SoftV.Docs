@@ -1,3 +1,8 @@
+---
+id: auth
+title: 鉴别
+---
+
 # SoftHub 中的授权
 本指南将向您介绍如何在 SoftHub 中授权。
 打开 SoftHub 应用程序。
