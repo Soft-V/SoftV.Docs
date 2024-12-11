@@ -13,7 +13,7 @@ keywords:
 
 # SoftHub
 
-Some info here
+Here is how to work with SoftHub
 
 import {DocsCardList} from '../../src/components/DocsCard';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
