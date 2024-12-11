@@ -68,6 +68,8 @@ const sidebars = {
       },
       'items': [
         'softhub/get-started',
+        'softhub/auth',
+        'softhub/robocad',
       ],
     },
     {
