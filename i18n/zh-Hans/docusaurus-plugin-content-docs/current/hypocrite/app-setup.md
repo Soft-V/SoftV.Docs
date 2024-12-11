@@ -7,6 +7,9 @@ title: 应用程序设置
 
 在开始使用 **Hypocrite.Services** 的功能之前，您需要对 **App** 文件进行一些设置。
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs
     defaultValue="wpf"
     values={[

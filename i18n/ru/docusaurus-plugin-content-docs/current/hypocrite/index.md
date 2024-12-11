@@ -13,7 +13,7 @@ keywords:
 
 Прежде чем начать, вам следует знать, что **Hypocrite.Services** полностью зависит от [Prism libraries](https://github.com/PrismLibrary/Prism) и паттерна [MVVM](https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm).
 
-import {DocsCardList} from '../../src/components/DocsCard';
+import {DocsCardList} from '../../../../..//src/components/DocsCard';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocsCardList list={useCurrentSidebarCategory().items} />

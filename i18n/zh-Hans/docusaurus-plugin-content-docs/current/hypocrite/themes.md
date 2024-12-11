@@ -1,11 +1,11 @@
 ---
 id: themes
-title: Управление темами
+title: 主题管理
 ---
 
-# Управление темами  
+# 主题管理  
 
-**Hypocrite.Services** поддерживает смену темы в реальном времени и гибкую регистрацию объектов. Вот пример кода для регистрации ```ThemeSwitcherService``` в вашем приложении (если вам не нужен сервис смены тем, можно пропустить эту регистрацию):
+**Hypocrite.Services** 支持实时主题更改和灵活的对象注册。以下是将 ```ThemeSwitcherService``` 注册到您的应用中的示例（如果您不想在项目中使用主题更改服务，您可以跳过此注册）：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -44,9 +44,9 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 </Tabs>  
 
-```ThemeSwitcherService``` получает стартовую/дефолтную тему вашего приложения. Остальные параметры будут рассмотрены далее.  
+```ThemeSwitcherService``` 获取您项目的启动/默认主题。关于其他参数，我们稍后再谈。
 
-В моем приложении ```ThemeType``` - это перечисление тем:
+在我的应用程序中，```ThemeType``` 是一个主题枚举：
 ```csharp
 public enum ThemeType
 {
@@ -54,25 +54,23 @@ public enum ThemeType
     Light
 }
 ```
-
-### Создание словарей ресурсов
-
-Для корректной работы *ThemeSwitcherService* необходимо создать *ResourceDictionary* для каждой темы, а также *ResourceDictionary*, который будет содержать все изменения тем. Например, в моем проекте созданы *DarkTheme.xaml*, *LightTheme.xaml* и *ThemeHolder.xaml*.
+### 创建资源字典
+为了使 *ThemeSwitcherService* 正常工作，您需要为每个主题创建 *ResourceDictionaries*，以及一个包含所有主题变化的 *ResourceDictionary*。在我的项目中，我创建了 *DarkTheme.xaml*、*LightTheme.xaml* 和 *ThemeHolder.xaml*。
 
 <Tabs 
-    defaultValue="wpf" 
-    values={[ 
-        {label: 'WPF', value: 'wpf'}, 
-        {label: 'Avalonia', value: 'avalonia'}, 
+defaultValue="wpf" 
+values={[ 
+    {label: 'WPF', value: 'wpf'}, 
+    {label: 'Avalonia', value: 'avalonia'}, 
     ]}> 
     <TabItem value="wpf">
-*DarkTheme.xaml*: 
+*DarkTheme.xaml*:
 ```xml <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"> 
-                    <Color x:Key="TextForegroundBrushColor">AliceBlue</Color> 
-                    <SolidColorBrush x:Key="TextForegroundBrush" 
-                                    Color="{DynamicResource TextForegroundBrushColor}"/>
-
+                           <Color x:Key="TextForegroundBrushColor">AliceBlue</Color> 
+                           <SolidColorBrush x:Key="TextForegroundBrush" 
+                           Color="{DynamicResource TextForegroundBrushColor}"/>
+                           
         <Color x:Key="WindowBrushColor">#070c13</Color>
         <SolidColorBrush x:Key="WindowBrush"
                         Color="{DynamicResource WindowBrushColor}" />
@@ -91,7 +89,7 @@ public enum ThemeType
                         Color="{DynamicResource WindowBrushColor}" />
     </ResourceDictionary>
     ```
-    *ThemeHolder.xaml* (здесь указывается дефолтная тема):
+    *ThemeHolder.xaml* (您应在此处设置默认主题):
     ```xml
     <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -101,7 +99,7 @@ public enum ThemeType
     </ResourceDictionary>
     ```
 
-    Хранитель *.xaml* файлов тем (*ThemeHolder.xaml* в примере) должен быть добавлен в ресурсы приложения:
+    *.xaml* 主题文件的持有者 (*ThemeHolder.xaml* 为示例) 应该像这样合并到您的应用资源中：
     ```xml
     <mvvm:ApplicationBase x:Class="YourNamespace.App"
                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -145,7 +143,7 @@ public enum ThemeType
                         Color="{DynamicResource WindowBrushColor}" />
     </ResourceDictionary>
     ```
-    *ThemeHolder.xaml* (здесь указывается дефолтная тема):
+    *ThemeHolder.xaml* (您应在此处设置默认主题):
     ```xml
     <ResourceDictionary xmlns="https://github.com/avaloniaui"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -155,7 +153,7 @@ public enum ThemeType
     </ResourceDictionary>
     ```
 
-    Хранитель *.xaml* файлов тем (*ThemeHolder.xaml* в примере) должен быть добавлен в ресурсы приложения:
+    *.xaml* 主题文件的持有者 (*ThemeHolder.xaml* 为示例) 应该像这样合并到您的应用资源中：
     ```xml
     <Application xmlns="https://github.com/avaloniaui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -171,19 +169,17 @@ public enum ThemeType
     ```
 </TabItem>
 </Tabs>
-
-### Использование в *xaml*
-
-Зарегистрированные цвета и кисти можно использовать как *DynamicResource*:
+№№№ 在 *xaml* 中使用
+注册的颜色和画刷可以像这样用作 *DynamicResource*：
 ```xml
 <Rectangle Fill="{DynamicResource TestBrush}"/>
 ```
 
-### Изменение и обработка текущей темы
+### 更改和处理当前主题
 
-С помощью ```ThemeSwitcherService``` можно менять тему приложения в реальном времени через метод ```ChangeTheme(theme)``` и получить текущую тему через метод ```GetCurrentTheme()```.
+使用 ```ThemeSwitcherService```，您可以通过 ```ChangeTheme(theme)``` 方法实时更改应用程序的主题，并通过 ```GetCurrentTheme()``` 方法获取当前主题。
 
-Также существует событие ```ThemeChangedEvent```, которое вызывается через ```IEventAggregator``` с аргументами ```ThemeChangedEventArgs```. Подписаться на него можно так (```IEventAggregator``` уже доступен в ```ViewModelBase```):
+此外，还有一个 ```ThemeChangedEvent``` 事件，通过 ```IEventAggregator``` 调用，携带 ```ThemeChangedEventArgs```。您可以像这样订阅它 （```IEventAggregator``` 已在 ```ViewModelBase``` 中解析）：
 ```csharp
 EventAggregator.GetEvent<ThemeChangedEvent>().Subscribe(YourHandler);
 ```

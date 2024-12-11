@@ -10,14 +10,20 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-defaultValue="wpf"
-values={[
-{label: 'WPF', value: 'wpf'},
-{label: 'Avalonia', value: 'avalonia'},
-]}>
-<TabItem value="wpf">
-Первым шагом добавьте PackageReference в ваш проект:
-```xml <ItemGroup> ... <PackageReference Include="Hypocrite.Services" Version="SpecifyVersionHere" /> ... </ItemGroup>```
+    defaultValue="wpf"
+    values={[
+        {label: 'WPF', value: 'wpf'},
+        {label: 'Avalonia', value: 'avalonia'},
+    ]}>
+    <TabItem value="wpf">
+        Первым шагом добавьте PackageReference в ваш проект:
+        ```xml 
+        <ItemGroup>
+            ... 
+            <PackageReference Include="Hypocrite.Services" Version="SpecifyVersionHere" />
+             ... 
+        </ItemGroup>
+        ```
 
     Затем измените ваш файл **App.xaml**, как показано ниже. Где ```YourNamespace``` — это пространство имен, в котором расположен **App.xaml**.  
     ```xml  
