@@ -19,7 +19,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Improve Yourself with Soft-V"
+      description="Improve Yourself with Soft V and robocadV"
       noFooter>
 
       <HeroSection/>
