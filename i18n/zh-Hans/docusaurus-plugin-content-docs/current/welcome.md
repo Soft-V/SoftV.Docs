@@ -20,7 +20,7 @@ robocadV 是一款跨平台机器人模拟器，具有内置环境、机器人�
 阅读有关 robocadV 的更多信息！
 
 :::info
-从 [这里](get-started) 开始。
+从 [这里](robocad) 开始。
 :::
 
 <XpfAd/>
@@ -30,7 +30,7 @@ robocadV 是一款跨平台机器人模拟器，具有内置环境、机器人�
 了解 SoftHub 启动器的基本概念。
 
 :::info
-从 [这里](basics) 开始。
+从 [这里](softhub) 开始。
 :::
 
 ## shufflecad
@@ -38,7 +38,7 @@ robocadV 是一款跨平台机器人模拟器，具有内置环境、机器人�
 了解如何将 Shuffleboard 和 Driver Station 合并到一个应用程序中。
 
 :::info
-从 [这里](guides) 开始。
+从 [这里](shufflecad) 开始。
 :::
 
 ## Hypocrite
@@ -46,7 +46,7 @@ robocadV 是一款跨平台机器人模拟器，具有内置环境、机器人�
 使用 Hypocrite 服务创建可扩展且松散耦合的 WPF 和 Avalonia 应用程序。
 
 :::info
-从 [这里](concepts) 开始。
+从 [这里](hypocrite) 开始。
 :::
 
 ## toolcad
@@ -54,7 +54,7 @@ robocadV 是一款跨平台机器人模拟器，具有内置环境、机器人�
 了解如何使用随机任务生成器来实现移动机器人的功能。
 
 :::info
-从 [这里](get-started/wpf) 开始。
+从 [这里](toolcad) 开始。
 :::
 
 ## 获取帮助

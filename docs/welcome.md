@@ -20,7 +20,7 @@ You can read more about each in specific chapters of the documentation.
 Read more about robocadV!
 
 :::info
-Get started [with robocadV](get-started).
+Get started [with robocadV](robocad).
 :::
 
 <XpfAd/>
@@ -30,7 +30,7 @@ Get started [with robocadV](get-started).
 Learn the basic concepts of SoftHub launcher.
 
 :::info
-Get started [with SoftHub](basics).
+Get started [with SoftHub](softhub).
 :::
 
 ## shufflecad
@@ -38,7 +38,7 @@ Get started [with SoftHub](basics).
 Learn how to use Shuffleboard and Driver Station joined into one app.
 
 :::info
-Get the guides for [shufflecad](guides).
+Get the guides for [shufflecad](shufflecad).
 :::
 
 ## Hypocrite
@@ -46,7 +46,7 @@ Get the guides for [shufflecad](guides).
 Create extensible and loosely coupled WPF and Avalonia apps using Hypocrite services.  
 
 :::info
-Explore the [Hypocrite](concepts).
+Explore the [Hypocrite](hypocrite).
 :::
 
 ## toolcad
@@ -54,7 +54,7 @@ Explore the [Hypocrite](concepts).
 Learn how to use random task generators for mobile robotics.
 
 :::info
-See our section [about toolcad](reference).
+See our section [about toolcad](toolcad).
 :::
 
 ## Getting Help
