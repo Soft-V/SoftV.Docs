@@ -83,6 +83,6 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Analog ports are used for analog sensors. For example: [Infrared distance sensor](/infrared).  
+Analog ports are used for analog sensors. For example: [Infrared distance sensor](infrared).  
 There are only 4 analog ports in VMX. Indexing starts from 1.  
 :::
