@@ -35,6 +35,17 @@ const sidebars = {
                 'robocad/libraries/installation/labview',
               ],
             },
+            {
+              'type': 'category',
+              'label': 'Studica',
+              'link': {
+                'type': 'doc',
+                'id': 'robocad/libraries/studica/index',
+              },
+              'items': [
+                'robocad/libraries/studica/motors',
+              ],
+            },
           ],
         },
       ],
