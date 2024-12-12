@@ -79,5 +79,5 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Ultrasound sensor voltage value is from ~```8``` up to ~```100``` sm.
+Ultrasound sensor value is from ~```8``` up to ~```100``` sm.
 :::
