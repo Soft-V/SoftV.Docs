@@ -84,6 +84,7 @@ const sidebars = {
         'hypocrite/localization',
         'hypocrite/themes',
         'hypocrite/logging',
+        'hypocrite/container',
         'hypocrite/observer',
         'hypocrite/preview-window',
         'hypocrite/fody',
