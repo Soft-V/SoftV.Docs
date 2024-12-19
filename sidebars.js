@@ -43,6 +43,7 @@ const sidebars = {
                 'id': 'robocad/libraries/studica/index',
               },
               'items': [
+                'robocad/libraries/studica/setup',
                 'robocad/libraries/studica/motors',
                 'robocad/libraries/studica/encoders',
                 'robocad/libraries/studica/infrared',

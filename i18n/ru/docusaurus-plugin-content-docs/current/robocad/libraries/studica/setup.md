@@ -1,13 +1,12 @@
 ---
-id: motors
-title: Motors
+id: setup
+title: Настройка проекта
 ---
 
-# Motors   
 
-Motors are used to move robot and its components.
+# Настройка проекта
 
-#### Example:
+Здесь представлен пример того, как можно настроить проект для запуска, если вы не успользуете проект-шаблон:  
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -21,22 +20,12 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # rotate for 5 seconds and stop
         from robocad.studica import RobotVmxTitan
 
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
         
-        # wait a bit so robocad inites
-        time.sleep(0.1)
-        robot.motor_speed_0 = 30
-        robot.motor_speed_1 = 30
-        robot.motor_speed_2 = 30
-
-        time.sleep(5)
-        robot.motor_speed_0 = 0
-        robot.motor_speed_1 = 0
-        robot.motor_speed_2 = 0
+        # действия здесь
 
         time.sleep(0.1)
         robot.stop()
@@ -44,7 +33,6 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     <TabItem value="java">
         ```java
-        // rotate for 5 seconds and stop
         import io.github.softv.studica.RobotVmxTitan;
 
         public class Main {
@@ -53,16 +41,7 @@ import TabItem from '@theme/TabItem';
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);
 
-                // wait a bit so robocad inites
-                Thread.sleep(100);
-                robot.setMotorSpeed0(30);
-                robot.setMotorSpeed1(30);
-                robot.setMotorSpeed2(30);
-
-                Thread.sleep(5000);
-                robot.setMotorSpeed0(0);
-                robot.setMotorSpeed1(0);
-                robot.setMotorSpeed2(0);
+                // действия здесь
 
                 Thread.sleep(100);
                 robot.stop();
@@ -72,11 +51,7 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     <TabItem value="labview">
         <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/studica/labview/lv_motor.png" />
+            <img src="/docshome/img/robocad/libraries/studica/labview/lv_setup.png" />
         </div>
     </TabItem>
 </Tabs>   
-
-:::note
-Min speed is ```-100``` and max is ```100```!
-:::

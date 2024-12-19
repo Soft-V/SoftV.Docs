@@ -71,7 +71,9 @@ import TabItem from '@theme/TabItem';
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        <div style={{textAlign: 'left'}}>
+            <img src="/docshome/img/robocad/libraries/studica/labview/lv_motor.png" />
+        </div>
     </TabItem>
 </Tabs>   
 
