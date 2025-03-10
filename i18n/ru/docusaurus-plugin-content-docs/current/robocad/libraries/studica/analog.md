@@ -34,7 +34,7 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_2 = 30
 
         # ждем линию
-        while robot.analog_1 > 1500:
+        while robot.analog_3 > 1500:
             time.sleep(0.1)
 
         robot.motor_speed_0 = 0
@@ -63,7 +63,7 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed2(30);
 
                 // ждем линию
-                while (robot.getAnalog1() > 1500) {
+                while (robot.getAnalog3() > 1500) {
                     Thread.sleep(100);
                 }
                 
