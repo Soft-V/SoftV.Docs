@@ -73,25 +73,6 @@ const sidebars = {
         'softhub/robocad',
       ],
     },
-    {
-      'type': 'category',
-      'label': 'Hypocrite',
-      'link': {
-        'type': 'doc',
-        'id': 'hypocrite/index',
-      },
-      'items': [
-        'hypocrite/app-setup',
-        'hypocrite/localization',
-        'hypocrite/themes',
-        'hypocrite/logging',
-        'hypocrite/container',
-        'hypocrite/observer',
-        'hypocrite/preview-window',
-        'hypocrite/fody',
-      ],
-    },
-    // 'faq',
     'community'
   ],
 };

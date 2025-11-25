@@ -41,14 +41,6 @@ robocadV 是一款跨平台机器人模拟器，具有内置环境、机器人�
 从 [这里](shufflecad) 开始。
 :::
 
-## Hypocrite
-
-使用 Hypocrite 服务创建可扩展且松散耦合的 WPF 和 Avalonia 应用程序。
-
-:::info
-从 [这里](hypocrite) 开始。
-:::
-
 ## toolcad
 
 了解如何使用随机任务生成器来实现移动机器人的功能。

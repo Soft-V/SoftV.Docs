@@ -53,14 +53,6 @@ Learn how to use Shuffleboard and Driver Station joined into one app.
 Get the guides for [shufflecad](shufflecad).
 :::
 
-## Hypocrite
-
-Create extensible and loosely coupled WPF and Avalonia apps using Hypocrite services.  
-
-:::info
-Explore the [Hypocrite](hypocrite).
-:::
-
 ## toolcad
 
 Learn how to use random task generators for mobile robotics.
