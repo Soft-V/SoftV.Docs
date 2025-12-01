@@ -56,6 +56,18 @@ const sidebars = {
                 'robocad/libraries/studica/titan-limits',
               ],
             },
+            {
+              'type': 'category',
+              'label': 'Update',
+              'link': {
+                'type': 'doc',
+                'id': 'robocad/libraries/update/index',
+              },
+              'items': [
+                'robocad/libraries/update/python',
+                'robocad/libraries/update/java',
+              ],
+            },
           ],
         },
       ],
@@ -71,6 +83,17 @@ const sidebars = {
         'softhub/get-started',
         'softhub/auth',
         'softhub/robocad',
+      ],
+    },
+    {
+      'type': 'category',
+      'label': 'Shufflecad',
+      'link': {
+        'type': 'doc',
+        'id': 'shufflecad/index',
+      },
+      'items': [
+        'shufflecad/get-started',
       ],
     },
     'community'

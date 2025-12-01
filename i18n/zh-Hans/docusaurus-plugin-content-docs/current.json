@@ -14,5 +14,9 @@
   "sidebar.documentationSidebar.category.Installation": {
     "message": "安装",
     "description": "The label for category Get Started in sidebar documentationSidebar"
+  },
+  "sidebar.documentationSidebar.category.Update": {
+    "message": "更新镜像和库",
+    "description": "_"
   }
 }

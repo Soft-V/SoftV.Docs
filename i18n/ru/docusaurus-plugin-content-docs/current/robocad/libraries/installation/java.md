@@ -29,7 +29,14 @@ import TabItem from '@theme/TabItem';
             <artifactId>robocad4J</artifactId>
             <version>LATEST</version>
         </dependency>
-        ```
+        ```  
+
+        Вставьте это в тег *project*:
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```  
 
         Вы также должны использовать *Java SDK* версии 11 и указать язык версии 11 (вы можете проверить это здесь: *File → Project Structure*). Кроме того, необходимо указать целевую версию байт-кода как 11. Это можно сделать здесь: *File → Settings… → Build, Execution, Deployment → Compiler → Java Compiler*:
         <div style={{textAlign: 'left'}}>

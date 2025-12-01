@@ -4,19 +4,19 @@
     "description": "The label for version current"
   },
   "sidebar.documentationSidebar.category.Get Started": {
-    "message": "Начало Работы",
+    "message": "Get Started",
     "description": "The label for category Get Started in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Libraries": {
-    "message": "Библиотеки",
-    "description": "The label for category Get Started in sidebar documentationSidebar"
+    "message": "Libraries",
+    "description": "The label for category Libraries in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Installation": {
-    "message": "Установка",
-    "description": "The label for category Get Started in sidebar documentationSidebar"
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Update": {
-    "message": "Обновление образа и библиотек",
+    "message": "Update image and libraries",
     "description": "_"
   }
 }
