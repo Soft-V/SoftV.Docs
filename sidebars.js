@@ -94,6 +94,7 @@ const sidebars = {
       },
       'items': [
         'shufflecad/get-started',
+        'shufflecad/start-project',
       ],
     },
     'community'
