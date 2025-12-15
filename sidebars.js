@@ -95,6 +95,10 @@ const sidebars = {
       'items': [
         'shufflecad/get-started',
         'shufflecad/start-project',
+        'shufflecad/front-panel',
+        'shufflecad/logs',
+        'shufflecad/cameras',
+        'shufflecad/joystick',
       ],
     },
     'community'
