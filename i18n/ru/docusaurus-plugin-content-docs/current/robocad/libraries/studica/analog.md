@@ -21,8 +21,10 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # Поворачиваем, пока робот не обнаружит черную линию, подключенную к аналоговому порту 1
+        # Поворачиваем, пока робот не обнаружит черную линию, подключенную к аналоговому порту 3
         from robocad.studica import RobotVmxTitan
+
+        import time
 
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
@@ -47,11 +49,13 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     <TabItem value="java">
         ```java
-        // Поворачиваем, пока робот не обнаружит черную линию, подключенную к аналоговому порту 1
-        import io.github.softv.studica.RobotVmxTitan;
+        // Поворачиваем, пока робот не обнаружит черную линию, подключенную к аналоговому порту 3
+        import io.github.softv.RobotVmxTitan;
+
+        import java.io.IOException;
 
         public class Main {
-            const boolean IS_REAL_ROBOT = false;
+            final static boolean IS_REAL_ROBOT = false;
 
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);

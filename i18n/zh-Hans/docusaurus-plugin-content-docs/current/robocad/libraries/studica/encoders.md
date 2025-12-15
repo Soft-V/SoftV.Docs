@@ -24,6 +24,8 @@ import TabItem from '@theme/TabItem';
         # 旋转 5 秒，停止并检查编码器差值
         from robocad.studica import RobotVmxTitan
 
+        import time
+
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
         
@@ -48,10 +50,12 @@ import TabItem from '@theme/TabItem';
     <TabItem value="java">
         ```java
         // 旋转 5 秒，停止并检查编码器差值
-        import io.github.softv.studica.RobotVmxTitan;
+        import io.github.softv.RobotVmxTitan;
+
+        import java.io.IOException;
 
         public class Main {
-            const boolean IS_REAL_ROBOT = false;
+            final static boolean IS_REAL_ROBOT = false;
 
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);

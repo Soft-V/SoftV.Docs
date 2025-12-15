@@ -24,6 +24,8 @@ import TabItem from '@theme/TabItem';
         # 向前移动，直到超声波传感器测量到15厘米
         from robocad.studica import RobotVmxTitan
 
+        import time
+
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
         
@@ -46,10 +48,12 @@ import TabItem from '@theme/TabItem';
     <TabItem value="java">
         ```java
         // 向前移动，直到超声波传感器测量到15厘米
-        import io.github.softv.studica.RobotVmxTitan;
+        import io.github.softv.RobotVmxTitan;
+
+        import java.io.IOException;
 
         public class Main {
-            const boolean IS_REAL_ROBOT = false;
+            final static boolean IS_REAL_ROBOT = false;
 
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);

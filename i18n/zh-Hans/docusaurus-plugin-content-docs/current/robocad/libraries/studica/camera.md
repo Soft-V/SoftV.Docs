@@ -22,16 +22,17 @@ import TabItem from '@theme/TabItem';
     <TabItem value="python">  
         ```python
         # 旋转 5 秒并将摄像头图像发送到 shufflecad
-        from robocad.shufflecad.shufflecad import Shufflecad
-        from robocad.shufflecad.shufflecad_holder import ShuffleVariable, CameraVariable
+        from robocad.shufflecad import Shufflecad, ShuffleVariable, CameraVariable
         from robocad.studica import RobotVmxTitan
+
+        import time
 
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
+        shufflecad = Shufflecad(robot)
 
         # shufflecad 配置
-        cv_default_camera: CameraVariable = Shufflecad.add_var(CameraVariable("default"))
-        Shufflecad.start()
+        cv_default_camera: CameraVariable = shufflecad.add_var(CameraVariable("default"))
         
         # 等待一下让 robocad 初始化
         time.sleep(0.1)
@@ -49,25 +50,28 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_2 = 0
 
         time.sleep(0.1)
+        shufflecad.stop()
         robot.stop()
-        Shufflecad.stop()
         ```
     </TabItem>
     <TabItem value="java">
         ```java
         // 旋转 5 秒并将摄像头图像发送到 shufflecad
         import io.github.softv.shufflecad.Shufflecad;
-        import io.github.softv.studica.RobotVmxTitan;
+        import io.github.softv.RobotVmxTitan;
+
+        import org.opencv.core.Mat;
+        import java.io.IOException;
 
         public class Main {
-            const boolean IS_REAL_ROBOT = false;
+            final static boolean IS_REAL_ROBOT = false;
 
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);
+                Shufflecad shufflecad = new Shufflecad(robot);
 
                 // shufflecad 配置
-                CameraVariable cvDefaultCamera = (CameraVariable)Shufflecad.addVar(new CameraVariable("default"));
-                Shufflecad.start();
+                CameraVariable cvDefaultCamera = (CameraVariable)shufflecad.addVar(new CameraVariable("default"));
 
                 // 等待一下让 robocad 初始化
                 Thread.sleep(100);
@@ -86,8 +90,8 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed2(0);
 
                 Thread.sleep(100);
+                shufflecad.stop();
                 robot.stop();
-                Shufflecad.stop();
             }
         }
         ```

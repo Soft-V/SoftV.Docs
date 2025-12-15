@@ -22,16 +22,17 @@ import TabItem from '@theme/TabItem';
     <TabItem value="python">  
         ```python
         # rotate for 5 seconds and send camera image to shufflecad
-        from robocad.shufflecad.shufflecad import Shufflecad
-        from robocad.shufflecad.shufflecad_holder import ShuffleVariable, CameraVariable
+        from robocad.shufflecad import Shufflecad, ShuffleVariable, CameraVariable
         from robocad.studica import RobotVmxTitan
+
+        import time
 
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
+        shufflecad = Shufflecad(robot)
 
         # shufflecad stuff
-        cv_default_camera: CameraVariable = Shufflecad.add_var(CameraVariable("default"))
-        Shufflecad.start()
+        cv_default_camera: CameraVariable = shufflecad.add_var(CameraVariable("default"))
         
         # wait a bit so robocad inites
         time.sleep(0.1)
@@ -49,25 +50,28 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_2 = 0
 
         time.sleep(0.1)
+        shufflecad.stop()
         robot.stop()
-        Shufflecad.stop()
         ```
     </TabItem>
     <TabItem value="java">
         ```java
         // rotate for 5 seconds and send camera image to shufflecad
         import io.github.softv.shufflecad.Shufflecad;
-        import io.github.softv.studica.RobotVmxTitan;
+        import io.github.softv.RobotVmxTitan;
+
+        import org.opencv.core.Mat;
+        import java.io.IOException;
 
         public class Main {
-            const boolean IS_REAL_ROBOT = false;
+            final static boolean IS_REAL_ROBOT = false;
 
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);
+                Shufflecad shufflecad = new Shufflecad(robot);
 
                 // shufflecad stuff
-                CameraVariable cvDefaultCamera = (CameraVariable)Shufflecad.addVar(new CameraVariable("default"));
-                Shufflecad.start();
+                CameraVariable cvDefaultCamera = (CameraVariable)shufflecad.addVar(new CameraVariable("default"));
 
                 // wait a bit so robocad inites
                 Thread.sleep(100);
@@ -86,8 +90,8 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed2(0);
 
                 Thread.sleep(100);
+                shufflecad.stop();
                 robot.stop();
-                Shufflecad.stop();
             }
         }
         ```

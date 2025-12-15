@@ -22,16 +22,17 @@ import TabItem from '@theme/TabItem';
     <TabItem value="python">  
         ```python
         # поворачиваться в течение 5 секунд и отправлять изображение с камеры в shufflecad
-        from robocad.shufflecad.shufflecad import Shufflecad
-        from robocad.shufflecad.shufflecad_holder import ShuffleVariable, CameraVariable
+        from robocad.shufflecad import Shufflecad, ShuffleVariable, CameraVariable
         from robocad.studica import RobotVmxTitan
+
+        import time
 
         IS_REAL_ROBOT = False
         robot = RobotVmxTitan(IS_REAL_ROBOT)
+        shufflecad = Shufflecad(robot)
 
         # работа с shufflecad
-        cv_default_camera: CameraVariable = Shufflecad.add_var(CameraVariable("default"))
-        Shufflecad.start()
+        cv_default_camera: CameraVariable = shufflecad.add_var(CameraVariable("default"))
         
         # ждем, пока robocad инициализируется
         time.sleep(0.1)
@@ -41,7 +42,9 @@ import TabItem from '@theme/TabItem';
 
         st_time = time.time()
         while time.time() - st_time < 5:
-            cv_default_camera.set_mat(robot.camera_image)
+            img = robot.camera_image
+            if img is not None:
+                cv_default_camera.set_mat(img)
             time.sleep(0.1)
 
         robot.motor_speed_0 = 0
@@ -49,25 +52,29 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_2 = 0
 
         time.sleep(0.1)
+        shufflecad.stop()
         robot.stop()
-        Shufflecad.stop()
         ```
     </TabItem>
     <TabItem value="java">
         ```java
         // поворачиваться в течение 5 секунд и отправлять изображение с камеры в shufflecad
         import io.github.softv.shufflecad.Shufflecad;
-        import io.github.softv.studica.RobotVmxTitan;
+        import io.github.softv.shufflecad.CameraVariable;
+        import io.github.softv.RobotVmxTitan;
+
+        import org.opencv.core.Mat;
+        import java.io.IOException;
 
         public class Main {
-            const boolean IS_REAL_ROBOT = false;
+            final static boolean IS_REAL_ROBOT = false;
 
             public static void main(String[] args) throws IOException, InterruptedException {
                 RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);
+                Shufflecad shufflecad = new Shufflecad(robot);
 
                 // работа с shufflecad
-                CameraVariable cvDefaultCamera = (CameraVariable)Shufflecad.addVar(new CameraVariable("default"));
-                Shufflecad.start();
+                CameraVariable cvDefaultCamera = (CameraVariable)shufflecad.addVar(new CameraVariable("default"));
 
                 // ждем, пока robocad инициализируется
                 Thread.sleep(100);
@@ -77,7 +84,9 @@ import TabItem from '@theme/TabItem';
 
                 long stTime = System.currentTimeMillis();
                 while (System.currentTimeMillis() - stTime < 5000) {
-                    cvDefaultCamera.setMat(robot.getCameraImage());
+                    Mat img = robot.getCameraImage();
+                    if (img != null)
+                        cvDefaultCamera.setMat(img);
                     Thread.sleep(100);
                 }
 
@@ -86,8 +95,8 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed2(0);
 
                 Thread.sleep(100);
+                shufflecad.stop();
                 robot.stop();
-                Shufflecad.stop();
             }
         }
         ```
