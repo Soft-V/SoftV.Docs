@@ -37,6 +37,29 @@ const sidebars = {
             },
             {
               'type': 'category',
+              'label': 'Algaritm',
+              'link': {
+                'type': 'doc',
+                'id': 'robocad/libraries/algaritm/index',
+              },
+              'items': [
+                'robocad/libraries/algaritm/setup',
+                'robocad/libraries/algaritm/motors',
+                'robocad/libraries/algaritm/step-motors',
+                'robocad/libraries/algaritm/encoders',
+                'robocad/libraries/algaritm/pid',
+                'robocad/libraries/algaritm/infrared',
+                'robocad/libraries/algaritm/ultrasound',
+                'robocad/libraries/algaritm/analog',
+                'robocad/libraries/algaritm/imu',
+                'robocad/libraries/algaritm/camera',
+                'robocad/libraries/algaritm/lidar',
+                'robocad/libraries/algaritm/servo',
+                'robocad/libraries/algaritm/titan-limits',
+              ],
+            },
+            {
+              'type': 'category',
               'label': 'Studica',
               'link': {
                 'type': 'doc',
