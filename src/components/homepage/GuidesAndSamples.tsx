@@ -104,7 +104,7 @@ export default function GuidesAndSamples() {
             </Translate> 
           </h3>
 
-          <Link to="/docs" className="font-jakarta text-sm font-semibold">
+          <Link to="/docs/welcome" className="font-jakarta text-sm font-semibold">
             <Translate
               id="theme.guides.viewMore">
               View more guides 
