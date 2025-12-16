@@ -25,9 +25,9 @@ const guides: Guide[] = [
     link: '/docs/softhub',
   },
   {
-    title: 'Hypocrite',
-    text: 'Lightweight powerful library for WPF and Avalonia',
-    link: '/docs/hypocrite',
+    title: 'Shufflecad',
+    text: 'Shuffleboard and Driver Station in one app',
+    link: '/docs/shufflecad',
   },
 ];
 
@@ -104,7 +104,7 @@ export default function GuidesAndSamples() {
             </Translate> 
           </h3>
 
-          <Link to="/docs/guides" className="font-jakarta text-sm font-semibold">
+          <Link to="/docs" className="font-jakarta text-sm font-semibold">
             <Translate
               id="theme.guides.viewMore">
               View more guides 
