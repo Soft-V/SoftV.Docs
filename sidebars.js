@@ -81,6 +81,20 @@ const sidebars = {
             },
             {
               'type': 'category',
+              'label': 'Shufflecad',
+              'link': {
+                'type': 'doc',
+                'id': 'robocad/libraries/shufflecad/index',
+              },
+              'items': [
+                'robocad/libraries/shufflecad/vars',
+                'robocad/libraries/shufflecad/camera',
+                'robocad/libraries/shufflecad/logs',
+                'robocad/libraries/shufflecad/joystick',
+              ],
+            },
+            {
+              'type': 'category',
               'label': 'Update',
               'link': {
                 'type': 'doc',
