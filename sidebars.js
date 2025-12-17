@@ -81,7 +81,7 @@ const sidebars = {
             },
             {
               'type': 'category',
-              'label': 'Shufflecad',
+              'label': 'Shufflecad-robocad',
               'link': {
                 'type': 'doc',
                 'id': 'robocad/libraries/shufflecad/index',
