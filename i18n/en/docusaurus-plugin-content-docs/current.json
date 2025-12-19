@@ -18,5 +18,9 @@
   "sidebar.documentationSidebar.category.Update": {
     "message": "Update image and libraries",
     "description": "_"
+  },
+  "sidebar.documentationSidebar.category.Algaritm-Get-Started": {
+    "message": "Working with Algaritm kit",
+    "description": "-"
   }
 }

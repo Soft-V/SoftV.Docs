@@ -18,5 +18,9 @@
   "sidebar.documentationSidebar.category.Update": {
     "message": "更新镜像和库",
     "description": "_"
+  },
+  "sidebar.documentationSidebar.category.Algaritm-Get-Started": {
+    "message": "使用 Algaritm 套件",
+    "description": "-"
   }
 }

@@ -18,5 +18,9 @@
   "sidebar.documentationSidebar.category.Update": {
     "message": "Обновление образа и библиотек",
     "description": "_"
+  },
+  "sidebar.documentationSidebar.category.Algaritm-Get-Started": {
+    "message": "Работа с набором Algaritm",
+    "description": "-"
   }
 }

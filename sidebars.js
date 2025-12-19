@@ -138,6 +138,19 @@ const sidebars = {
         'shufflecad/joystick',
       ],
     },
+    {
+      'type': 'category',
+      'label': 'Algaritm-Get-Started',
+      'link': {
+        'type': 'doc',
+        'id': 'algaritm-kit/index',
+      },
+      'items': [
+        'algaritm-kit/get-started',
+        'algaritm-kit/download-required',
+        'algaritm-kit/create-project',
+      ],
+    },
     'community'
   ],
 };
