@@ -5,6 +5,10 @@ title: Создание начального проекта
 
 # Создание начального проекта  
 
+:::note
+В этих примерах будут использованы VS Code и IntelliJ.
+:::  
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -16,19 +20,11 @@ import TabItem from '@theme/TabItem';
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
-        :::note
-        В этом примере будет использован VS Code.
-        :::  
-
         - Создайте папку в проводнике и откройте ее в VS Code;  
         - Создайте файл *main.py* (название файлов и вложенных папок можете выбирать сами);  
         - Напишите [начальную программу для работы с набором](../robocad/libraries/algaritm/setup).
     </TabItem>
     <TabItem value="java">
-        :::note
-        В этом примере будет использован IntelliJ.
-        :::  
-
         - Откройте IntelliJ и нажмите создание нового проекта;  
         - Выберите название, путь и укажите систему сборки Maven;  
         - Настройте [*pom.xml* файл](../robocad/libraries/installation/java);
