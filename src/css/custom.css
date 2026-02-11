@@ -872,6 +872,20 @@ img[src$='#terminal'] {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.img-lang {
+  vertical-align: middle;
+}
+.span-lang {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  text-align: center;
+}
+.pre-lang {
+  display: flex;
+  align-items: center;
+}
+
 .homepage-section {
   margin-bottom: 3rem;
 }

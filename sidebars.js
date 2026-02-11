@@ -101,6 +101,7 @@ const sidebars = {
                 'id': 'robocad/libraries/update/index',
               },
               'items': [
+                'robocad/libraries/update/image',
                 'robocad/libraries/update/python',
                 'robocad/libraries/update/java',
               ],
