@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
         - 打开终端并运行以下命令：
         ```bash
         umask 022
-        sudo /usr/local/bin/pip3 install robocad-py --upgrade
+        sudo /usr/bin/pip3 install robocad-py --upgrade
         ```
     </TabItem>
     <TabItem value="algaritm">
