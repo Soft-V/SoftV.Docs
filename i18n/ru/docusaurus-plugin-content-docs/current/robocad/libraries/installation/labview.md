@@ -5,7 +5,7 @@ title: LabVIEW
 
 # LabVIEW
 
-Эти инструкции показывают, как установить библиотеку **robocadLV**.
+Эта инструкция показывает, как установить библиотеку **robocadLV**.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
