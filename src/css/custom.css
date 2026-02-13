@@ -884,6 +884,10 @@ img[src$='#terminal'] {
 .pre-lang {
   display: flex;
   align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .homepage-section {
