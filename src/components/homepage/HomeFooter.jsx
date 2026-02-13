@@ -123,7 +123,7 @@ const services = [
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
 
             <div className="flex flex-wrap gap-2 text-sm text-gray-200">
-              <img src="https://raw.githubusercontent.com/CADindustries/container/main/logos/logo_softv.png" alt="Soft-V" className="h-9 w-fit lg:h-12" />
+              <img src="https://raw.githubusercontent.com/CADindustries/container/main/logos/logo_softv.png" alt="Soft-V" className="h-9 lg:h-12" />
             </div>
            
             <div className="flex flex-wrap gap-2 text-sm text-gray-200">
