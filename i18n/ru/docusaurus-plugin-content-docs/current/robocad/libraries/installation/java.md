@@ -5,7 +5,7 @@ title: Java
 
 # Java
 
-Эти инструкции показывают, как установить библиотеку **robocad4J**.
+Эта инструкция показывает, как установить библиотеку **robocad4J**.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
