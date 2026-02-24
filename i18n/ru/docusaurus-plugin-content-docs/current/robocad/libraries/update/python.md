@@ -5,7 +5,7 @@ title: Обновление библиотеки robocad-py
 
 # Обновление библиотеки robocad-py
 
-Эти инструкции показывают, как обновить библиотеку **robocad-py**.
+Эта инструкция показывает, как обновить библиотеку **robocad-py**.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

@@ -5,7 +5,7 @@ title: Cameras
 
 # Cameras
 
-The "Cameras" page is used to work with video streams. Here you can select the desired video stream by clicking it in the list on the right.
+The **Cameras** page is used to work with video streams. Here you can select the desired video stream by clicking it in the list on the right.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/shufflecad/shufflecad_4.png"/>
 </div>

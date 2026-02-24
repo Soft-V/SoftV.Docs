@@ -5,7 +5,7 @@ title: Ultrasound distance sensor
 
 # Ultrasound distance sensor   
 
-Ultrasound distance sensor is used to know a distance to an obstacle.
+Uldrasound distance sensor is used to determine the distance to an obstacle.
 
 #### Example:
 

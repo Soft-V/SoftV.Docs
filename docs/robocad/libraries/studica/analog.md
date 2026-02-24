@@ -5,7 +5,7 @@ title: Analog sensors
 
 # Analog sensors   
 
-Analog sensors are used to know a voltage from an analog component.
+Analog ports are used to read voltage from analog sensors.
 
 #### Example:
 
@@ -90,5 +90,5 @@ import TabItem from '@theme/TabItem';
 
 :::note
 Analog ports are used for analog sensors. For example: [Infrared distance sensor](infrared).  
-There are only 4 analog ports in VMX. Indexing starts from 1.  
+There are 4 analog ports available on VMX. Indexing starts from 1.  
 :::

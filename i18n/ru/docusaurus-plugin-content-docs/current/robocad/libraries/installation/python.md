@@ -5,7 +5,7 @@ title: Python
 
 # Python
 
-Эти инструкции показывают, как установить библиотеку **robocad-py**.
+Эта инструкция показывает, как установить библиотеку **robocad-py**.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

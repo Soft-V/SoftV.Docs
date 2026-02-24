@@ -5,7 +5,7 @@ title: Working with the joystick
 
 # Working with the joystick
 
-This page shows examples of reading joystick values from shufflecad. The Algaritm robot set is used in examples.
+This page shows examples of controlling a servo using joystick from the shufflecad. The Algaritm robot kit is used in examples.
 
 #### Example:
 
@@ -87,7 +87,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Available joystick value keys:  
+Available joystick values:  
 - *A*;  
 - *X*;  
 - *Y*;  

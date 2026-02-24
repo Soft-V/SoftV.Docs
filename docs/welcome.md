@@ -15,24 +15,24 @@ keywords:
   - download
 ---
 
-Welcome to the documentation for Soft V products.
+Welcome to the documentation for Soft V products!
 
 ## Overview 
 The most popular product of the Soft V company is robocadV.
-robocadV is a cross-platform robot simulator with a built-in environment, robot and scenario designer.  
+robocadV is a cross-platform robot simulator that includes a built-in environment, robot, and scenario designer.
 
-To work with virtual robots, libraries are used for various programming languages, such as Python, Java, LabVIEW, C#, C++ and others.
-If at the time of reading this you have not found libraries for your favorite programming language, do not worry, you can write your own library simply by looking at the internals of existing ones.  
+To work with virtual robots, libraries are used for various programming languages, including Python, Java, LabVIEW, C#, C++ and others.
+If you cannot find a library for your preferred programming language, there is no need to worry — you can create your own by examining the internal structure of the existing libraries.
 
-But our company has not only robocadV, but also many other useful tools.
-You can read more about each in specific chapters of the documentation.  
+In addition to robocadV, our company offers many other useful tools.
+You can learn more about each of them in the relevant sections of the documentation.
 
 ## robocadV
 
 Read more about robocadV!
 
 :::info
-Get started [with robocadV](robocad).
+Get started with [robocadV](robocad).
 :::
 
 <XpfAd/>
@@ -47,10 +47,10 @@ Get started [with SoftHub](softhub).
 
 ## shufflecad
 
-Learn how to use Shuffleboard and Driver Station joined into one app.
+Learn how to use Shuffleboard and Driver Station combined into a single app.
 
 :::info
-Get the guides for [shufflecad](shufflecad).
+See the guides for [shufflecad](shufflecad).
 :::
 
 ## toolcad
@@ -58,7 +58,7 @@ Get the guides for [shufflecad](shufflecad).
 Learn how to use random task generators for mobile robotics.
 
 :::info
-See our section [about toolcad](toolcad).
+See our section about [toolcad](toolcad).
 :::
 
 ## Getting Help

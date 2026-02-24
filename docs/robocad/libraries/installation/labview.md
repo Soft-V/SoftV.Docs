@@ -6,7 +6,7 @@ title: LabVIEW
 
 # LabVIEW
 
-These guides show you how to install **robocadLV** library.  
+This guide shows you how to install **robocadLV** library.  
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

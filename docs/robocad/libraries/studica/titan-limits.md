@@ -84,8 +84,8 @@ import TabItem from '@theme/TabItem';
 
 :::note
 Titan limit ports are read-only!  
-Usually used for buttons.  
-Limits are placed in the order:
+They are typically used for connecting buttons.
+Limits are arranged in the following order:
 - Limit High 0
 - Limit Low 0
 - Limit High 1

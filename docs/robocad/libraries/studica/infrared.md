@@ -5,7 +5,7 @@ title: Infrared distance sensor
 
 # Infrared distance sensor   
 
-Infrared distance sensor is used to know a distance to an obstacle.
+The infrared distance sensor is used to determine the distance to an obstacle.
 
 #### Example:
 
@@ -83,8 +83,8 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Infrared sensor voltage value is from ~```570``` up to ~```2700```.
-To get IR distance from voltage you can write a converter func. Example in C#:
+The infrared sensor output voltage ranges approximately from 570 to 2700.
+To convert the voltage value into distance, you can implement a conversion function. An example in C# is provided below.
 ```csharp
 public static float VoltageToDist(ushort voltage)
 {

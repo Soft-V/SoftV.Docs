@@ -86,8 +86,8 @@ import TabItem from '@theme/TabItem';
 
 :::note
 VMX flex ports are read-only!  
-Usually used for buttons.  
-Limits are placed in the order:
+They are typically used for connecting buttons.
+Ports are arranged in the following order:
 - FlexDIO 0
 - FlexDIO 1
 - FlexDIO 2

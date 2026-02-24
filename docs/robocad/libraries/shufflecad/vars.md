@@ -5,7 +5,7 @@ title: Working with variables
 
 # Working with variables
 
-This page shows examples of adding variables in shufflecad and sending/receiving values. The Algaritm robot set is used in examples.
+This page shows examples of adding variables in shufflecad and sending/receiving values. The Algaritm robot kit is used in examples.
 
 #### Example:
 

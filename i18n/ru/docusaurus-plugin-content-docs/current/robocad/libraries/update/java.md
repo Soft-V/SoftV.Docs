@@ -5,7 +5,7 @@ title: Обновление библиотеки robocad4J
 
 # Обновление библиотеки robocad4J
 
-Эти инструкции показывают, как обновить библиотеку **robocad4J**.
+Эта инструкция показывает, как обновить библиотеку **robocad4J**.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

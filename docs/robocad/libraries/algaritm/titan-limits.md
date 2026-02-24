@@ -3,9 +3,9 @@ id: titan-limits
 title: Limit ports of motor controller board
 ---
 
-# Limit ports of motor controller board
+# Limit-ports of motor controller board
 
-Limit ports of the motor controller board are used to get boolean values from buttons and similar components.
+Limit-ports of the motor controller board are used to get boolean values from buttons and similar components.
 
 #### Example:
 
@@ -83,7 +83,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-Limit ports are read-only and are typically used for buttons.
+Limit-ports are read-only and are typically used for buttons.
 Ports are arranged in the following order:
 - Limit Low 0
 - Limit High 0

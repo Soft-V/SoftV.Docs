@@ -5,7 +5,7 @@ title: Monitoring
 
 # Monitoring
 
-The "Monitoring" page is used to inspect the robot's state. Here you can manage state variables that you added in your program.
+The **Monitoring** page is used to inspect the robot's state. Here you can manage state variables that you've added in your program.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/shufflecad/shufflecad_2.png"/>
 </div>

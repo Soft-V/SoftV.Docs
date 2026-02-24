@@ -5,7 +5,7 @@ title: Algaritm
 
 # Algaritm
 
-这些指南演示了如何在 Algaritm 套件上使用 **robocadV** 库并附带示例。
+这些指南介绍了如何在 Algaritm 套件 上使用 robocadV 库，并提供示例。
 
 您可以使用适用于所选编程语言的示例项目：
 - [Python](https://github.com/Soft-V/sample-robocad-py/tree/main/studica)

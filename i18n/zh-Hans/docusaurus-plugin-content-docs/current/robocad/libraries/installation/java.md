@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
         </dependency>  
         ```  
 
-        您还应该使用版本 11 的 *Java SDK* 和版本 11 的语言（您可以在这里检查：*文件 → 项目结构*）。 您还应该将目标字节码版本设置为 11。 您可以在此处设置：*文件 → 设置… → 构建、执行、部署 → 编译器 → Java 编译器*：  
+        您还需要使用 Java SDK 11 以及 Java 11 语言版本（可在以下位置检查：文件 → 项目结构）。 同时，请将目标字节码版本设置为 11。 设置路径如下：文件 → 设置 → 构建、执行、部署 → 编译器 → Java 编译器。
         <div style={{textAlign: 'left'}}>  
             <img src="/docshome/img/robocad/libraries/installation/intellij2.png" />  
         </div>  

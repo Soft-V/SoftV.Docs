@@ -6,7 +6,7 @@ title: 项目设置
 
 # 项目设置
 
-下面示例展示了如果不使用项目模板，如何配置一个运行项目：
+下面的示例演示了在不使用项目模板的情况下，如何配置一个可运行的项目：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

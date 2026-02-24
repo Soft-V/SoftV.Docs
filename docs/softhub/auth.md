@@ -4,9 +4,9 @@ title: Authentication
 ---
 
 # Authorization in SoftHub
-This guide will show you how to log in to SoftHub.
+This guide will show you how to login to SoftHub.
 Open the SoftHub application.
-The application looks as follows: 
+The application looks as following: 
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth1.png"/>
 </div>
@@ -18,7 +18,7 @@ And click on the **Register** button.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth3.png"/>
 </div>
-Next, enter all the necessary data:
+Next, enter all the necessary information:
 - **Profile Name**;
 - **Email address**;
 - **Password** (password must contain at least one upper case letter, one lower case letter and one digit. Minimum password length is 8 characters, maximum is 22 characters).
@@ -29,7 +29,7 @@ After entering your data, you must agree to the terms of use by **checking the b
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth5.png"/>
 </div>
-Next you will receive an email with a **confirmation code**, it may be in your **Spam** folder, you need to enter it here:
+Next you will receive an email with **confirmation code**, it may be in your **Spam** folder, you need to enter it here:
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth6.png"/>
 </div>

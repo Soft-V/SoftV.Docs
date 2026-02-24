@@ -5,7 +5,7 @@ title: Encoders
 
 # Encoders   
 
-Encoders are used to know motor rotations.
+Encoders are used to determine the number of motor rotations.
 
 #### Example:
 
@@ -88,5 +88,5 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::warning
-Internal encoder implementation can change in time so values would be different!
+The internal implementation of encoders may change over time, so values can differ!
 :::

@@ -4,7 +4,7 @@ title: Getting started
 ---
 
 # SoftHub Installation
-This guide will show you how to install **SoftHub**.
+This guide shows you how to install **SoftHub**.
 To download the SoftHub application, you need to go to https://softv.su/.
 The site looks like the following: 
 <div style={{textAlign: 'left'}}>

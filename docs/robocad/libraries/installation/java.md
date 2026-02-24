@@ -6,7 +6,7 @@ title: Java
 
 # Java
 
-These guides show you how to install **robocad4J** library.  
+This guide shows you how to install **robocad4J** library.  
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

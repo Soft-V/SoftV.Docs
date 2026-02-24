@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
 :::note
 Titan limit порты только для чтения!  
 Обычно используются для кнопок.  
-Порты размещаются в следующем порядке:
+Лимиты размещаются в следующем порядке:
 - Limit High 0
 - Limit Low 0
 - Limit High 1

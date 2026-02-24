@@ -5,7 +5,7 @@ title: Работа с джойстиком
 
 # Работа с джойстиком  
 
-Здесь показаны примеры получения данных джойстика из shufflecad. Для примера будет исопльзован набор Algaritm.  
+Здесь показаны примеры получения данных джойстика из shufflecad. Для примера будет использован набор Algaritm.  
 
 #### Пример:
 
@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # кручение сервопривода с помощью стика
+        # вращение сервопривода с помощью стика
         from robocad.algaritm import RobotAlgaritm
         from robocad.shufflecad import Shufflecad, ShuffleVariable, CameraVariable
 

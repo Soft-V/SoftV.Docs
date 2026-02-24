@@ -123,6 +123,6 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-There are 8 servo ports. Numbering starts at 1.
-The motor controller board has only two additional servo ports.
+There are 8 servo ports. Indexing starts at 1.
+The motor controller board has only 2 additional servo ports.
 :::

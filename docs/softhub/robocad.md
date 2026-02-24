@@ -4,9 +4,9 @@ title: robocadV simulator
 ---
 
 # Install robocadV simulator
-This guide will show you how to install Robocad.
+This guide show you how to install Robocad.
 First you need to activate your Robocad license.
-You need to log in to SoftHub to activate the license.
+You need to log in to SoftHub to activate it.
 After authorization, click on the **Activation** button.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad1.png"/>

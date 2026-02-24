@@ -5,7 +5,7 @@ title: IMU
 
 # IMU   
 
-IMU is used to know robot yaw rotation.
+IMU is used to determine robot's yaw.
 
 #### Example:
 

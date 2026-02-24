@@ -5,7 +5,7 @@ title: Logging in shufflecad
 
 # Logging in shufflecad
 
-shufflecad also provides the ability to write logs to the application.
+shufflecad also provides the functionality to write logs to the application.
 
 #### Example:
 
@@ -102,5 +102,5 @@ Available log levels:
 - *LOG_WARNING*;
 - *LOG_ERROR*.  
   
-Also, the third parameter of the log function may accept a text color in hex format, for example ```"#CCCCCC"```.
+Also, the third parameter of the log function may accept a text color in HEX, for example ```"#CCCCCC"```.
 :::

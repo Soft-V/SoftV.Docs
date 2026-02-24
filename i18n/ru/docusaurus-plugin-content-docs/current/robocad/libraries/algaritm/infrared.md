@@ -88,7 +88,7 @@ import TabItem from '@theme/TabItem';
 ```csharp
 public static float VoltageToDist(ushort voltage)
 {
-    // проверка на деление на ноль
+    // проверка деления на ноль
     if (voltage == 0)
         return 0;
     return (float)Math.Pow((13673.9f / voltage), 1 / 0.83022f);

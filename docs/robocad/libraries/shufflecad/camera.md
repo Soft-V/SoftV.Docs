@@ -5,7 +5,7 @@ title: Working with video stream variables
 
 # Working with video stream variables
 
-This page shows examples of adding variables for video streams in shufflecad and sending images. The Algaritm robot set is used in examples.
+This page shows examples of adding variables for video streams and sending images in shufflecad. The Algaritm robot kit is used in examples.
 
 #### Example:
 
@@ -105,5 +105,5 @@ import TabItem from '@theme/TabItem';
 </Tabs>   
 
 :::note
-*CameraVariable* can be used only for sending a video stream/image to shufflecad.  
+*CameraVariable* can only be used for sending a video stream/image to shufflecad.  
 :::

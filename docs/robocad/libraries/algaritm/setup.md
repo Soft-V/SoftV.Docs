@@ -6,7 +6,7 @@ title: Project setup
 
 # Project setup
 
-This shows an example of how to configure a project to run if you do not use a project template:
+This page shows an example of how to configure a project to run if you do not use a project template:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
