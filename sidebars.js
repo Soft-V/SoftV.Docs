@@ -7,6 +7,19 @@ const sidebars = {
     'welcome',
     {
       'type': 'category',
+      'label': 'SoftHub',
+      'link': {
+        'type': 'doc',
+        'id': 'softhub/index',
+      },
+      'items': [
+        'softhub/get-started',
+        'softhub/auth',
+        'softhub/robocad',
+      ],
+    },
+    {
+      'type': 'category',
       'label': 'robocadV',
       'link': {
         'type': 'doc',
@@ -14,6 +27,19 @@ const sidebars = {
       },
       'items': [
         'robocad/get-started',
+        {
+          'type': 'category',
+          'label': 'Installation',
+          'link': {
+            'type': 'doc',
+            'id': 'robocad/libraries/installation/index',
+          },
+          'items': [
+            'robocad/libraries/installation/python',
+            'robocad/libraries/installation/java',
+            'robocad/libraries/installation/labview',
+          ],
+        },
         {
           'type': 'category',
           'label': 'Libraries',
@@ -24,19 +50,6 @@ const sidebars = {
           'items': [
             {
               'type': 'category',
-              'label': 'Installation',
-              'link': {
-                'type': 'doc',
-                'id': 'robocad/libraries/installation/index',
-              },
-              'items': [
-                'robocad/libraries/installation/python',
-                'robocad/libraries/installation/java',
-                'robocad/libraries/installation/labview',
-              ],
-            },
-            {
-              'type': 'category',
               'label': 'Algaritm',
               'link': {
                 'type': 'doc',
@@ -45,17 +58,17 @@ const sidebars = {
               'items': [
                 'robocad/libraries/algaritm/setup',
                 'robocad/libraries/algaritm/motors',
-                'robocad/libraries/algaritm/step-motors',
                 'robocad/libraries/algaritm/encoders',
                 'robocad/libraries/algaritm/pid',
                 'robocad/libraries/algaritm/infrared',
                 'robocad/libraries/algaritm/ultrasound',
                 'robocad/libraries/algaritm/analog',
                 'robocad/libraries/algaritm/imu',
-                'robocad/libraries/algaritm/camera',
                 'robocad/libraries/algaritm/lidar',
-                'robocad/libraries/algaritm/servo',
                 'robocad/libraries/algaritm/titan-limits',
+                'robocad/libraries/algaritm/servo',
+                'robocad/libraries/algaritm/step-motors',
+                'robocad/libraries/algaritm/camera',
               ],
             },
             {
@@ -71,12 +84,12 @@ const sidebars = {
                 'robocad/libraries/studica/encoders',
                 'robocad/libraries/studica/infrared',
                 'robocad/libraries/studica/ultrasound',
-                'robocad/libraries/studica/analog',
                 'robocad/libraries/studica/imu',
-                'robocad/libraries/studica/camera',
-                'robocad/libraries/studica/vmx-hcdio',
-                'robocad/libraries/studica/vmx-flex',
                 'robocad/libraries/studica/titan-limits',
+                'robocad/libraries/studica/analog',
+                'robocad/libraries/studica/vmx-flex',
+                'robocad/libraries/studica/vmx-hcdio',
+                'robocad/libraries/studica/camera',
               ],
             },
             {
@@ -89,8 +102,8 @@ const sidebars = {
               'items': [
                 'robocad/libraries/shufflecad/vars',
                 'robocad/libraries/shufflecad/camera',
-                'robocad/libraries/shufflecad/logs',
                 'robocad/libraries/shufflecad/joystick',
+                'robocad/libraries/shufflecad/logs',
               ],
             },
             {
@@ -112,19 +125,6 @@ const sidebars = {
     },
     {
       'type': 'category',
-      'label': 'SoftHub',
-      'link': {
-        'type': 'doc',
-        'id': 'softhub/index',
-      },
-      'items': [
-        'softhub/get-started',
-        'softhub/auth',
-        'softhub/robocad',
-      ],
-    },
-    {
-      'type': 'category',
       'label': 'Shufflecad',
       'link': {
         'type': 'doc',
@@ -134,9 +134,9 @@ const sidebars = {
         'shufflecad/get-started',
         'shufflecad/start-project',
         'shufflecad/front-panel',
-        'shufflecad/logs',
         'shufflecad/cameras',
         'shufflecad/joystick',
+        'shufflecad/logs',
       ],
     },
     {
