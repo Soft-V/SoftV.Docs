@@ -156,6 +156,7 @@ const config = {
         logo: {
           alt: 'Soft-V Logo',
           src: 'img/purple-border-gradient-icon.png',
+          href: 'https://softv.su',
           srcDark: "img/white-border-gradient-icon.png"
         },
         items: [
