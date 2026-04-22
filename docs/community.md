@@ -6,7 +6,7 @@
 
 :::info
 * _Telegram_ bot [here](https://t.me/SoftVsupport_bot).
-* _Telegram_ chat [here](https://t.me/+5Ra7entaUjRhMWJi).
+* _Telegram_ chat [here](https://t.me/softv_chat).
 :::
 
 
