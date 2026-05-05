@@ -18,18 +18,18 @@ title: Индикация
     <tbody>
         <tr>
             <td><b>Выключен</b></td>
-            <td><img className="img-lang" src="/docshome/img/indication/state-0.png" width="32"/></td>
-            <td><img className="img-lang" src="/docshome/img/indication/state-0.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-0.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-0.png" width="32"/></td>
         </tr>
         <tr>
             <td><b>Нет подключения/Не запущена программа</b></td>
-            <td><img className="img-lang" src="/docshome/img/indication/state-2.png" width="32"/></td>
-            <td><img className="img-lang" src="/docshome/img/indication/state-2.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-2.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-2.png" width="32"/></td>
         </tr>
         <tr>
             <td><b>Программа работает</b></td>
-            <td><img className="img-lang" src="/docshome/img/indication/state-3.png" width="32"/></td>
-            <td><img className="img-lang" src="/docshome/img/indication/state-1.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-3.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-1.png" width="32"/></td>
         </tr>
     </tbody>
 </table>
