@@ -20,7 +20,11 @@
     "description": "_"
   },
   "sidebar.documentationSidebar.category.Algaritm-Get-Started": {
-    "message": "Работа с набором Algaritm",
+    "message": "Работа с набором Algaritmica",
+    "description": "-"
+  },
+  "sidebar.documentationSidebar.category.Studica-Get-Started": {
+    "message": "Работа с набором Studica",
     "description": "-"
   }
 }

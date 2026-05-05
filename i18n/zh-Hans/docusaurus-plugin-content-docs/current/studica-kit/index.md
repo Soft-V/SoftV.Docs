@@ -1,9 +1,9 @@
 ---
 id: index
-title: Работа с набором Algaritmica
+title: 使用 Studica 套件
 ---
 
-# Работа с набором Algaritmica
+# 使用 Studica 套件
 
 import {DocsCardList} from '../../../../../src/components/DocsCard';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

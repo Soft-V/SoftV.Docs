@@ -152,6 +152,20 @@ const sidebars = {
         'algaritm-kit/create-project',
       ],
     },
+    {
+      'type': 'category',
+      'label': 'Studica-Get-Started',
+      'link': {
+        'type': 'doc',
+        'id': 'studica-kit/index',
+      },
+      'items': [
+        'studica-kit/get-started',
+        'studica-kit/download-required',
+        'studica-kit/create-project',
+        'studica-kit/indication',
+      ],
+    },
     'community'
   ],
 };
