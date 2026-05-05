@@ -28,7 +28,7 @@ title: Индикация
         </tr>
         <tr>
             <td><b>Программа работает</b></td>
-            <td><img className="img-lang" src="/docshome/img/indication/status-3.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-4.png" width="32"/></td>
             <td><img className="img-lang" src="/docshome/img/indication/status-1.png" width="32"/></td>
         </tr>
     </tbody>
