@@ -150,6 +150,7 @@ const sidebars = {
         'algaritm-kit/get-started',
         'algaritm-kit/download-required',
         'algaritm-kit/create-project',
+        'algaritm-kit/indication',
       ],
     },
     {
