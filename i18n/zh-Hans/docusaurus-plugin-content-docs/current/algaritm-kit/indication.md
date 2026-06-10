@@ -11,8 +11,8 @@ title: 指示灯
     <thead>
         <tr>
             <th width="40%">状态</th>
-            <th width="30%">VMX</th>
-            <th width="30%">Titan QUAD</th>
+            <th width="30%">Shield</th>
+            <th width="30%">Motor driver</th>
         </tr>
     </thead>
     <tbody>
@@ -28,7 +28,7 @@ title: 指示灯
         </tr>
         <tr>
             <td><b>程序正在运行</b></td>
-            <td><img className="img-lang" src="/docshome/img/indication/status-4.png" width="32"/></td>
+            <td><img className="img-lang" src="/docshome/img/indication/status-1.png" width="32"/></td>
             <td><img className="img-lang" src="/docshome/img/indication/status-1.png" width="32"/></td>
         </tr>
     </tbody>
