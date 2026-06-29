@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
         robot = RobotAlgaritm(IS_REAL_ROBOT)
         shufflecad = Shufflecad(robot)
         
-        shufflecad.print_to_log("Robot started", Shufflecad.LOG_INFO)
+        shufflecad.print_to_log("Robot started", shufflecad.LOG_INFO)
 
         # 等待 robocad 初始化
         time.sleep(0.1)
@@ -45,7 +45,7 @@ import TabItem from '@theme/TabItem';
         robot.motor_speed_1 = 0
         robot.motor_speed_2 = 0
 
-        shufflecad.print_to_log("Robot stopped", Shufflecad.LOG_INFO)
+        shufflecad.print_to_log("Robot stopped", shufflecad.LOG_INFO)
 
         time.sleep(0.3)
         shufflecad.stop()
@@ -68,7 +68,7 @@ import TabItem from '@theme/TabItem';
                 RobotAlgaritm robot = new RobotAlgaritm(IS_REAL_ROBOT);
                 Shufflecad shufflecad = new Shufflecad(robot);
 
-                shufflecad.printToLog("Robot started", Shufflecad.LOG_INFO);
+                shufflecad.printToLog("Robot started", shufflecad.LOG_INFO);
 
                 // 等待 robocad 初始化
                 Thread.sleep(100);
@@ -82,7 +82,7 @@ import TabItem from '@theme/TabItem';
                 robot.setMotorSpeed1(0);
                 robot.setMotorSpeed2(0);
 
-                shufflecad.printToLog("Robot stopped", Shufflecad.LOG_INFO);
+                shufflecad.printToLog("Robot stopped", shufflecad.LOG_INFO);
 
                 Thread.sleep(300);
                 shufflecad.stop();
