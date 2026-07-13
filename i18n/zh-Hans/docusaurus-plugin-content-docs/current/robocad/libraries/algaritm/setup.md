@@ -52,6 +52,18 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+
+        确保在您的 **pom.xml** 中包含以下内容：
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```
+
+        要从模拟器使用摄像头，您应当[编译或下载预编译的 OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html)，并在程序开头加载所需库。例如：
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
+        ```
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

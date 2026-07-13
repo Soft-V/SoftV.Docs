@@ -52,6 +52,18 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+
+        Убедитесь, что в вашем **pom.xml** есть:
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```
+
+        Чтобы работать с камерой из симулятора, вам следует [скомпилировать или скачать предварительно собранную версию OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html) и загрузить требуемую библиотеку в начале вашей программы. Например:
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
+        ```
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

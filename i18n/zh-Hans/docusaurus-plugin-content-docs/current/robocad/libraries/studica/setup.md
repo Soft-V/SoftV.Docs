@@ -52,6 +52,18 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+
+        確保在您的 **pom.xml** 中包含以下內容：
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```
+
+        要從模擬器使用攝像頭，您應當[編譯或下載預編譯的 OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html)，並在程式開頭載入所需庫。例如：
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
+        ```
     </TabItem>
     <TabItem value="labview">
         <div style={{textAlign: 'left'}}>

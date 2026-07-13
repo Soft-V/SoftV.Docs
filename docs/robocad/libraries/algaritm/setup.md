@@ -51,6 +51,19 @@ import TabItem from '@theme/TabItem';
                 robot.stop();
             }
         }
+        ```  
+
+        Make sure you have this in your **pom.xml** file:
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```  
+
+        To work with camera from simulator you should [compile or download precompiled OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html) and load required library in the beginning of your program.   
+        For example:
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
         ```
     </TabItem>
     <TabItem value="labview">

@@ -70,6 +70,12 @@ import TabItem from '@theme/TabItem';
             final static boolean IS_REAL_ROBOT = true;
 
             public static void main(String[] args) throws IOException, InterruptedException {
+                if (IS_REAL_ROBOT) {
+                    System.load("/home/pi/opencv/build/lib/libopencv_java490.so");
+                } else {
+                    System.load("C:\\path\\to\\opencv_java.dll");
+                }
+
                 RobotAlgaritm robot = new RobotAlgaritm(IS_REAL_ROBOT);
                 Shufflecad shufflecad = new Shufflecad(robot);
 
