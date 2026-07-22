@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -103,6 +105,92 @@ import TabItem from '@theme/TabItem';
                 Thread.sleep(100);
                 shufflecad.stop();
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // 旋转5秒并将摄像头图像发送到 shufflecad
+        #include "algaritm.hpp"
+        #include "shufflecad.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+            Shufflecad shufflecad(&robot);
+
+            // 与 shufflecad 交互
+            CameraVariable* cv_default_camera = shufflecad.add_var(new CameraVariable("default"));
+
+            // 等待 robocad 初始化
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.set_motor_speed_0(30);
+            robot.set_motor_speed_1(30);
+            robot.set_motor_speed_2(30);
+
+            auto st_time = std::chrono::steady_clock::now();
+            while (std::chrono::steady_clock::now() - st_time < std::chrono::seconds(5)) {
+                cv::Mat img = robot.get_camera();
+                if (!img.empty())
+                    cv_default_camera->set_mat(img);
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            robot.set_motor_speed_0(0);
+            robot.set_motor_speed_1(0);
+            robot.set_motor_speed_2(0);
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            shufflecad.stop();
+            robot.stop();
+        }
+        ```  
+
+        请在 `CMakeLists.txt` 中链接 **OpenCV**（`find_package(OpenCV REQUIRED)`）；由于是在构建时静态链接，因此不需要像 Java 那样手动加载运行库。
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // 旋转5秒并将摄像头图像发送到 shufflecad
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+                var shufflecad = new Shufflecad(robot);
+
+                // 与 shufflecad 交互
+                var cvDefaultCamera = (CameraVariable)shufflecad.AddVar(new CameraVariable("default"));
+
+                // 等待 robocad 初始化
+                System.Threading.Thread.Sleep(100);
+                robot.MotorSpeed0 = 30;
+                robot.MotorSpeed1 = 30;
+                robot.MotorSpeed2 = 30;
+
+                var stTime = System.DateTime.UtcNow;
+                while ((System.DateTime.UtcNow - stTime).TotalSeconds < 5)
+                {
+                    var img = robot.CameraImage;
+                    if (img != null)
+                        cvDefaultCamera.SetMat(img);
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                robot.MotorSpeed0 = 0;
+                robot.MotorSpeed1 = 0;
+                robot.MotorSpeed2 = 0;
+
+                System.Threading.Thread.Sleep(100);
+                shufflecad.Stop();
+                robot.Stop();
             }
         }
         ```

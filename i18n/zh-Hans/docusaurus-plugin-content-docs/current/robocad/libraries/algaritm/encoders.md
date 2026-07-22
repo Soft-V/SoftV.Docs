@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -76,6 +78,70 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // 旋转5秒，停止并检查编码器差值
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // 等待 robocad 初始化
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            int32_t enc_start = robot.get_motor_enc_0();
+            robot.set_motor_speed_0(30);
+            robot.set_motor_speed_1(30);
+            robot.set_motor_speed_2(30);
+
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            robot.set_motor_speed_0(0);
+            robot.set_motor_speed_1(0);
+            robot.set_motor_speed_2(0);
+
+            int32_t enc_diff = robot.get_motor_enc_0() - enc_start;
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // 旋转5秒，停止并检查编码器差值
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // 等待 robocad 初始化
+                System.Threading.Thread.Sleep(100);
+                int encStart = robot.MotorEnc0;
+                robot.MotorSpeed0 = 30;
+                robot.MotorSpeed1 = 30;
+                robot.MotorSpeed2 = 30;
+
+                System.Threading.Thread.Sleep(5000);
+                robot.MotorSpeed0 = 0;
+                robot.MotorSpeed1 = 0;
+                robot.MotorSpeed2 = 0;
+
+                int encDiff = robot.MotorEnc0 - encStart;
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```
