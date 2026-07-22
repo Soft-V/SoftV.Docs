@@ -19,25 +19,17 @@ import TabItem from '@theme/TabItem';
 	<TabItem value="studica">
 		- Подключитесь к Raspberry Pi по SSH или подключите к ней монитор с периферией.  
 		- Подключите Raspberry Pi к сети с доступом в интернет.  
-		- Загрузите на Raspberry Pi свой проект C++ с обновлённым `GIT_TAG`/версией в `CMakeLists.txt`.  
-		- В папке проекта выполните:
-		```bash
-		cmake -S . -B build
-		cmake --build build
-		```
+		- Перейдите в папку **/home/pi/cpp** и удалите **robocad-cpp**.  
+		- Клонируйте нужную версию или последнюю, например ```git clone https://github.com/Soft-V/robocad-cpp```.  
+		- Создайте каталог **build** внутри **robocad-cpp** и перейдите в него.  
+		- Выполните ```cmake ..``` и ```make -j4```.  
 	</TabItem>
 	<TabItem value="algaritm">
 		- Подключитесь к Repka Pi по SSH или подключите к ней монитор с периферией.  
 		- Подключите Repka Pi к сети с доступом в интернет.  
-		- Загрузите на Repka Pi свой проект C++ с обновлённым `GIT_TAG`/версией в `CMakeLists.txt`.  
-		- В папке проекта выполните:
-		```bash
-		cmake -S . -B build
-		cmake --build build
-		```
+		- Перейдите в папку **/home/pi/cpp** и удалите **robocad-cpp**.  
+		- Клонируйте нужную версию или последнюю, например ```git clone https://github.com/Soft-V/robocad-cpp```.  
+		- Создайте каталог **build** внутри **robocad-cpp** и перейдите в него.  
+		- Выполните ```cmake ..``` и ```make -j4```.  
 	</TabItem>
 </Tabs>
-
-:::note
-Если вы клонировали репозиторий напрямую, а не через `FetchContent`, перед пересборкой выполните `git pull` (или переключитесь на новый тег).
-:::

@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
         由于机器人（Raspberry Pi / Repka Pi）通常没有网络连接，单个 `CMakeLists.txt` 可以通过 `REAL_ROBOT` 选项支持两种模式：
         - **模拟器**（`REAL_ROBOT=OFF`，默认）— CMake 通过 `FetchContent` 从 GitHub 拉取并构建 **robocad-cpp**。配置时需要联网。
-        - **真实机器人**（`REAL_ROBOT=ON`）— 链接到您已经构建好并复制到机器人上的 **robocad-cpp**。无需联网。
+        - **真实机器人**（`REAL_ROBOT=ON`）— 链接到已经在机器人上构建好的 **robocad-cpp**。无需联网。
 
         ```cmake
         cmake_minimum_required(VERSION 3.14)
@@ -57,32 +57,20 @@ import TabItem from '@theme/TabItem';
                 GIT_REPOSITORY https://github.com/Soft-V/robocad-cpp.git
                 GIT_TAG 1.4.0
             )
+            # 使用您需要的版本，而不是 1.4.0
             FetchContent_MakeAvailable(robocad-cpp)
 
             target_link_libraries(YourTarget PRIVATE robocad-cpp)
         endif()
         ```  
 
-        **模拟器构建**（有网络，默认）：
+        **模拟器构建**：
         ```bash
         cmake -S . -B build
         cmake --build build
         ```  
 
-        **真实机器人构建**（离线）：先在有网络的机器上克隆并构建 **robocad-cpp**：
-        ```bash
-        git clone --branch 1.4.0 https://github.com/Soft-V/robocad-cpp.git
-        cmake -S robocad-cpp -B robocad-cpp/build
-        cmake --build robocad-cpp/build
-        ```  
-        将 `robocad-cpp/include` 和构建出的 `robocad-cpp/build/librobocad-cpp.so` 复制到机器人上，然后在机器人上针对这份副本构建您的项目：
-        ```bash
-        cmake -S . -B build -DREAL_ROBOT=ON \
-            -DROBOCAD_CPP_INCLUDE_DIR=/home/pi/robocad-cpp/include \
-            -DROBOCAD_CPP_LIBRARY=/home/pi/robocad-cpp/build/librobocad-cpp.so
-        cmake --build build
-        ```  
-        这一步不需要联网——CMake 只是将您的可执行文件链接到已构建好的 `.so`，并从指定路径包含头文件。想要更新机器人上的库版本时，重复克隆/构建步骤并使用新标签，然后替换复制过去的文件即可。
+        **真实机器人构建**：通过 Shufflecad 完成。
 
         现在，您可以使用 **robocad-cpp** 库！
     </TabItem>

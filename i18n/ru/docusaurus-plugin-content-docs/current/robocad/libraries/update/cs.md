@@ -19,18 +19,15 @@ import TabItem from '@theme/TabItem';
 	<TabItem value="studica">
 		- Подключитесь к Raspberry Pi по SSH или подключите к ней монитор с периферией.  
 		- Подключите Raspberry Pi к сети с доступом в интернет.  
-		- Загрузите на Raspberry Pi свой проект C# с обновлённой версией пакета `RobocadCs` в файле *.csproj* и запустите `dotnet build` в папке проекта.
+		- Перейдите в каталог **/home/pi/csharp** и откройте файл **Downloader.csproj**.  
+		- Установите здесь требуемую версию **RobocadCs** или добавьте другие необходимые пакеты.  
+		- Выполните ```dotnet restore Downloader.csproj --packages ./offline-packages/ -r linux-arm64``` в этом каталоге.
 	</TabItem>
 	<TabItem value="algaritm">
 		- Подключитесь к Repka Pi по SSH или подключите к ней монитор с периферией.  
 		- Подключите Repka Pi к сети с доступом в интернет.  
-		- Загрузите на Repka Pi свой проект C# с обновлённой версией пакета `RobocadCs` в файле *.csproj* и запустите `dotnet build` в папке проекта.
+		- Перейдите в каталог **/home/pi/csharp** и откройте файл **Downloader.csproj**.  
+		- Установите здесь требуемую версию **RobocadCs** или добавьте другие необходимые пакеты.  
+		- Выполните ```dotnet restore Downloader.csproj --packages ./offline-packages/ -r linux-arm64``` в этом каталоге.
 	</TabItem>
 </Tabs>
-
-:::note
-Обновить до конкретной версии также можно прямо из папки проекта командой:
-```bash
-dotnet add package RobocadCs --version <new-version>
-```
-:::
