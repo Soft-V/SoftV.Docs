@@ -168,7 +168,7 @@ import TabItem from '@theme/TabItem';
                 var cvDefaultCamera = (CameraVariable)shufflecad.AddVar(new CameraVariable("default"));
 
                 // ждем, пока robocad инициализируется
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = 30;
                 robot.MotorSpeed2 = 30;
@@ -177,14 +177,14 @@ import TabItem from '@theme/TabItem';
                 while ((System.DateTime.UtcNow - stTime).TotalSeconds < 5)
                 {
                     cvDefaultCamera.SetMat(robot.CameraImage);
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
                 robot.MotorSpeed2 = 0;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 shufflecad.Stop();
                 robot.Stop();
             }

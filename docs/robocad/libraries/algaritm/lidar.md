@@ -138,7 +138,7 @@ import TabItem from '@theme/TabItem';
                 var lidarSv = (ShuffleVariable)shufflecad.AddVar(new ShuffleVariable("lidar", ShuffleVariable.RadarType, ShuffleVariable.OutVar));
 
                 // wait until robocad is initialized
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
 
                 var stTime = System.DateTime.UtcNow;
                 while ((System.DateTime.UtcNow - stTime).TotalSeconds < 10)
@@ -146,7 +146,7 @@ import TabItem from '@theme/TabItem';
                     float[] data = robot.LidarData;
                     if (data != null)
                         lidarSv.SetRadar(data);
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
                 shufflecad.Stop();

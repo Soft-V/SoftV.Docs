@@ -102,7 +102,7 @@ import TabItem from '@theme/TabItem';
 
                 // actions go here
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

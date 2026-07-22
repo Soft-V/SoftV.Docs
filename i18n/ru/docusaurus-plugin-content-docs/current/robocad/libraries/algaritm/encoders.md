@@ -48,6 +48,10 @@ import TabItem from '@theme/TabItem';
         time.sleep(0.1)
         robot.stop()
         ```
+        Вы также можете сбросить текущее значение энкодера:
+        ```python
+        robot.reset_motor_enc_0()
+        ```
     </TabItem>
     <TabItem value="java">
         ```java
@@ -81,6 +85,10 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+        Вы также можете сбросить текущее значение энкодера:
+        ```java
+        robot.resetMotorEnc0();
+        ```
     </TabItem>
     <TabItem value="cpp">
         ```cpp
@@ -111,6 +119,10 @@ import TabItem from '@theme/TabItem';
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
             robot.stop();
         }
+        ```
+         Вы также можете сбросить текущее значение энкодера:
+        ```cpp
+        robot.reset_motor_enc_0();
         ```
     </TabItem>
     <TabItem value="cs">
@@ -144,6 +156,10 @@ import TabItem from '@theme/TabItem';
                 robot.Stop();
             }
         }
+        ```
+        Вы также можете сбросить текущее значение энкодера:
+        ```cs
+        robot.ResetMotorEnc0();
         ```
     </TabItem>
     <TabItem value="labview">

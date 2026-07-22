@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Убедитесь, что ваша CMake-цель линкуется с `robocad-cpp` (см. [установку](../installation/cpp)) и с **OpenCV**, а также что рантайм OpenCV доступен при запуске для работы с камерой.
+        Убедитесь, что ваш CMake-таргет линкуется с `robocad-cpp` (см. [установку](../installation/cpp)) и с **OpenCV**, а также что рантайм OpenCV доступен при запуске для работы с камерой.
     </TabItem>
     <TabItem value="cs">
         ```csharp
@@ -101,7 +101,7 @@ import TabItem from '@theme/TabItem';
 
                 // действия здесь
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

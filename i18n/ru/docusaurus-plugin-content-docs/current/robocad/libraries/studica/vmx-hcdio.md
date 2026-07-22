@@ -123,18 +123,18 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotVMXTitan(IsRealRobot);
 
                 // немного подождать, чтобы robocad инициализировался
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.SetAngleHcdio(0, 1);    // установка угла 0 для порта 1
                 robot.SetPwmHcdio(0.05f, 2);  // установка pwm 0.05 для порта 2
                 robot.SetBoolHcdio(true, 3);  // установка true для порта 3
 
                 // подождать 3 секунды
-                System.Threading.Thread.Sleep(3000);
+                Thread.Sleep(3000);
                 robot.SetAngleHcdio(300, 1);  // установка угла 300 для порта 1
                 robot.SetPwmHcdio(0.25f, 2);  // установка pwm 0.25 для порта 2
                 robot.SetBoolHcdio(false, 3); // установка false для порта 3
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

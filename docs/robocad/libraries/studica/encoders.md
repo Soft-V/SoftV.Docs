@@ -48,6 +48,10 @@ import TabItem from '@theme/TabItem';
         time.sleep(0.1)
         robot.stop()
         ```
+        You can also reset the accumulated encoder value:
+        ```python
+        robot.reset_motor_enc_0()
+        ```
     </TabItem>
     <TabItem value="java">
         ```java
@@ -81,6 +85,10 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+        You can also reset the accumulated encoder value:
+        ```java
+        robot.resetMotorEnc0();
+        ```
     </TabItem>
     <TabItem value="cpp">
         ```cpp
@@ -111,6 +119,10 @@ import TabItem from '@theme/TabItem';
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
             robot.stop();
         }
+        ```
+        You can also reset the accumulated encoder value:
+        ```cpp
+        robot.reset_motor_enc_0();
         ```
     </TabItem>
     <TabItem value="cs">
@@ -144,6 +156,10 @@ import TabItem from '@theme/TabItem';
                 robot.Stop();
             }
         }
+        ```
+        You can also reset the accumulated encoder value:
+        ```cs
+        robot.ResetMotorEnc0();
         ```
     </TabItem>
     <TabItem value="labview">
