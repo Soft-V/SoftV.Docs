@@ -16,6 +16,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -64,6 +66,48 @@ import TabItem from '@theme/TabItem';
         ```java
         System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
         ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // действия здесь
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```  
+
+        Убедитесь, что ваша CMake-цель линкуется с `robocad-cpp` (см. [установку](../installation/cpp)) и с **OpenCV**, а также что рантайм OpenCV доступен при запуске для работы с камерой.
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // действия здесь
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
+            }
+        }
+        ```  
+
+        Убедитесь, что в вашем проекте подключён NuGet-пакет **RobocadCs** (см. [установку](../installation/cs)).
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -81,6 +83,74 @@ import TabItem from '@theme/TabItem';
 
                 shufflecad.stop();
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // стоять в течение 10 секунд и отправлять данные лидара в shufflecad
+        #include "algaritm.hpp"
+        #include "shufflecad.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+            Shufflecad shufflecad(&robot);
+
+            // работа с shufflecad
+            ShuffleVariable* lidar_sv = shufflecad.add_var(new ShuffleVariable("lidar", ShuffleVariable::RADAR_TYPE, ShuffleVariable::OUT_VAR));
+
+            // ждем, пока robocad инициализируется
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+            auto st_time = std::chrono::steady_clock::now();
+            while (std::chrono::steady_clock::now() - st_time < std::chrono::seconds(10)) {
+                std::vector<float> data = robot.get_lidar();
+                if (!data.empty())
+                    lidar_sv->set_radar(data);
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            shufflecad.stop();
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // стоять в течение 10 секунд и отправлять данные лидара в shufflecad
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+                var shufflecad = new Shufflecad(robot);
+
+                // работа с shufflecad
+                var lidarSv = (ShuffleVariable)shufflecad.AddVar(new ShuffleVariable("lidar", ShuffleVariable.RadarType, ShuffleVariable.OutVar));
+
+                // ждем, пока robocad инициализируется
+                System.Threading.Thread.Sleep(100);
+
+                var stTime = System.DateTime.UtcNow;
+                while ((System.DateTime.UtcNow - stTime).TotalSeconds < 10)
+                {
+                    float[] data = robot.LidarData;
+                    if (data != null)
+                        lidarSv.SetRadar(data);
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                shufflecad.Stop();
+                robot.Stop();
             }
         }
         ```
