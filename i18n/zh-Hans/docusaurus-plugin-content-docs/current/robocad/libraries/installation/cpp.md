@@ -17,26 +17,72 @@ import TabItem from '@theme/TabItem';
         {label: 'CMake', value: 'CMake'},
     ]}>
     <TabItem value="CMake">
-        **robocad-cpp** 以源代码形式分发（CMake 项目），目前还没有包管理器。可以通过 `FetchContent` 将其添加到您的项目中：  
-        ```cmake
-        include(FetchContent)
-        FetchContent_Declare(
-            robocad-cpp
-            GIT_REPOSITORY https://github.com/Soft-V/robocad-cpp.git
-            GIT_TAG 1.4.0
-        )
-        FetchContent_MakeAvailable(robocad-cpp)
+        **robocad-cpp** 以源代码形式分发（CMake 项目），目前还没有包管理器。**robocad-cpp** 需要 **C++20** 编译器和 **OpenCV**（用于摄像头视频流）。
 
-        target_link_libraries(YourTarget PRIVATE robocad-cpp)
+        由于机器人（Raspberry Pi / Repka Pi）通常没有网络连接，单个 `CMakeLists.txt` 可以通过 `REAL_ROBOT` 选项支持两种模式：
+        - **模拟器**（`REAL_ROBOT=OFF`，默认）— CMake 通过 `FetchContent` 从 GitHub 拉取并构建 **robocad-cpp**。配置时需要联网。
+        - **真实机器人**（`REAL_ROBOT=ON`）— 链接到您已经构建好并复制到机器人上的 **robocad-cpp**。无需联网。
+
+        ```cmake
+        cmake_minimum_required(VERSION 3.14)
+        project(YourProject CXX)
+
+        set(CMAKE_CXX_STANDARD 20)
+        set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+        option(REAL_ROBOT "Link against an already-built local robocad-cpp instead of fetching it from GitHub" OFF)
+
+        find_package(Threads REQUIRED)
+        find_package(OpenCV REQUIRED)
+
+        add_executable(YourTarget src/main.cpp)
+        target_link_libraries(YourTarget PRIVATE Threads::Threads ${OpenCV_LIBS})
+        target_include_directories(YourTarget PRIVATE ${OpenCV_INCLUDE_DIRS})
+
+        if(REAL_ROBOT)
+            # robocad-cpp 已在其他地方构建好，并被复制到了这台机器上
+            set(ROBOCAD_CPP_INCLUDE_DIR "" CACHE PATH "Path to robocad-cpp's include/ directory")
+            set(ROBOCAD_CPP_LIBRARY "" CACHE FILEPATH "Path to the prebuilt librobocad-cpp.so")
+
+            if(NOT ROBOCAD_CPP_INCLUDE_DIR OR NOT ROBOCAD_CPP_LIBRARY)
+                message(FATAL_ERROR "REAL_ROBOT=ON requires -DROBOCAD_CPP_INCLUDE_DIR=... and -DROBOCAD_CPP_LIBRARY=...")
+            endif()
+
+            target_include_directories(YourTarget PRIVATE ${ROBOCAD_CPP_INCLUDE_DIR})
+            target_link_libraries(YourTarget PRIVATE ${ROBOCAD_CPP_LIBRARY})
+        else()
+            include(FetchContent)
+            FetchContent_Declare(
+                robocad-cpp
+                GIT_REPOSITORY https://github.com/Soft-V/robocad-cpp.git
+                GIT_TAG 1.4.0
+            )
+            FetchContent_MakeAvailable(robocad-cpp)
+
+            target_link_libraries(YourTarget PRIVATE robocad-cpp)
+        endif()
         ```  
 
-        您也可以直接克隆仓库，然后使用 `add_subdirectory`：
-        ```cmake
-        add_subdirectory(robocad-cpp)
-        target_link_libraries(YourTarget PRIVATE robocad-cpp)
+        **模拟器构建**（有网络，默认）：
+        ```bash
+        cmake -S . -B build
+        cmake --build build
         ```  
 
-        **robocad-cpp** 需要 **C++20** 编译器和 **OpenCV**（用于摄像头视频流）。请确保 CMake 能够找到 OpenCV（`find_package(OpenCV REQUIRED)`），并且构建出的可执行文件在运行时能够找到 OpenCV 运行库。
+        **真实机器人构建**（离线）：先在有网络的机器上克隆并构建 **robocad-cpp**：
+        ```bash
+        git clone --branch 1.4.0 https://github.com/Soft-V/robocad-cpp.git
+        cmake -S robocad-cpp -B robocad-cpp/build
+        cmake --build robocad-cpp/build
+        ```  
+        将 `robocad-cpp/include` 和构建出的 `robocad-cpp/build/librobocad-cpp.so` 复制到机器人上，然后在机器人上针对这份副本构建您的项目：
+        ```bash
+        cmake -S . -B build -DREAL_ROBOT=ON \
+            -DROBOCAD_CPP_INCLUDE_DIR=/home/pi/robocad-cpp/include \
+            -DROBOCAD_CPP_LIBRARY=/home/pi/robocad-cpp/build/librobocad-cpp.so
+        cmake --build build
+        ```  
+        这一步不需要联网——CMake 只是将您的可执行文件链接到已构建好的 `.so`，并从指定路径包含头文件。想要更新机器人上的库版本时，重复克隆/构建步骤并使用新标签，然后替换复制过去的文件即可。
 
         现在，您可以使用 **robocad-cpp** 库！
     </TabItem>
