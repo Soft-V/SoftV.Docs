@@ -33,3 +33,9 @@ import TabItem from '@theme/TabItem';
 :::note
 Installing additional Maven packages is done in a similar way.
 :::
+
+:::warning
+Manual library updates can cause the robot to malfunction.
+Only update library versions if you are sure they are compatible with the OS version and robot firmware.
+Please update the entire image instead of updating libraries piecemeal.
+:::

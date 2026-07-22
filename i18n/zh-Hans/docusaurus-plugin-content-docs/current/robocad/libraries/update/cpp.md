@@ -33,3 +33,9 @@ import TabItem from '@theme/TabItem';
 		- 运行 ```cmake ..``` 和 ```make -j4```。
 	</TabItem>
 </Tabs>
+
+:::warning
+手动更新库可能会导致机器人异常运行。
+只有在确认库版本与操作系统版本和机器人固件兼容时，才更新库版本。
+请整体更新镜像，而不是单独更新库。
+:::

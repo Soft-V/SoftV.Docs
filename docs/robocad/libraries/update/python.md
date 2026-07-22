@@ -35,3 +35,9 @@ import TabItem from '@theme/TabItem';
 		```
 	</TabItem>
 </Tabs>
+
+:::warning
+Manual library updates can cause the robot to malfunction.
+Only update library versions if you are sure they are compatible with the OS version and robot firmware.
+Please update the entire image instead of updating libraries piecemeal.
+:::
