@@ -146,29 +146,29 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotAlgaritm(IsRealRobot);
 
                 // немного подождать, чтобы robocad инициализировался
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
 
                 // вращаем в одну сторону на 10000 шагов
                 robot.StepMotorMove(1, 10000, 1000, true);
 
                 // ждать, пока мотор не дойдет до нужного значения
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 while (robot.IsStep1Busy)
                 {
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
                 // вращаем в другую сторону на 10000 шагов
                 robot.StepMotorMove(1, 10000, 1000, false);
 
                 // ждать, пока мотор не дойдет до нужного значения
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 while (robot.IsStep1Busy)
                 {
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

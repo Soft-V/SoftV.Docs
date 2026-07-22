@@ -123,20 +123,20 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotVMXTitan(IsRealRobot);
 
                 // wait a bit so robocad inites
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = -30;
 
                 // wait for distance
                 while (robot.Us1 > 15)
                 {
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

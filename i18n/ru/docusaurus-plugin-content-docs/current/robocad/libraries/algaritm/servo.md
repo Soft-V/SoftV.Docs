@@ -183,14 +183,14 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotAlgaritm(IsRealRobot);
 
                 // немного подождать, чтобы robocad инициализировался
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.SetAngleServo(0, 1); // установка угла 0 для порта 1
 
                 // подождать 3 секунды
-                System.Threading.Thread.Sleep(3000);
+                Thread.Sleep(3000);
                 robot.SetAngleServo(180, 1); // установка угла 180 для порта 1
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }
@@ -210,14 +210,14 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotAlgaritm(IsRealRobot);
 
                 // немного подождать, чтобы robocad инициализировался
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.AdditionalServo1 = 0;   // установка угла 0 для порта 1
 
                 // подождать 3 секунды
-                System.Threading.Thread.Sleep(3000);
+                Thread.Sleep(3000);
                 robot.AdditionalServo1 = 180; // установка угла 180 для порта 1
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

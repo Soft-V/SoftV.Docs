@@ -34,8 +34,28 @@ import TabItem from '@theme/TabItem';
             <PackageReference Include="RobocadCs" Version="1.4.0" />
         </ItemGroup>
         ```  
+        Также для работы с камерой из симулятора вам необходимо вставить следующий блок в файл *.csproj*:
+        ```xml
+        <ItemGroup Condition="$([MSBuild]::IsOSPlatform('OSX')) And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">
+            <PackageReference Include="OpenCvSharp4.runtime.osx_arm64" Version="4.8.1-rc" />
+        </ItemGroup>
+        <ItemGroup Condition="$([MSBuild]::IsOSPlatform('OSX')) And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'X64'">
+            <PackageReference Include="OpenCvSharp4.runtime.osx.10.15-x64" Version="4.6.0.20230105" />
+        </ItemGroup>
+        <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+            <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.9.0.20240103" />
+        </ItemGroup>
+        <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Linux')) And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'X64'">
+            <PackageReference Include="OpenCvSharp4.official.runtime.linux-x64" Version="4.9.0.20240103" />
+        </ItemGroup>
+        <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Linux')) And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">
+            <PackageReference Include="OpenCvSharp4.runtime.linux-arm64" Version="4.13.0.20260526" />
+        </ItemGroup>
+        ```
 
         Теперь вы можете использовать библиотеку **RobocadCs**!
+
+
     </TabItem>
 </Tabs>
 

@@ -48,6 +48,10 @@ import TabItem from '@theme/TabItem';
         time.sleep(0.1)
         robot.stop()
         ```
+        You can also reset the accumulated encoder value:
+        ```python
+        robot.reset_motor_enc_0()
+        ```
     </TabItem>
     <TabItem value="java">
         ```java
@@ -81,6 +85,11 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+
+        You can also reset the accumulated encoder value:
+        ```java
+        robot.resetMotorEnc0();
+        ```
     </TabItem>
     <TabItem value="cpp">
         ```cpp
@@ -112,6 +121,10 @@ import TabItem from '@theme/TabItem';
             robot.stop();
         }
         ```
+        You can also reset the accumulated encoder value:
+        ```cpp
+        robot.reset_motor_enc_0();
+        ```
     </TabItem>
     <TabItem value="cs">
         ```csharp
@@ -127,23 +140,27 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotAlgaritm(IsRealRobot);
 
                 // wait until robocad is initialized
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 int encStart = robot.MotorEnc0;
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = 30;
                 robot.MotorSpeed2 = 30;
 
-                System.Threading.Thread.Sleep(5000);
+                Thread.Sleep(5000);
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
                 robot.MotorSpeed2 = 0;
 
                 int encDiff = robot.MotorEnc0 - encStart;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }
+        ```
+        You can also reset the accumulated encoder value:
+        ```cs
+        robot.ResetMotorEnc0();
         ```
     </TabItem>
     <TabItem value="labview">

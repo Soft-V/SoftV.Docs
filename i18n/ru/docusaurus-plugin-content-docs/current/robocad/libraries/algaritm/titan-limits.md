@@ -123,20 +123,20 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotAlgaritm(IsRealRobot);
 
                 // немного подождать, чтобы robocad инициализировался
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = -30;
 
                 // ждать нажатия кнопки
                 while (!robot.TitanLimits[0])
                 {
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

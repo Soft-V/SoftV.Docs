@@ -123,20 +123,20 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotAlgaritm(IsRealRobot);
 
                 // немного подождать, чтобы robocad инициализировался
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = -30;
 
                 // ждать достижения расстояния
                 while (robot.Analog1 < 2000)
                 {
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }
@@ -151,7 +151,7 @@ import TabItem from '@theme/TabItem';
 Напряжение на инфракрасном датчике варьируется от ~```570``` до ~```2700```.
 Для преобразования напряжения в расстояние можно написать функцию-конвертер. Пример на C#:
 ```csharp
-public static float VoltageToDist(ushort voltage)
+public static float VoltageToDist(float voltage)
 {
     // проверка деления на ноль
     if (voltage == 0)

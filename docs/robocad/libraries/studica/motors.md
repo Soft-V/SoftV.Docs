@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
             robot.set_motor_speed_1(30);
             robot.set_motor_speed_2(30);
 
-            std::this_thread::sleep_for(std::chrono::seconds(5));
+            std::this_thread::sleep_for(std::chrono::milliseconds(5000));
             robot.set_motor_speed_0(0);
             robot.set_motor_speed_1(0);
             robot.set_motor_speed_2(0);
@@ -118,17 +118,17 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotVMXTitan(IsRealRobot);
 
                 // wait a bit so robocad inites
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = 30;
                 robot.MotorSpeed2 = 30;
 
-                System.Threading.Thread.Sleep(5000);
+                Thread.Sleep(5000);
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
                 robot.MotorSpeed2 = 0;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }

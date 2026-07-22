@@ -123,20 +123,20 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotVMXTitan(IsRealRobot);
 
                 // wait a bit so robocad inites
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = -30;
 
                 // wait for distance
                 while (robot.Analog1 < 2000)
                 {
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
 
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }
@@ -151,7 +151,7 @@ import TabItem from '@theme/TabItem';
 The infrared sensor output voltage ranges approximately from 570 to 2700.
 To convert the voltage value into distance, you can implement a conversion function. An example in C# is provided below.
 ```csharp
-public static float VoltageToDist(ushort voltage)
+public static float VoltageToDist(float voltage)
 {
     // div by zero check
     if (voltage == 0)

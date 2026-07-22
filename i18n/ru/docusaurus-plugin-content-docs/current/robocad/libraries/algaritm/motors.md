@@ -118,17 +118,17 @@ import TabItem from '@theme/TabItem';
                 var robot = new RobotAlgaritm(IsRealRobot);
 
                 // немного подождать, чтобы robocad инициализировался
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.MotorSpeed0 = 30;
                 robot.MotorSpeed1 = 30;
                 robot.MotorSpeed2 = 30;
 
-                System.Threading.Thread.Sleep(5000);
+                Thread.Sleep(5000);
                 robot.MotorSpeed0 = 0;
                 robot.MotorSpeed1 = 0;
                 robot.MotorSpeed2 = 0;
 
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(100);
                 robot.Stop();
             }
         }
