@@ -31,7 +31,5 @@ import TabItem from '@theme/TabItem';
 		- Clone required version or the latest like ```git clone https://github.com/Soft-V/robocad-cpp```.
 		- Create **build** directory inside **robocad-cpp** and ```cd``` into.
 		- Run ```cmake ..``` and ```make -j4```.
-		```
 	</TabItem>
 </Tabs>
-
