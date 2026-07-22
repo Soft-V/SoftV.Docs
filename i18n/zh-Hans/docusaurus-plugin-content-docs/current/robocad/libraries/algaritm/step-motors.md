@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -88,6 +90,86 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // 向一个方向旋转，然后向相反方向旋转
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // 等待 robocad 初始化
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+            // 向一个方向旋转 10000 步
+            robot.step_motor_move(1, 10000, 1000, true);
+
+            // 等待电机到达目标
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            while (robot.is_step_1_busy()) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            // 向相反方向旋转 10000 步
+            robot.step_motor_move(1, 10000, 1000, false);
+
+            // 等待电机到达目标
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            while (robot.is_step_1_busy()) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // 向一个方向旋转，然后向相反方向旋转
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // 等待 robocad 初始化
+                System.Threading.Thread.Sleep(100);
+
+                // 向一个方向旋转 10000 步
+                robot.StepMotorMove(1, 10000, 1000, true);
+
+                // 等待电机到达目标
+                System.Threading.Thread.Sleep(100);
+                while (robot.IsStep1Busy)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                // 向相反方向旋转 10000 步
+                robot.StepMotorMove(1, 10000, 1000, false);
+
+                // 等待电机到达目标
+                System.Threading.Thread.Sleep(100);
+                while (robot.IsStep1Busy)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```

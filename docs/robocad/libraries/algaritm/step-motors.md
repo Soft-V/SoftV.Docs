@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -88,6 +90,86 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // rotate in one direction, then in the other
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // wait a bit for robocad to initialize
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+            // rotate one way for 10000 steps
+            robot.step_motor_move(1, 10000, 1000, true);
+
+            // wait until the motor reaches the target
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            while (robot.is_step_1_busy()) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            // rotate the other way for 10000 steps
+            robot.step_motor_move(1, 10000, 1000, false);
+
+            // wait until the motor reaches the target
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            while (robot.is_step_1_busy()) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // rotate in one direction, then in the other
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // wait a bit for robocad to initialize
+                System.Threading.Thread.Sleep(100);
+
+                // rotate one way for 10000 steps
+                robot.StepMotorMove(1, 10000, 1000, true);
+
+                // wait until the motor reaches the target
+                System.Threading.Thread.Sleep(100);
+                while (robot.IsStep1Busy)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                // rotate the other way for 10000 steps
+                robot.StepMotorMove(1, 10000, 1000, false);
+
+                // wait until the motor reaches the target
+                System.Threading.Thread.Sleep(100);
+                while (robot.IsStep1Busy)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```

@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -77,6 +79,71 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // вращение сервопривода с помощью стика
+        #include "algaritm.hpp"
+        #include "shufflecad.hpp"
+
+        #include <thread>
+        #include <chrono>
+        #include <cmath>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+            Shufflecad shufflecad(&robot);
+
+            // ждем, пока robocad инициализируется
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+            auto st_time = std::chrono::steady_clock::now();
+            while (std::chrono::steady_clock::now() - st_time < std::chrono::seconds(30)) {
+                int raw = shufflecad.joystick_data.left_stick_y;
+                float angle = std::abs(raw) / 200.0f;
+                robot.set_servo_angle(angle, 1);
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```  
+
+        Состояние джойстика в **robocad-cpp**/**RobocadCs** представлено структурой/объектом (`joystick_data`/`JoystickData`) с типизированным полем для каждого элемента управления, а не строковым словарем, как в Python/Java.
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // вращение сервопривода с помощью стика
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+                var shufflecad = new Shufflecad(robot);
+
+                // ждем, пока robocad инициализируется
+                System.Threading.Thread.Sleep(100);
+
+                var stTime = System.DateTime.UtcNow;
+                while ((System.DateTime.UtcNow - stTime).TotalSeconds < 30)
+                {
+                    int raw = shufflecad.JoystickData.LeftStickY;
+                    float angle = System.Math.Abs(raw) / 200f;
+                    robot.SetAngleServo(angle, 1);
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```

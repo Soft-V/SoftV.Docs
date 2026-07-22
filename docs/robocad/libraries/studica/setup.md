@@ -16,6 +16,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -65,6 +67,48 @@ import TabItem from '@theme/TabItem';
         ```java
         System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
         ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        #include "studica.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = false;
+            RobotVmxTitan robot(IS_REAL_ROBOT);
+
+            // do something here
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```  
+
+        Make sure your CMake target links against `robocad-cpp` (see [installation](../installation/cpp)) and against **OpenCV**, whose runtime should be discoverable at execution time for camera support.
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = false;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotVMXTitan(IsRealRobot);
+
+                // do something here
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
+            }
+        }
+        ```  
+
+        Make sure your project references the **RobocadCs** NuGet package (see [installation](../installation/cs)).
     </TabItem>
     <TabItem value="labview">
         <div style={{textAlign: 'left'}}>
