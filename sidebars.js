@@ -37,6 +37,8 @@ const sidebars = {
           'items': [
             'robocad/libraries/installation/python',
             'robocad/libraries/installation/java',
+            'robocad/libraries/installation/cpp',
+            'robocad/libraries/installation/cs',
             'robocad/libraries/installation/labview',
           ],
         },
@@ -117,6 +119,8 @@ const sidebars = {
                 'robocad/libraries/update/image',
                 'robocad/libraries/update/python',
                 'robocad/libraries/update/java',
+                'robocad/libraries/update/cpp',
+                'robocad/libraries/update/cs',
               ],
             },
           ],

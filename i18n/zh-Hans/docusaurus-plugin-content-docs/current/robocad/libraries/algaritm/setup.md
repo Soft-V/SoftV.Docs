@@ -16,6 +16,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -52,6 +54,60 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+
+        确保在您的 **pom.xml** 中包含以下内容：
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```
+
+        要从模拟器使用摄像头，您应当[编译或下载预编译的 OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html)，并在程序开头加载所需库。例如：
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // 在此处添加你的逻辑
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```  
+
+        请确保您的 CMake 目标链接了 `robocad-cpp`（参见[安装说明](../installation/cpp)）以及 **OpenCV**，并确保运行时能够找到 OpenCV 运行库以支持摄像头功能。
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // 在此处添加你的逻辑
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
+            }
+        }
+        ```  
+
+        请确保您的项目已引用 **RobocadCs** NuGet 包（参见[安装说明](../installation/cs)）。
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

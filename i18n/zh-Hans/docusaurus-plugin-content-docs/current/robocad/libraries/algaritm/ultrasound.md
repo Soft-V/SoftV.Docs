@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -73,6 +75,69 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // 前进直到超声波传感器测得距离为 15 cm
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // 等待 robocad 初始化
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.set_motor_speed_0(30);
+            robot.set_motor_speed_1(-30);
+
+            // 等待测量到距离
+            while (robot.get_us1() > 15) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            robot.set_motor_speed_0(0);
+            robot.set_motor_speed_1(0);
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // 前进直到超声波传感器测得距离为 15 cm
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // 等待 robocad 初始化
+                System.Threading.Thread.Sleep(100);
+                robot.MotorSpeed0 = 30;
+                robot.MotorSpeed1 = -30;
+
+                // 等待测量到距离
+                while (robot.Us1 > 15)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                robot.MotorSpeed0 = 0;
+                robot.MotorSpeed1 = 0;
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```

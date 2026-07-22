@@ -16,6 +16,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -51,7 +53,62 @@ import TabItem from '@theme/TabItem';
                 robot.stop();
             }
         }
+        ```  
+
+        Make sure you have this in your **pom.xml** file:
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```  
+
+        To work with camera from simulator you should [compile or download precompiled OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html) and load required library in the beginning of your program.   
+        For example:
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
         ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // actions go here
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```  
+
+        Make sure your CMake target links against `robocad-cpp` (see [installation](../installation/cpp)) and against **OpenCV**, whose runtime should be discoverable at execution time for camera support.
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // actions go here
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
+            }
+        }
+        ```  
+
+        Make sure your project references the **RobocadCs** NuGet package (see [installation](../installation/cs)).
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

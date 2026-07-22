@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -73,6 +75,69 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // move forward until the IR sensor reads 2000 mV
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // wait a bit for robocad to initialize
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.set_motor_speed_0(30);
+            robot.set_motor_speed_1(-30);
+
+            // wait until the distance is reached
+            while (robot.get_analog_1() < 2000) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            robot.set_motor_speed_0(0);
+            robot.set_motor_speed_1(0);
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // move forward until the IR sensor reads 2000 mV
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // wait a bit for robocad to initialize
+                System.Threading.Thread.Sleep(100);
+                robot.MotorSpeed0 = 30;
+                robot.MotorSpeed1 = -30;
+
+                // wait until the distance is reached
+                while (robot.Analog1 < 2000)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                robot.MotorSpeed0 = 0;
+                robot.MotorSpeed1 = 0;
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```

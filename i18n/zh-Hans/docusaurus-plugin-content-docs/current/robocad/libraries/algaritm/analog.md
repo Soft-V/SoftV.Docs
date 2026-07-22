@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -77,6 +79,73 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // 旋转直到机器人检测到连接到模拟端口3的黑线
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // 等待 robocad 初始化
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.set_motor_speed_0(30);
+            robot.set_motor_speed_1(30);
+            robot.set_motor_speed_2(30);
+
+            // 等待检测到黑线
+            while (robot.get_analog_3() > 1500) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            robot.set_motor_speed_0(0);
+            robot.set_motor_speed_1(0);
+            robot.set_motor_speed_2(0);
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // 旋转直到机器人检测到连接到模拟端口3的黑线
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // 等待 robocad 初始化
+                System.Threading.Thread.Sleep(100);
+                robot.MotorSpeed0 = 30;
+                robot.MotorSpeed1 = 30;
+                robot.MotorSpeed2 = 30;
+
+                // 等待检测到黑线
+                while (robot.Analog3 > 1500)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                robot.MotorSpeed0 = 0;
+                robot.MotorSpeed1 = 0;
+                robot.MotorSpeed2 = 0;
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```

@@ -17,6 +17,8 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
@@ -80,6 +82,74 @@ import TabItem from '@theme/TabItem';
 
                 Thread.sleep(100);
                 robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // включение PID регулятора и выставление настроек
+        #include "algaritm.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+
+            // немного подождать, чтобы robocad инициализировался
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+            // включаем PID регулятор и выставляем коэффициенты
+            robot.set_pid_settings(true, 0.14f, 0.1f, 0.0f);
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+            robot.set_motor_speed_0(30);
+            robot.set_motor_speed_1(30);
+            robot.set_motor_speed_2(30);
+
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            robot.set_motor_speed_0(0);
+            robot.set_motor_speed_1(0);
+            robot.set_motor_speed_2(0);
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // включение PID регулятора и выставление настроек
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+
+                // немного подождать, чтобы robocad инициализировался
+                System.Threading.Thread.Sleep(100);
+
+                // включаем PID регулятор и выставляем коэффициенты
+                robot.SetPidSettings(true, 0.14f, 0.1f, 0f);
+                System.Threading.Thread.Sleep(100);
+
+                robot.MotorSpeed0 = 30;
+                robot.MotorSpeed1 = 30;
+                robot.MotorSpeed2 = 30;
+
+                System.Threading.Thread.Sleep(5000);
+                robot.MotorSpeed0 = 0;
+                robot.MotorSpeed1 = 0;
+                robot.MotorSpeed2 = 0;
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
             }
         }
         ```

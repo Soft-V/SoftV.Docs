@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
         </dependency>
         ```  
 
-        Paste this into *build* tag:
+        Paste this into *project* tag:
         ```xml
         <build>
             <finalName>UserBuiltJar</finalName>

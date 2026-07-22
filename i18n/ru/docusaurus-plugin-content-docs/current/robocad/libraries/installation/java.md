@@ -42,7 +42,12 @@ import TabItem from '@theme/TabItem';
         <div style={{textAlign: 'left'}}>
             <img src="/docshome/img/robocad/libraries/installation/intellij2.png" />
         </div>
-        
+
+        Чтобы работать с камерой из симулятора, вам следует [скомпилировать или скачать предварительно собранную версию OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html) и загрузить требуемую библиотеку в начале вашей программы. Например:
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
+        ```
+
         Теперь вы можете использовать библиотеку **robocad4J**!
     </TabItem>
 </Tabs>
