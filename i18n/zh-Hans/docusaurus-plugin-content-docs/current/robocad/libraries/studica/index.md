@@ -10,4 +10,6 @@ title: Studica
 您可以使用适合您所选语言的示例项目：
 - [Python](https://github.com/Soft-V/sample-robocad-py/tree/main/studica)
 - [Java](https://github.com/Soft-V/sample-robocad4J/tree/main/studica)
+- [C++](https://github.com/Soft-V/sample-robocad-cpp/tree/main/studica)
+- [C#](https://github.com/Soft-V/sample-robocad-cs/tree/main/studica)
 - [LabVIEW](https://github.com/Soft-V/sample-robocadLV)
