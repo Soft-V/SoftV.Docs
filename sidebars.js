@@ -52,29 +52,6 @@ const sidebars = {
           'items': [
             {
               'type': 'category',
-              'label': 'Algaritm',
-              'link': {
-                'type': 'doc',
-                'id': 'robocad/libraries/algaritm/index',
-              },
-              'items': [
-                'robocad/libraries/algaritm/setup',
-                'robocad/libraries/algaritm/motors',
-                'robocad/libraries/algaritm/encoders',
-                'robocad/libraries/algaritm/pid',
-                'robocad/libraries/algaritm/infrared',
-                'robocad/libraries/algaritm/ultrasound',
-                'robocad/libraries/algaritm/analog',
-                'robocad/libraries/algaritm/imu',
-                'robocad/libraries/algaritm/lidar',
-                'robocad/libraries/algaritm/titan-limits',
-                'robocad/libraries/algaritm/servo',
-                'robocad/libraries/algaritm/step-motors',
-                'robocad/libraries/algaritm/camera',
-              ],
-            },
-            {
-              'type': 'category',
               'label': 'Studica',
               'link': {
                 'type': 'doc',
@@ -161,10 +138,13 @@ const sidebars = {
         'algaritm-kit/connecting-ultrasonic',
         'algaritm-kit/connecting-digital',
         'algaritm-kit/connecting-bno055',
+        'algaritm-kit/connecting-lidar',
         'algaritm-kit/connecting-servo',
+        'algaritm-kit/connecting-camera',
         'algaritm-kit/connecting-motors',
         'algaritm-kit/connecting-encoders',
         'algaritm-kit/connecting-limit-switch',
+        'algaritm-kit/connecting-step-motors',
         'algaritm-kit/indication',
       ],
     },

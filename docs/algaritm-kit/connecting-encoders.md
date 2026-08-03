@@ -14,7 +14,7 @@ Use the standard 4‑pin cables supplied with the kit to connect digfital encode
 <div style={{ marginBottom: "10px" }}>
     <img src="/docshome/img/algaritm-kit/driver/driver-encoder-connection.png"/>
 </div>
-The code snippet below reads the values from the digital encoder connected to port 2 (as shown in the example above) and sends it to shufflecad. This provides a quick and easy way to verify that encoder is functioning properly and that the connection have been made correctly.
+The code snippet below reads the values from the digital encoder connected to port 2 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that encoder is functioning properly and that the connection have been made correctly.
 
 <Tabs
     defaultValue="python"
