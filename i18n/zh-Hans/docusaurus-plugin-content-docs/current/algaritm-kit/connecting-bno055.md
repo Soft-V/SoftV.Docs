@@ -1,23 +1,23 @@
 ---
 id: connecting-bno055
-title: Connecting BNO055
+title: 连接 BNO055
 ---
 
-# Connecting BNO055
+# 连接 BNO055
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-BNO055 is a smart 9-axis absolute orientation sensor from Bosch Sensortec. It integrates three core sensors in a single board: a 3-axis accelerometer for measuring linear acceleration, a 3-axis gyroscope for angular velocity, and a 3-axis magnetometer for magnetic field strength.
+BNO055 是博世传感器公司（Bosch Sensortec）出品的智能九轴绝对方向传感器。它将三个核心传感器集成在一块板上：用于测量线性加速度的三轴加速度计、用于角速度的三轴陀螺仪，以及用于磁场强度的三轴磁力计。
 
-The board provides UART and I2C interfaces for additional peripherals. The I2C_1 port is designed for the BNO055 sensor.
+该板提供 UART 和 I2C 接口以连接其他外设。I2C_1 端口专为 BNO055 传感器设计。
 <img src="/docshome/img/algaritm-kit/shield/shield-uart-i2c-ports.PNG"/>
 
-Connect the sensor using the supplied 6-to-4-pin cable, ensuring correct pinout orientation on the 6-pin side.
+使用配套的 6 转 4 针线缆连接传感器，注意 6 针一侧的引脚方向要正确。
 
 <img src="/docshome/img/algaritm-kit/shield/shield-bno055-connection.PNG"/>
 
-The code snippet gets yaw, roll and pitch values and sends them to shufflecad. This provides a quick and easy way to verify that orientation sensor is functioning properly and that connection has been made correctly.
+该代码片段获取偏航角（yaw）、横滚角（roll）和俯仰角（pitch）的数值并发送到 shufflecad。这提供了一种快速简便的方法，用于验证姿态传感器工作是否正常以及连接是否正确。
 
 <Tabs
     defaultValue="python"
@@ -146,19 +146,19 @@ The code snippet gets yaw, roll and pitch values and sends them to shufflecad. T
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
 
 :::note
-BNO055 pinout:
+BNO055 引脚定义：
 
-- Red — 3.3V
-- Black — GND
-- Yellow — SDA
-- Green — SCL
+- 红色 — 3.3V
+- 黑色 — GND
+- 黄色 — SDA
+- 绿色 — SCL
 
-See the image below for the example.
+请参见下方示例图片。
 <div style={{paddingLeft: "20px", paddingRight: "20px"}}>
     <img src="/docshome/img/algaritm-kit/other/bno055.png"/>
 </div>

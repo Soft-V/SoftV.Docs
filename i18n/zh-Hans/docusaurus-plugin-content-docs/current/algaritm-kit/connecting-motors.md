@@ -1,18 +1,18 @@
 ---
 id: connecting-motors
-title: Connecting motors
+title: 连接电机
 ---
 
-# Connecting motors
+# 连接电机
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The motor driver board provides 4 dedicated PWM ports for DC motor connection, each utilizing a robust XT30 connector. These connectors are specifically chosen for their ability to handle higher currents with minimal voltage drop, making them ideal for driving motors in demanding robotics applications. The connectors also feature a snug fit with positive retention, preventing accidental disconnection during operation. In the example image below, motors are connected to ports 3 and 4.
+电机驱动板提供 4 个专用的 PWM 端口用于连接直流电机，每个端口都使用坚固的 XT30 接口。选用这些接口是因为它们能够以极小的压降承受更大的电流，非常适合驱动要求较高的机器人应用中的电机。这些接口还具有紧密贴合、正向锁定的特点，可防止运行过程中意外脱落。下图示例中，电机分别连接到端口 3 和 4。
 <div style={{ marginBottom: "10px"}}>
     <img src="/docshome/img/algaritm-kit/driver/driver-dc-motors-connection.png"/>
 </div>
-Using the code snippet below, you can manually set speed to each motor connected in the example. This provides a quick and easy way to verify that each motor is functioning properly and that all connections have been made correctly.
+使用下面的代码片段，你可以手动为示例中连接的每个电机设置转速。这提供了一种快速简便的方法，用于验证每个电机工作是否正常以及所有连接是否正确。
 <Tabs
     defaultValue="python"
     values={[
@@ -132,8 +132,8 @@ Using the code snippet below, you can manually set speed to each motor connected
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
 
-Our slibrary includes a built‑in PID controller to help you achieve smooth and accurate motor regulation. For a complete guide on working with encoders and using the PID controller, refer to the [Connecting encoders](../algaritm-kit/connecting-encoders) page.
+我们的库内置了一个 PID 控制器，可帮助你实现平滑、精准的电机调节。有关编码器使用和 PID 控制器的完整指南，请参阅[连接编码器](../algaritm-kit/connecting-encoders)页面。

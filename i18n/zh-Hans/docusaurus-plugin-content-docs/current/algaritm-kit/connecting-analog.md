@@ -1,24 +1,24 @@
 ---
 id: connecting-analog
-title: Connecting analog sensors
+title: 连接模拟传感器
 ---
 
-# Connecting analog sensors
+# 连接模拟传感器
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The TCRT5000 is a versatile reflective optical sensor that comes with the kit. Its working principle is simple: it emits infrared light and measures how much is reflected back. This makes it perfect for projects like line-following robots, where the sensor can distinguish between a black line and a white background.
+TCRT5000 是套件自带的一款多功能反射式光电传感器。其工作原理很简单：它发射红外光并测量反射回来的光量。这使它非常适合循线机器人等项目，传感器可以区分黑线和白色背景。
 
 <div style={{ paddingBottom: "10px" }}>
     <img src="/docshome/img/algaritm-kit/other/tcrt5000-line-follower-sensor.PNG"/>
 </div>
 
-Use the standard 3‑pin cables supplied with the kit to connect the line following sensors to the analog input port. Make sure to observe the correct pinout.
+使用套件附带的标准 3 针线缆将循线传感器连接到模拟输入端口。请务必注意正确的引脚定义。
 
 <img src="/docshome/img/algaritm-kit/shield/shield-tcrt5000-connection.PNG"/>
 
-The code snippet below reads the values from the analog sensor connected to port 1 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that sensor is functioning properly and that the connections have been made correctly.
+下面的代码片段读取连接到端口 1（如上例所示）的模拟传感器的数值，并将其发送到 shufflecad。这提供了一种快速简便的方法，用于验证传感器工作是否正常以及连接是否正确。
 
 <Tabs
     defaultValue="python"
@@ -131,16 +131,16 @@ The code snippet below reads the values from the analog sensor connected to port
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
 
 :::note
-TCRT5000 line following sensor pinout:
-- Black — GND
-- White — OUT (A1)
-- Red — VCC (5V)
+TCRT5000 循线传感器引脚定义：
+- 黑色 — GND
+- 白色 — OUT (A1)
+- 红色 — VCC (5V)
 
-See the image below for the example.
+请参见下方示例图片。
 <img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.PNG"/>
 :::

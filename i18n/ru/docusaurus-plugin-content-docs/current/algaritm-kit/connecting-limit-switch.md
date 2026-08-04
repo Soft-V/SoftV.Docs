@@ -1,22 +1,22 @@
 ---
 id: connecting-limit-switch
-title: Connecting limit switch
+title: Подключение концевого выключателя
 ---
 
-# Connecting limit switch
+# Подключение концевого выключателя
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Each motor port is equipped with two limit switch inputs, labeled Llim and Hlim on the board. Both ports serve the same purpose — they are designed for connecting end‑stop switches that detect when a mechanism has reached the limit of its travel. These inputs do not have predefined functions; you can assign them in software to stop or reverse the motor when a switch is triggered.
+Каждый моторный порт оснащён двумя входами концевых выключателей, обозначенными на плате как Llim и Hlim. Оба порта служат одной цели — они предназначены для подключения концевых выключателей, которые определяют достижение механизмом предельного положения хода. Эти входы не имеют предопределённых функций; вы можете назначить их в программе для остановки или реверса мотора при срабатывании выключателя.
 
 <img src="/docshome/img/algaritm-kit/driver/driver-limit-switch-ports.PNG"/>
 
-Use the standard 2‑pin cables supplied with the kit to connect limit switch to its port. Unlike other connections, these ports are not polarity-sensitive — it doesn't matter which side of the wire goes where. You can connect them in any orientation.
+Используйте стандартные 2‑контактные кабели из комплекта набора Algaritmica для подключения концевого выключателя к его порту. В отличие от других подключений, эти порты не чувствительны к полярности — не имеет значения, какая сторона провода куда подключена. Их можно подключать в любой ориентации.
 
 <img src="/docshome/img/algaritm-kit/driver/driver-limit-switch-connection.png"/>
 
-The code snippet below gets boolean value from the limit switch connected to the Llim port on M3 motor and sends it to shufflecad. This provides a quick and easy way to verify that limit switch is functioning properly and that the connection has been made correctly.
+Фрагмент кода ниже получает логическое значение с концевого выключателя, подключённого к порту Llim мотора M3, и передаёт его в shufflecad. Это позволяет быстро и просто проверить работоспособность концевого выключателя и правильность подключения.
 
 <Tabs
     defaultValue="python"
@@ -134,16 +134,16 @@ The code snippet below gets boolean value from the limit switch connected to the
 </Tabs>
 
 :::note
-The upper contact will always be the Common wire. The remaining two contacts are:
-- NO — Normally opened: LOW when idle, HIGH when pressed
-- NC — Normally closed: HIGH when idle, LOW when pressed
+Верхний контакт всегда является проводом Common. Оставшиеся два контакта:
+- NO — Normally opened: LOW в покое, HIGH при нажатии
+- NC — Normally closed: HIGH в покое, LOW при нажатии
 
-See the image below for the example.
+Пример см. на изображении ниже.
 <img src="/docshome/img/algaritm-kit/other/limit-switch-pinout.PNG"/>
 :::
 
 :::note
-Limit ports are read-only and are arranged as follows:
+Порты концевых выключателей доступны только для чтения и расположены следующим образом:
 - M0:
     - Hlim: 0
     - Llim: 1

@@ -1,24 +1,24 @@
 ---
 id: connecting-analog
-title: Connecting analog sensors
+title: Подключение аналоговых датчиков
 ---
 
-# Connecting analog sensors
+# Подключение аналоговых датчиков
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The TCRT5000 is a versatile reflective optical sensor that comes with the kit. Its working principle is simple: it emits infrared light and measures how much is reflected back. This makes it perfect for projects like line-following robots, where the sensor can distinguish between a black line and a white background.
+TCRT5000 — универсальный оптический рефлекторный датчик, входящий в комплект набора Algaritmica. Принцип его работы прост: датчик излучает инфракрасный свет и измеряет количество отражённого сигнала. Это делает его идеальным для проектов вроде роботов для следования по линии, где датчик может различать чёрную линию и белый фон.
 
 <div style={{ paddingBottom: "10px" }}>
     <img src="/docshome/img/algaritm-kit/other/tcrt5000-line-follower-sensor.PNG"/>
 </div>
 
-Use the standard 3‑pin cables supplied with the kit to connect the line following sensors to the analog input port. Make sure to observe the correct pinout.
+Используйте стандартные 3‑контактные кабели из комплекта набора Algaritmica для подключения датчиков следования по линии к аналоговому входному порту. Обязательно соблюдайте правильную распайку контактов.
 
 <img src="/docshome/img/algaritm-kit/shield/shield-tcrt5000-connection.PNG"/>
 
-The code snippet below reads the values from the analog sensor connected to port 1 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that sensor is functioning properly and that the connections have been made correctly.
+Фрагмент кода ниже считывает значения с аналогового датчика, подключённого к порту 1 (как показано в примере выше), и передаёт их в shufflecad. Это позволяет быстро и просто проверить работоспособность датчика и правильность подключения.
 
 <Tabs
     defaultValue="python"
@@ -136,11 +136,11 @@ The code snippet below reads the values from the analog sensor connected to port
 </Tabs>
 
 :::note
-TCRT5000 line following sensor pinout:
-- Black — GND
-- White — OUT (A1)
-- Red — VCC (5V)
+Распайка датчика следования по линии TCRT5000:
+- Чёрный — GND
+- Белый — OUT (A1)
+- Красный — VCC (5V)
 
-See the image below for the example.
+Пример см. на изображении ниже.
 <img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.PNG"/>
 :::

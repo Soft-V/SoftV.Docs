@@ -1,26 +1,26 @@
 ---
 id: connecting-servo
-title: Connecting servo
+title: 连接舵机
 ---
 
-# Connecting servo
+# 连接舵机
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The main controller features 8 PWM ports specifically designed for connecting standard angular servo motors. These ports generate the precise PWM signals required to position a servo at any angle within its operating range. With 8 independent channels, you can control up to eight servos simultaneously, making the board ideal for complex projects such as multi‑joint robotic arms, pan‑tilt camera gimbals, or any mechanism that requires coordinated motion of multiple actuators.
+主控制器提供 8 个 PWM 端口，专门用于连接标准角度舵机。这些端口生成精确的 PWM 信号，以将舵机定位到其工作范围内的任意角度。凭借 8 个独立通道，你可以同时控制多达八个舵机，非常适合多关节机械臂、云台摄像头，或任何需要多个执行器协同运动的机构等复杂项目。
 
 <img src="/docshome/img/algaritm-kit/shield/shield-pwm-overview.png"/>
 
-To work with servos, first, connect the signal cable from one of the PWM ports on the main controller to the **I** (INPUT) port on the servo power block.
+要使用舵机，首先将信号线从主控制器上的某个 PWM 端口连接到舵机电源模块的 **I**（输入）端口。
 
 <img src="/docshome/img/algaritm-kit/shield/shield-servo-connection.png"/>
 
- Then, plug your servos directly into the **O** (OUT) ports on the servo power block.
+然后，将舵机直接插入舵机电源模块的 **O**（输出）端口。
 
 <img src="/docshome/img/algaritm-kit/other/servo-power-block-servo-connection.PNG"/>
 
-Use the code snippet below to set servo angles and ensure correct servo connection, as shown in the example.
+使用下面的代码片段设置舵机角度，并确认舵机连接是否正确，如示例所示。
 
 <Tabs
     defaultValue="python"
@@ -141,25 +141,25 @@ Use the code snippet below to set servo angles and ensure correct servo connecti
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
 
 :::note
-The servo motors included in the kit support an operating range of **0°** to **180°**.
+套件所含舵机的工作范围为 **0°** 至 **180°**。
 :::
 
-# Connecting additional servo
+# 连接附加舵机
 
-The main controller already includes servo ports, but for projects that require more servos, the motor driver board provides 2 additional servo outputs — giving you the ability to control even more actuators.
+主控制器已内置了舵机端口，但对于需要更多舵机的项目，电机驱动板还提供 2 个额外的舵机输出——让你能够控制更多的执行器。
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo-overview.PNG"/>
 
-The additional servo outputs on the motor driver board use the same standard 3‑pin servo connector. As with the servo ports on the main controller, they must be connected through the servo power block to ensure stable power delivery.
+电机驱动板上的附加舵机输出使用与标准相同的 3 针舵机接口。与主控制器上的舵机端口一样，它们也必须通过舵机电源模块连接，以确保供电稳定。
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo.PNG"/>
 
-Use the code snippet below to set additional servo angles and ensure correct servo connection, as shown in the example.
+使用下面的代码片段设置附加舵机的角度，并确认舵机连接是否正确，如示例所示。
 
 <Tabs
     defaultValue="python"
@@ -272,7 +272,6 @@ Use the code snippet below to set additional servo angles and ensure correct ser
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
-

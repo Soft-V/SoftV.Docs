@@ -1,31 +1,31 @@
 ---
 id: connecting-digital
-title: Connecting buttons and LEDs
+title: 连接按钮和 LED
 ---
 
-# Connecting buttons and LEDs
+# 连接按钮和 LED
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The shield provides 8 digital I/O ports 0-7. Ports D0–D3 are configured as outputs for driving LEDs, which are used for robot status indication — for example, to show power, mode, or warning states. Ports D4–D7 are configured as inputs for connecting programmable buttons and switches, allowing the operator to trigger autonomous actions, switch between operational modes, or manually override running routines.
+扩展板提供 8 个数字 I/O 端口（0-7）。D0–D3 端口被配置为输出，用于驱动 LED，可用于机器人状态指示——例如显示电源、模式或警告状态。D4–D7 端口被配置为输入，用于连接可编程按钮和开关，使操作者能够触发自主动作、切换操作模式或手动覆盖正在运行的例程。
 
 <div style={{ marginBottom: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-buttons-and-leds-overview.png"/>
 </div>
 
-The kit includes LEDs that can be connected directly to the digital output ports D0–D3. For these LEDs, simply connect the signal pin (red or yellow wire) and ground to the corresponding ports on the shield, and they are ready to operate. However, if you want to use other LEDs, you may need to add a current-limiting resistor in series with the signal line. A value of around 220Ω is typically sufficient for most standard 5V applications.
+套件包含的 LED 可以直接连接到数字输出端口 D0–D3。对于这些 LED，只需将信号引脚（红色或黄色导线）和地线连接到扩展板上对应的端口，即可正常工作。但是，如果要使用其他 LED，可能需要在信号线上串联一个限流电阻。对于大多数标准 5V 应用，约 220Ω 的阻值通常就足够了。
 
 <div style={{ marginBottom: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-leds-connection.png"/>
 </div>
 
-The included buttons connect to ports D4–D7 just like the LEDs — each button requires only a signal connection (red or yellow wire) and a ground connection to function. Simply wire them to the corresponding ports, and they are ready to be used as digital inputs.
+套件包含的按钮以与 LED 相同的方式连接到 D4–D7 端口——每个按钮只需要一个信号连接（红色或黄色导线）和一个地线连接即可工作。只需将它们连接到相应的端口，即可作为数字输入使用。
 
 <div style={{ marginBottom: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-button-connection.png"/>
 </div>
-The code snippet sets bool values to LEDs (port 0 and 3) and reads button status from the port 6 (as shown in the example above). This provides a quick and easy way to verify that each device is functioning properly and that all connections have been made correctly.
+该代码片段将布尔值设置给 LED（端口 0 和 3），并读取端口 6（如上例所示）的按钮状态。这提供了一种快速简便的方法，用于验证每个设备工作是否正常以及所有连接是否正确。
 <Tabs
     defaultValue="python"
     values={[
@@ -153,21 +153,21 @@ The code snippet sets bool values to LEDs (port 0 and 3) and reads button status
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
 
 :::note
-Emergency stop button pinout:
+急停按钮引脚定义：
 
-- Yellow — NO (Normally Opened: LOW when idle, HIGH when pressed)
-- Black — C
+- 黄色 — NO（常开：静止时为 LOW，按下时为 HIGH）
+- 黑色 — C
 
-See the image below for the example.
+请参见下方示例图片。
 <img src="/docshome/img/algaritm-kit/other/ems.png"/>
 :::
 :::note
-By default, the shield's VCC line is connected to the onboard 5V rail. To accommodate devices that operate at 3.3V, you can simply reposition the jumper and switch the output voltage accordingly. This ensures seamless integration with a wide range of external sensors beyond those included in the kit. Note that repositioning the jumper will also change ultrasonic sensors' output voltage. Refer to the image below for correct jumper position when using 3.3V.
+默认情况下，扩展板的 VCC 线连接到板载 5V 电源轨。若要兼容工作在 3.3V 的设备，只需重新放置跳线即可切换输出电压。这样可以无缝对接套件之外的各种外部传感器。请注意，重新放置跳线也会同时改变超声波传感器的输出电压。使用 3.3V 时的正确跳线位置请参见下图。
 
 <div style={{ marginRight: "20px", marginLeft: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-v2-3v3.png"/>

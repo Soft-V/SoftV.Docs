@@ -1,26 +1,26 @@
 ---
 id: connecting-servo
-title: Connecting servo
+title: Подключение сервопривода
 ---
 
-# Connecting servo
+# Подключение сервопривода
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The main controller features 8 PWM ports specifically designed for connecting standard angular servo motors. These ports generate the precise PWM signals required to position a servo at any angle within its operating range. With 8 independent channels, you can control up to eight servos simultaneously, making the board ideal for complex projects such as multi‑joint robotic arms, pan‑tilt camera gimbals, or any mechanism that requires coordinated motion of multiple actuators.
+Главный контроллер оснащён 8 PWM-портами, специально предназначенными для подключения стандартных угловых сервоприводов. Эти порты генерируют точные PWM-сигналы, необходимые для установки сервопривода в любое положение в пределах рабочего диапазона. Благодаря 8 независимым каналам можно одновременно управлять до восьми сервоприводов, что делает плату идеальной для сложных проектов — многозвенных роботизированных манипуляторов, подвесов камер pan-tilt или любых механизмов, требующих согласованного движения нескольких приводов.
 
 <img src="/docshome/img/algaritm-kit/shield/shield-pwm-overview.png"/>
 
-To work with servos, first, connect the signal cable from one of the PWM ports on the main controller to the **I** (INPUT) port on the servo power block.
+Для работы с сервоприводами сначала подключите сигнальный кабель от одного из PWM-портов главного контроллера к порту **I** (INPUT) на блоке питания сервоприводов.
 
 <img src="/docshome/img/algaritm-kit/shield/shield-servo-connection.png"/>
 
- Then, plug your servos directly into the **O** (OUT) ports on the servo power block.
+ Затем подключите сервоприводы напрямую к портам **O** (OUT) на блоке питания сервоприводов.
 
 <img src="/docshome/img/algaritm-kit/other/servo-power-block-servo-connection.PNG"/>
 
-Use the code snippet below to set servo angles and ensure correct servo connection, as shown in the example.
+Используйте фрагмент кода ниже для установки углов сервоприводов и проверки правильности подключения, как показано в примере.
 
 <Tabs
     defaultValue="python"
@@ -146,20 +146,20 @@ Use the code snippet below to set servo angles and ensure correct servo connecti
 </Tabs>
 
 :::note
-The servo motors included in the kit support an operating range of **0°** to **180°**.
+Сервоприводы, входящие в комплект набора Algaritmica, поддерживают рабочий диапазон от **0°** до **180°**.
 :::
 
-# Connecting additional servo
+# Подключение дополнительного сервопривода
 
-The main controller already includes servo ports, but for projects that require more servos, the motor driver board provides 2 additional servo outputs — giving you the ability to control even more actuators.
+Главный контроллер уже включает порты для сервоприводов, но для проектов, требующих большего количества сервоприводов, контроллер двигателей предоставляет 2 дополнительных выхода — что даёт возможность управлять ещё большим числом приводов.
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo-overview.PNG"/>
 
-The additional servo outputs on the motor driver board use the same standard 3‑pin servo connector. As with the servo ports on the main controller, they must be connected through the servo power block to ensure stable power delivery.
+Дополнительные выходы сервоприводов на контроллере двигателей используют тот же стандартный 3‑контактный разъём сервопривода. Как и порты сервоприводов на главном контроллере, они должны подключаться через блок питания сервоприводов для обеспечения стабильной подачи питания.
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo.PNG"/>
 
-Use the code snippet below to set additional servo angles and ensure correct servo connection, as shown in the example.
+Используйте фрагмент кода ниже для установки углов дополнительных сервоприводов и проверки правильности подключения, как показано в примере.
 
 <Tabs
     defaultValue="python"

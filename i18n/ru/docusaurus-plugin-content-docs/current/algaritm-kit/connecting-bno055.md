@@ -1,23 +1,23 @@
 ---
 id: connecting-bno055
-title: Connecting BNO055
+title: Подключение BNO055
 ---
 
-# Connecting BNO055
+# Подключение BNO055
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-BNO055 is a smart 9-axis absolute orientation sensor from Bosch Sensortec. It integrates three core sensors in a single board: a 3-axis accelerometer for measuring linear acceleration, a 3-axis gyroscope for angular velocity, and a 3-axis magnetometer for magnetic field strength.
+BNO055 — интеллектуальный 9-осевой датчик абсолютной ориентации от Bosch Sensortec. На одной плате он объединяет три базовых датчика: 3-осевой датчик линейного ускорения, 3-осевой гироскоп для угловой скорости и 3-осевой магнитометр для измерения напряжённости магнитного поля.
 
-The board provides UART and I2C interfaces for additional peripherals. The I2C_1 port is designed for the BNO055 sensor.
+Плата предоставляет интерфейсы UART и I2C для дополнительной периферии. Порт I2C_1 предназначен для датчика BNO055.
 <img src="/docshome/img/algaritm-kit/shield/shield-uart-i2c-ports.PNG"/>
 
-Connect the sensor using the supplied 6-to-4-pin cable, ensuring correct pinout orientation on the 6-pin side.
+Подключите датчик с помощью кабеля 6-to-4-pin из комплекта набора Algaritmica, соблюдая правильную ориентацию распайки на 6-контактной стороне.
 
 <img src="/docshome/img/algaritm-kit/shield/shield-bno055-connection.PNG"/>
 
-The code snippet gets yaw, roll and pitch values and sends them to shufflecad. This provides a quick and easy way to verify that orientation sensor is functioning properly and that connection has been made correctly.
+Фрагмент кода получает значения yaw, roll и pitch и передаёт их в shufflecad. Это позволяет быстро и просто проверить работоспособность датчика ориентации и правильность подключения.
 
 <Tabs
     defaultValue="python"
@@ -151,14 +151,14 @@ The code snippet gets yaw, roll and pitch values and sends them to shufflecad. T
 </Tabs>
 
 :::note
-BNO055 pinout:
+Распайка BNO055:
 
-- Red — 3.3V
-- Black — GND
-- Yellow — SDA
-- Green — SCL
+- Красный — 3.3V
+- Чёрный — GND
+- Жёлтый — SDA
+- Зелёный — SCL
 
-See the image below for the example.
+Пример см. на изображении ниже.
 <div style={{paddingLeft: "20px", paddingRight: "20px"}}>
     <img src="/docshome/img/algaritm-kit/other/bno055.png"/>
 </div>

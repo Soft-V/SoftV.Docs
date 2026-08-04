@@ -1,20 +1,20 @@
 ---
 id: connecting-encoders
-title: Connecting encoders
+title: 连接编码器
 ---
 
-# Connecting encoders
+# 连接编码器
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Every motor channel on the driver board features an encoder input port. By connecting a digital encoder, you can track the motor's rotation in real time. This enables precise monitoring of both velocity and displacement, which is critical for applications requiring accurate movement, such as line following, odometry, or robotic arm positioning.
+驱动板上的每个电机通道都配有一个编码器输入端口。通过连接数字编码器，可以实时跟踪电机的转动情况，从而实现对速度和位移的精确监测，这对于需要精准运动的应用（如循线、里程计或机械臂定位）至关重要。
 
-Use the standard 4‑pin cables supplied with the kit to connect digfital encoders. Make sure to observe the correct pinout. 
+使用套件附带的标准 4 针线缆连接数字编码器。请务必注意正确的引脚定义。
 <div style={{ marginBottom: "10px" }}>
     <img src="/docshome/img/algaritm-kit/driver/driver-encoder-connection.png"/>
 </div>
-The code snippet below reads the values from the digital encoder connected to port 2 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that encoder is functioning properly and that the connection has been made correctly.
+下面的代码片段读取连接到端口 2（如上例所示）的数字编码器的数值，并将其发送到 shufflecad。这提供了一种快速简便的方法，用于验证编码器工作是否正常以及连接是否正确。
 
 <Tabs
     defaultValue="python"
@@ -135,12 +135,12 @@ The code snippet below reads the values from the digital encoder connected to po
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
 
 :::note
-To complement the hardware capabilities, **robocad** library provides its own PID controller, allowing you to achieve smoother acceleration, reduced overshoot, and more accurate positioning. Note that PID controller will not work if encoders are not connected properly. Refer to the example of using PID and adjusting its coefficients.
+为补充硬件能力，**robocad** 库提供了自有的 PID 控制器，可帮助您实现更平滑的加速、更小的超调以及更精确的定位。请注意，如果编码器未正确连接，PID 控制器将无法工作。请参阅使用 PID 及调整其系数的示例。
 <Tabs
     defaultValue="python"
     values={[
@@ -159,7 +159,7 @@ To complement the hardware capabilities, **robocad** library provides its own PI
         robot.set_pid_settings(True, 0.14, 0.1, 0)
         time.sleep(1)
 
-        # place your code here
+        # 在此处放置你的代码
 
         robot.stop()
         ```
@@ -175,7 +175,7 @@ To complement the hardware capabilities, **robocad** library provides its own PI
                 robot.setPidSettings(true, 0.14f, 0.1f, 0.0f);
                 Thread.sleep(1000);
 
-                // place your code here
+                // 在此处放置你的代码
                 
                 robot.stop();
             }
@@ -194,7 +194,7 @@ To complement the hardware capabilities, **robocad** library provides its own PI
             robot.set_pid_settings(true, 0.14f, 0.1f, 0.0f);
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-            // place your code here
+            // 在此处放置你的代码
 
             robot.stop();
         }
@@ -218,8 +218,7 @@ To complement the hardware capabilities, **robocad** library provides its own PI
         ```
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>
 :::
-

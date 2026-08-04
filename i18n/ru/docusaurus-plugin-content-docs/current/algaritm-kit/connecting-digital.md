@@ -1,31 +1,31 @@
 ---
 id: connecting-digital
-title: Connecting buttons and LEDs
+title: Подключение кнопок и светодиодов
 ---
 
-# Connecting buttons and LEDs
+# Подключение кнопок и светодиодов
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The shield provides 8 digital I/O ports 0-7. Ports D0–D3 are configured as outputs for driving LEDs, which are used for robot status indication — for example, to show power, mode, or warning states. Ports D4–D7 are configured as inputs for connecting programmable buttons and switches, allowing the operator to trigger autonomous actions, switch between operational modes, or manually override running routines.
+Расширительная плата предоставляет 8 цифровых портов ввода-вывода 0–7. Порты D0–D3 настроены как выходы для управления светодиодами, которые используются для индикации состояния робота — например, для отображения питания, режима работы или предупреждений. Порты D4–D7 настроены как входы для подключения программируемых кнопок и переключателей, что позволяет оператору запускать автономные действия, переключать режимы работы или вручную переопределять выполняемые алгоритмы.
 
 <div style={{ marginBottom: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-buttons-and-leds-overview.png"/>
 </div>
 
-The kit includes LEDs that can be connected directly to the digital output ports D0–D3. For these LEDs, simply connect the signal pin (red or yellow wire) and ground to the corresponding ports on the shield, and they are ready to operate. However, if you want to use other LEDs, you may need to add a current-limiting resistor in series with the signal line. A value of around 220Ω is typically sufficient for most standard 5V applications.
+В комплект набора Algaritmica входят светодиоды, которые можно подключать напрямую к цифровым выходным портам D0–D3. Для этих светодиодов достаточно подключить сигнальный контакт (красный или жёлтый провод) и землю к соответствующим портам на расширительной плате — после этого они готовы к работе. Однако при использовании других светодиодов может потребоваться добавить токоограничивающий резистор последовательно с сигнальной линией. Значение около 220Ω обычно достаточно для большинства стандартных 5V-приложений.
 
 <div style={{ marginBottom: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-leds-connection.png"/>
 </div>
 
-The included buttons connect to ports D4–D7 just like the LEDs — each button requires only a signal connection (red or yellow wire) and a ground connection to function. Simply wire them to the corresponding ports, and they are ready to be used as digital inputs.
+Входящие в комплект кнопки подключаются к портам D4–D7 так же, как и светодиоды — каждой кнопке требуется только сигнальное подключение (красный или жёлтый провод) и подключение к земле. Достаточно подключить их к соответствующим портам, и они готовы к использованию в качестве цифровых входов.
 
 <div style={{ marginBottom: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-button-connection.png"/>
 </div>
-The code snippet sets bool values to LEDs (port 0 and 3) and reads button status from the port 6 (as shown in the example above). This provides a quick and easy way to verify that each device is functioning properly and that all connections have been made correctly.
+Фрагмент кода устанавливает логические значения для светодиодов (порты 0 и 3) и считывает состояние кнопки с порта 6 (как показано в примере выше). Это позволяет быстро и просто проверить работоспособность каждого устройства и правильность всех подключений.
 <Tabs
     defaultValue="python"
     values={[
@@ -158,16 +158,16 @@ The code snippet sets bool values to LEDs (port 0 and 3) and reads button status
 </Tabs>
 
 :::note
-Emergency stop button pinout:
+Распайка кнопки аварийной остановки:
 
-- Yellow — NO (Normally Opened: LOW when idle, HIGH when pressed)
-- Black — C
+- Жёлтый — NO (Normally Opened: LOW в покое, HIGH при нажатии)
+- Чёрный — C
 
-See the image below for the example.
+Пример см. на изображении ниже.
 <img src="/docshome/img/algaritm-kit/other/ems.png"/>
 :::
 :::note
-By default, the shield's VCC line is connected to the onboard 5V rail. To accommodate devices that operate at 3.3V, you can simply reposition the jumper and switch the output voltage accordingly. This ensures seamless integration with a wide range of external sensors beyond those included in the kit. Note that repositioning the jumper will also change ultrasonic sensors' output voltage. Refer to the image below for correct jumper position when using 3.3V.
+По умолчанию линия VCC на расширительной плате подключена к встроенной шине 5V. Для устройств, работающих на 3.3V, можно переставить перемычку и переключить выходное напряжение соответствующим образом. Это обеспечивает бесшовную интеграцию с широким спектром внешних датчиков, выходящих за рамки комплекта набора Algaritmica. Обратите внимание, что перестановка перемычки также изменит выходное напряжение ультразвуковых датчиков. Правильное положение перемычки при использовании 3.3V см. на изображении ниже.
 
 <div style={{ marginRight: "20px", marginLeft: "20px" }}>
     <img src="/docshome/img/algaritm-kit/shield/shield-v2-3v3.png"/>

@@ -1,18 +1,18 @@
 ---
 id: connecting-motors
-title: Connecting motors
+title: Подключение моторов
 ---
 
-# Connecting motors
+# Подключение моторов
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The motor driver board provides 4 dedicated PWM ports for DC motor connection, each utilizing a robust XT30 connector. These connectors are specifically chosen for their ability to handle higher currents with minimal voltage drop, making them ideal for driving motors in demanding robotics applications. The connectors also feature a snug fit with positive retention, preventing accidental disconnection during operation. In the example image below, motors are connected to ports 3 and 4.
+Контроллер двигателей предоставляет 4 выделенных PWM-порта для подключения DC-моторов, каждый из которых использует надёжный разъём XT30. Эти разъёмы специально выбраны за способность пропускать высокие токи с минимальным падением напряжения, что делает их идеальными для приводов в требовательных робототехнических приложениях. Разъёмы также обеспечивают плотную посадку с фиксацией, предотвращая случайное отключение во время работы. На примере изображения ниже моторы подключены к портам 3 и 4.
 <div style={{ marginBottom: "10px"}}>
     <img src="/docshome/img/algaritm-kit/driver/driver-dc-motors-connection.png"/>
 </div>
-Using the code snippet below, you can manually set speed to each motor connected in the example. This provides a quick and easy way to verify that each motor is functioning properly and that all connections have been made correctly.
+С помощью фрагмента кода ниже можно вручную задавать скорость каждому мотору, подключённому в примере. Это позволяет быстро и просто проверить работоспособность каждого мотора и правильность всех подключений.
 <Tabs
     defaultValue="python"
     values={[
@@ -136,4 +136,4 @@ Using the code snippet below, you can manually set speed to each motor connected
     </TabItem>
 </Tabs>
 
-Our slibrary includes a built‑in PID controller to help you achieve smooth and accurate motor regulation. For a complete guide on working with encoders and using the PID controller, refer to the [Connecting encoders](../algaritm-kit/connecting-encoders) page.
+Библиотека robocad включает встроенный PID-контроллер, который помогает достичь плавного и точного регулирования моторов. Полное руководство по работе с энкодерами и использованию PID-контроллера см. на странице [Подключение энкодеров](../algaritm-kit/connecting-encoders).

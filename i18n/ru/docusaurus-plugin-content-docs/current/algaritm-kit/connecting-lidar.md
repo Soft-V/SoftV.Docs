@@ -1,0 +1,154 @@
+---
+id: connecting-lidar
+title: Подключение LiDAR
+---
+
+# Подключение LiDAR
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+В комплект набора Algaritmica входит LiDAR WHEELTEC N10 — компактный 360° лазерный дальномер, специально разработанный для внутренних робототехнических приложений. N10 обеспечивает дальность обнаружения до 25 метров для белых поверхностей (11 метров для чёрных объектов) с точностью ±3 см на расстоянии до 6 метров.
+
+<img src="/docshome/img/algaritm-kit/other/lidar-n10.PNG"/>
+
+В комплект входит специальный кабель для подключения LiDAR к коммуникационному блоку. Просто подключите один конец (5-контактная сторона) к модулю LiDAR.
+
+<img src="/docshome/img/algaritm-kit/other/lidar-connecting-lidar.PNG"/>
+
+Следующий шаг — подключить 4-контактную сторону кабеля к коммуникационному блоку. Доступны два разъёма, необходимо использовать меньший из них.
+
+<img src="/docshome/img/algaritm-kit/other/lidar-connecting-communication-block.PNG"/>
+
+Последний шаг — подключение USB-кабеля. Вставьте разъём Type-C в модуль, а разъём Type-A — в порт USB 3.0 контроллера.
+
+<div style={{marginBottom: "10px"}}>
+    <img src="/docshome/img/algaritm-kit/other/lidar-communication-block-type-c.PNG"/>
+</div>
+
+Фрагмент кода ниже получает данные о расстоянии от LiDAR и передаёт их в shufflecad, где они отображаются в виде радарного графика, давая наглядное представление об окружающей среде.
+<Tabs
+    defaultValue="python"
+    values={[
+        {label: 'Python', value: 'python'},
+        {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
+        {label: 'LabVIEW', value: 'labview'},
+    ]}>
+    <TabItem value="python">  
+        ```python
+        from robocad.shufflecad import Shufflecad, ShuffleVariable
+        from robocad.algaritm import RobotAlgaritm
+        import time
+
+        robot: RobotAlgaritm = RobotAlgaritm(True)
+        shufflecad = Shufflecad(robot)
+        time.sleep(1)
+
+        lidar: ShuffleVariable = shufflecad.add_var(ShuffleVariable("lidar", ShuffleVariable.RADAR_TYPE, ShuffleVariable.OUT_VAR))
+
+        start_time = time.time()
+        while time.time() - start_time < 60:
+            data = robot.lidar_data
+            if data is not None:
+                lidar.set_radar(data)
+            time.sleep(0.02)
+
+        shufflecad.stop()
+        robot.stop()
+        ```
+    </TabItem>
+    <TabItem value="java">
+        ```java
+        import io.github.softv.shufflecad.Shufflecad;
+        import io.github.softv.shufflecad.ShuffleVariable;
+        import io.github.softv.RobotAlgaritm;
+
+        import java.util.ArrayList;
+        import java.io.IOException;
+
+        public class Main {
+            public static void main(String[] args) throws IOException, InterruptedException {
+                RobotAlgaritm robot = new RobotAlgaritm(true);
+                Shufflecad shufflecad = new Shufflecad(robot);
+                Thread.sleep(1000);
+
+                ShuffleVariable lidar = (ShuffleVariable)shufflecad.addVar(new ShuffleVariable("lidar", ShuffleVariable.RADAR_TYPE, ShuffleVariable.OUT_VAR));
+
+                long startTime = System.currentTimeMillis();
+                while (System.currentTimeMillis() - startTime < 60_000) {
+                    ArrayList<Integer> data = robot.getLidarData();
+                    if (data != null)
+                        lidar.setRadar(data);
+                    Thread.sleep(100);
+                }
+
+                shufflecad.stop();
+                robot.stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        #include "algaritm.hpp"
+        #include "shufflecad.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+
+            RobotAlgaritm robot(true);
+            Shufflecad shufflecad(&robot);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+            ShuffleVariable* lidar = shufflecad.add_var(new ShuffleVariable("lidar", ShuffleVariable::RADAR_TYPE, ShuffleVariable::OUT_VAR));
+
+            auto start_time = std::chrono::steady_clock::now();
+            while (std::chrono::steady_clock::now() - st_time < std::chrono::seconds(60)) {
+                std::vector<float> data = robot.get_lidar();
+                if (!data.empty())
+                    lidar->set_radar(data);
+                std::this_thread::sleep_for(std::chrono::milliseconds(20));
+            }
+
+            shufflecad.stop();
+            robot.stop();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        using RobocadCs;
+
+        class Program
+        {
+            public static void Main(string[] args)
+            {
+                RobotAlgaritm robot = new RobotAlgaritm(true);
+                Shufflecad shufflecad = new Shufflecad(robot);
+                Thread.Sleep(1000);
+
+                ShuffleVariable lidar = (ShuffleVariable)shufflecad.AddVar(new ShuffleVariable("lidar", ShuffleVariable.RadarType, ShuffleVariable.OutVar));
+
+                var startTime = DateTime.UtcNow;
+                while ((DateTime.UtcNow - startTime).TotalSeconds < 60)
+                {
+                    float[] data = robot.LidarData;
+                    if (data != null)
+                        lidar.SetRadar(data);
+                    Thread.Sleep(20);
+                }
+
+                shufflecad.Stop();
+                robot.Stop();
+            }
+        }
+        ```
+    </TabItem>
+    <TabItem value="labview">
+        **TODO:** 😇
+    </TabItem>
+</Tabs>

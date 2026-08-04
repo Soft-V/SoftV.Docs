@@ -1,20 +1,20 @@
 ---
 id: connecting-encoders
-title: Connecting encoders
+title: Подключение энкодеров
 ---
 
-# Connecting encoders
+# Подключение энкодеров
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Every motor channel on the driver board features an encoder input port. By connecting a digital encoder, you can track the motor's rotation in real time. This enables precise monitoring of both velocity and displacement, which is critical for applications requiring accurate movement, such as line following, odometry, or robotic arm positioning.
+Каждый моторный канал на контроллере двигателей оснащён портом входа энкодера. Подключив цифровой энкодер, можно отслеживать вращение мотора в реальном времени. Это обеспечивает точный мониторинг скорости и перемещения, что критически важно для приложений, требующих точного движения — следования по линии, одометрии или позиционирования роботизированного манипулятора.
 
-Use the standard 4‑pin cables supplied with the kit to connect digfital encoders. Make sure to observe the correct pinout. 
+Используйте стандартные 4‑контактные кабели из комплекта набора Algaritmica для подключения цифровых энкодеров. Обязательно соблюдайте правильную распайку контактов.
 <div style={{ marginBottom: "10px" }}>
     <img src="/docshome/img/algaritm-kit/driver/driver-encoder-connection.png"/>
 </div>
-The code snippet below reads the values from the digital encoder connected to port 2 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that encoder is functioning properly and that the connection has been made correctly.
+Фрагмент кода ниже считывает значения с цифрового энкодера, подключённого к порту 2 (как показано в примере выше), и передаёт их в shufflecad. Это позволяет быстро и просто проверить работоспособность энкодера и правильность подключения.
 
 <Tabs
     defaultValue="python"
@@ -140,7 +140,7 @@ The code snippet below reads the values from the digital encoder connected to po
 </Tabs>
 
 :::note
-To complement the hardware capabilities, **robocad** library provides its own PID controller, allowing you to achieve smoother acceleration, reduced overshoot, and more accurate positioning. Note that PID controller will not work if encoders are not connected properly. Refer to the example of using PID and adjusting its coefficients.
+Для дополнения аппаратных возможностей библиотека **robocad** предоставляет собственный PID-контроллер, позволяющий достичь более плавного разгона, уменьшения перерегулирования и более точного позиционирования. Обратите внимание, что PID-контроллер не будет работать, если энкодеры подключены неправильно. См. пример использования PID и настройки его коэффициентов.
 <Tabs
     defaultValue="python"
     values={[
@@ -159,7 +159,7 @@ To complement the hardware capabilities, **robocad** library provides its own PI
         robot.set_pid_settings(True, 0.14, 0.1, 0)
         time.sleep(1)
 
-        # place your code here
+        # ваш код здесь
 
         robot.stop()
         ```
@@ -175,7 +175,7 @@ To complement the hardware capabilities, **robocad** library provides its own PI
                 robot.setPidSettings(true, 0.14f, 0.1f, 0.0f);
                 Thread.sleep(1000);
 
-                // place your code here
+                // ваш код здесь
                 
                 robot.stop();
             }
@@ -194,7 +194,7 @@ To complement the hardware capabilities, **robocad** library provides its own PI
             robot.set_pid_settings(true, 0.14f, 0.1f, 0.0f);
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-            // place your code here
+            // ваш код здесь
 
             robot.stop();
         }
@@ -222,4 +222,3 @@ To complement the hardware capabilities, **robocad** library provides its own PI
     </TabItem>
 </Tabs>
 :::
-
