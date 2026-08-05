@@ -1,13 +1,228 @@
 ---
 id: joystick
-title: Геймпад
+title: Работа с джойстиком
 ---
 
-# Геймпад  
+# Работа с джойстиком
 
-Для работы с геймпадом/джойстиком используется страница **Геймпад**. Здесь Вы можете управлять виртуальным геймпадом, если физический не подключен к компьютеру:  
-<div style={{textAlign: 'left'}}>
-<img src="/docshome/img/shufflecad/shufflecad_5.png"/>
-</div>   
+На этой странице показаны примеры управления сервомотором с помощью джойстика из shufflecad. В примерах используется набор Algaritm.
 
-При подключении физического джойстика/геймпада к компьютеру — виртуальный геймпад будет работать только как индикатор, управлять им будет нельзя. 
+#### Пример:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+    defaultValue="python"
+    values={[
+        {label: 'Python', value: 'python'},
+        {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
+        {label: 'LabVIEW', value: 'labview'},
+    ]}>
+    <TabItem value="python">  
+        ```python
+        # управление сервомотором с помощью джойстика
+        from robocad.algaritm import RobotAlgaritm
+        from robocad.shufflecad import Shufflecad
+
+        import time
+
+        IS_REAL_ROBOT = True
+        robot = RobotAlgaritm(IS_REAL_ROBOT)
+        shufflecad = Shufflecad(robot)
+
+        # ожидание инициализации robocad
+        time.sleep(0.1)
+
+        st_time = time.time()
+        while time.time() - st_time < 30:
+            raw = shufflecad.joystick_data.left_stick_y
+            angle = abs(raw) / 200
+            robot.set_angle_servo(angle, 1)
+            time.sleep(0.1)
+
+        time.sleep(0.1)
+        robot.stop()
+        ```
+
+        :::note
+        Доступные значения джойстика:  
+        - *btn_a*;  
+        - *btn_b*;  
+        - *btn_x*;  
+        - *btn_y*;  
+        - *right_shoulder*;  
+        - *left_shoulder*;  
+        - *dpud_up*;  
+        - *dpud_down*;  
+        - *dpud_left*;  
+        - *dpud_right*;  
+        - *left_trigger*;  
+        - *right_trigger*;  
+        - *left_stick_x*;  
+        - *right_stick_y*;  
+        - *right_stick_x*;  
+        - *left_stick_y*;  
+        :::
+    </TabItem>
+    <TabItem value="java">
+        ```java
+        // управление сервомотором с помощью джойстика
+        import io.github.softv.RobotAlgaritm;
+        import io.github.softv.shufflecad.Shufflecad;
+
+        import java.io.IOException;
+
+        public class Main {
+            final static boolean IS_REAL_ROBOT = true;
+
+            public static void main(String[] args) throws IOException, InterruptedException {
+                RobotAlgaritm robot = new RobotAlgaritm(IS_REAL_ROBOT);
+                Shufflecad shufflecad = new Shufflecad(robot);
+
+                // ожидание инициализации robocad
+                Thread.sleep(100);
+
+                long stTime = System.currentTimeMillis();
+                while (System.currentTimeMillis() - stTime < 30000) {
+                    float raw = shufflecad.joystickData.LeftStickY;
+                    float angle = Math.abs(raw) / 200;
+                    robot.setAngleServo(angle, 1);
+                
+                    Thread.sleep(100);
+                }
+
+                Thread.sleep(100);
+                robot.stop();
+            }
+        }
+        ```
+
+        :::note
+        Доступные значения джойстика:  
+        - *BtnA*;  
+        - *BtnB*;  
+        - *BtnX*;  
+        - *BtnY*;  
+        - *RightShoulder*;  
+        - *LeftShoulder*;  
+        - *DpudUp*;
+        - *DpudDown*; 
+        - *DpudRight*; 
+        - *DpudLeft*;  
+        - *RightTrigger*;
+        - *LeftTrigger*; 
+        - *LeftStickX*;  
+        - *RightStickY*;  
+        - *RightStickX*;  
+        - *LeftStickY*;  
+        :::
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        // управление сервомотором с помощью джойстика
+        #include "algaritm.hpp"
+        #include "shufflecad.hpp"
+
+        #include <thread>
+        #include <chrono>
+        #include <cmath>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotAlgaritm robot(IS_REAL_ROBOT);
+            Shufflecad shufflecad(&robot);
+
+            // ожидание инициализации robocad
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+            auto st_time = std::chrono::steady_clock::now();
+            while (std::chrono::steady_clock::now() - st_time < std::chrono::seconds(30)) {
+                int raw = shufflecad.joystick_data.left_stick_y;
+                float angle = std::abs(raw) / 200.0f;
+                robot.set_servo_angle(angle, 1);
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```  
+        :::note
+        Доступные значения джойстика:  
+        - *btn_a*;  
+        - *btn_b*;  
+        - *btn_x*;  
+        - *btn_y*;  
+        - *right_shoulder*;  
+        - *left_shoulder*;
+        - *dpad_up*;
+        - *dpad_down*; 
+        - *dpad_left*;
+        - *dpad_right*; 
+        - *right_trigger*;  
+        - *left_trigger*;  
+        - *left_stick_x*;  
+        - *right_stick_x*;  
+        - *right_stick_y*;  
+        - *left_stick_y*;  
+        :::
+        
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        // управление сервомотором с помощью джойстика
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotAlgaritm(IsRealRobot);
+                var shufflecad = new Shufflecad(robot);
+
+                // ожидание инициализации robocad
+                System.Threading.Thread.Sleep(100);
+
+                var stTime = System.DateTime.UtcNow;
+                while ((System.DateTime.UtcNow - stTime).TotalSeconds < 30)
+                {
+                    int raw = shufflecad.JoystickData.LeftStickY;
+                    float angle = System.Math.Abs(raw) / 200f;
+                    robot.SetAngleServo(angle, 1);
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                System.Threading.Thread.Sleep(100);
+                robot.Stop();
+            }
+        }
+        ```
+        :::note
+        Доступные значения джойстика:  
+        - *BtnA*;  
+        - *BtnB*;  
+        - *BtnX*;  
+        - *BtnY*;  
+        - *RightShoulder*;  
+        - *LeftShoulder*;  
+        - *DpudUp*;
+        - *DpudDown*; 
+        - *DpudRight*; 
+        - *DpudLeft*;  
+        - *RightTrigger*;
+        - *LeftTrigger*; 
+        - *LeftStickX*;  
+        - *RightStickY*;  
+        - *RightStickX*;  
+        - *LeftStickY*;  
+        :::
+    </TabItem>
+    <TabItem value="labview">
+        **TODO:** 😇
+    </TabItem>
+</Tabs>
