@@ -3,7 +3,6 @@ id: create-project
 title: Create initial project
 ---
 
-
 # Create initial project
 
 This page shows an example of how to configure a project to run if you do not use a project template:

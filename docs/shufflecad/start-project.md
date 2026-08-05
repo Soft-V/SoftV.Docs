@@ -16,28 +16,42 @@ Open the program launch page and fill in the required fields to run the project 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
+<Tabs queryString="language"
     defaultValue="python"
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'}
     ]}>
     <TabItem value="python">
         - **Path to folder**: the path to the folder containing files to upload.
         - **Entry file**: the filename (with extension) to run.
 
         Example:
-        <div style={{textAlign: 'left'}}>
-        <img src="/docshome/img/shufflecad/shufflecad_1_py.png"/>
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/shufflecad/shufflecad_1_py.png"/>
         </div>
     </TabItem>
     <TabItem value="java">
         - **Path to folder**: the path to the folder containing files to upload.
-        - **Full class name to run**: the class name that contains the *main* function.
+        - **Full class name to run**: the class name that contains the `main()` function.
 
         Example:
-        <div style={{textAlign: 'left'}}>
-        <img src="/docshome/img/shufflecad/shufflecad_1_java.png"/>
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/shufflecad/shufflecad_1_java.png"/>
+        </div>
+    </TabItem>
+    <TabItem value="cpp">
+
+    </TabItem>
+    <TabItem value="cs">
+        - **Path to folder**: the path to the folder containing files to upload.
+        - **Relative path to .csproj**: search for `.csproj` location inside selected folder.
+        
+        Example:
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/shufflecad/shufflecad_1_csharp.png"/>
         </div>
     </TabItem>
 </Tabs>

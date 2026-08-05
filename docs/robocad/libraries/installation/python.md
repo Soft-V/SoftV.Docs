@@ -6,7 +6,7 @@ title: Python
 
 # Python
 
-This guide shows you how to install **robocad-py** library.  
+This guide shows you how to configure a project with PyCharm 2025 and install **robocad-py** library.  
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,30 +18,37 @@ import TabItem from '@theme/TabItem';
         {label: 'Cmd', value: 'cmd'},
     ]}>
     <TabItem value="PyCharm">
-        Open up **PyCharm** and select *File → Settings*:
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/pycharm1.png" />
+        Open **PyCharm** and create a new project:
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/pycharm-home.png" />
         </div>
 
-        Then *Project: Python → Project Interpreter → Install (Button with a 'plus' icon)*:  
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/pycharm2.png" />
+        After your project is created go to Settings by selecting *File → Settings* from the menu, or use the shortcut `Ctrl + Alt + S`.
+
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/pycharm-settings.png" />
         </div>
 
-        Search for **robocad-py**, select it and click *Install Package* button. 
+        Then find *Python → Interpreter* and press the **`+`** button to add **robocad-py** library:  
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/pycharm-download-robocad-py.png" />
+        </div>
+
+        Search for **robocad-py**, select it and click *Install Package* button. It is recommended to use the latest version.
         
         Now you can use **robocad-py** library!
     </TabItem>
     <TabItem value="cmd">
-        *Win + R → type there 'cmd' → Enter*:
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/pycmd1.png" />
+        On Windows use the shortcut *Win + R* to open **Run** dialog and type **cmd**.
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/pycmd.png" />
         </div>
 
-        Type there *pip install robocad-py* and press *Enter*. 
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/pycmd2.png" />
-        </div>
+        Paste the following command into command prompt to install **robocad-py** library.
+
+        ```bash
+        pip install robocad-py
+        ```
 
         After installation you can use **robocad-py** library!
     </TabItem>

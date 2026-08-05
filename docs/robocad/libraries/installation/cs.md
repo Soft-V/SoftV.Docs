@@ -6,7 +6,7 @@ title: C#
 
 # C#
 
-This guide shows you how to install **RobocadCs** library.  
+This guide shows you how to configure a project with Rider 2026 and install **RobocadCs** library.  
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,13 +17,26 @@ import TabItem from '@theme/TabItem';
         {label: 'NuGet', value: 'NuGet'},
     ]}>
     <TabItem value="NuGet">
-        Open your *.csproj* file (use version that you need insted of 1.4.0):
-        ```xml
-        <ItemGroup>
-            <PackageReference Include="RobocadCs" Version="1.4.0" />
-        </ItemGroup>
-        ```  
-        To work with camera image from the simulator or in real robot you should paste this block of code into your *.csproj* file:
+        Open **Rider** and create a new project:
+
+        <div style={{ textAlign: 'center' }}>
+            <img src="/docshome/img/robocad/libraries/installation/rider-create-project.png"/>
+        </div>
+
+        After the project is created, right click the solution file and click *Manage NuGet Packages* menu. Search for **RobocadCs** and install it.
+
+        <div style={{ textAlign: 'center', paddingBottom: '10px' }}>
+            <img src="/docshome/img/robocad/libraries/installation/rider-nuget.png"/>
+        </div>
+
+        To work with the camera image from the simulator or on the actual robot, you need to edit the `.csproj` file. To do so, right click on the file in the project tree and find *Edit → Edit .csproj*:
+
+        <div style={{ textAlign: 'center', paddingBottom: '10px' }}>
+            <img src="/docshome/img/robocad/libraries/installation/rider-edit-csproj.png"/>
+        </div>
+
+        Paste this block of code anywhere inside the `<Project>` tag:
+
         ```xml
         <ItemGroup Condition="$([MSBuild]::IsOSPlatform('OSX')) And '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">
             <PackageReference Include="OpenCvSharp4.runtime.osx_arm64" Version="4.8.1-rc" />
