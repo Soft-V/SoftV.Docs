@@ -13,9 +13,9 @@ The main controller features 8 PWM ports specifically designed for connecting st
 <img src="/docshome/img/algaritm-kit/shield/shield-pwm-overview.png"/>
 
 To work with servos, first, connect the signal cable from one of the PWM ports on the main controller to the **I** (INPUT) port on the servo power block.
-
-<img src="/docshome/img/algaritm-kit/shield/shield-servo-connection.png"/>
-
+<div style={{ marginBottom: "10px"}}>
+    <img src="/docshome/img/algaritm-kit/shield/shield-servo-connection.png"/>
+</div>
  Then, plug your servos directly into the **O** (OUT) ports on the servo power block.
 
 <img src="/docshome/img/algaritm-kit/other/servo-power-block-servo-connection.PNG"/>
@@ -155,7 +155,7 @@ The main controller already includes servo ports, but for projects that require 
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo-overview.PNG"/>
 
-The additional servo outputs on the motor driver board use the same standard 3‑pin servo connector. As with the servo ports on the main controller, they must be connected through the servo power block to ensure stable power delivery.
+The additional servo outputs on the motor driver board use the same standard 3‑pin servo connector. Unlike the servo ports on the main controller, they do not require connection through the servo power block — they can be connected directly to the servos.
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo.PNG"/>
 

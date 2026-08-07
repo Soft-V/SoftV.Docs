@@ -26,7 +26,7 @@ The motor controller features four independent PWM channels for DC motor control
 
 In addition to DC motors, the board supports two servo outputs with standard PWM control, as well as two dedicated ports for stepper motors.
 
-For communication between the motor controller and the shield, the controller offers a USB Type-C interface for fast configuration and real-time monitoring along with a CAN 2.0-compliant bus that supports multi-node networks with high noise immunity.
+For communication between the motor controller and the shield, the controller offers a USB Type-C interface for fast configuration and real-time monitoring.
 
 
 <img src="/docshome/img/algaritm-kit/driver/driver-overview.png"/>
