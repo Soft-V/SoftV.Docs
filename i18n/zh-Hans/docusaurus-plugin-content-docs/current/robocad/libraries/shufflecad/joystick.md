@@ -5,7 +5,7 @@ title: 使用手柄（摇杆）
 
 # 使用手柄（摇杆）
 
-本页展示如何从 shufflecad 获取手柄数据的示例。示例使用 Algaritm 机器人套件。
+本页展示了如何使用 shufflecad 的手柄控制舵机的示例。示例使用 Algaritm 机器人套件。
 
 #### 示例：
 
@@ -23,36 +23,54 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # 使用手柄控制伺服
+        # 使用手柄控制舵机
         from robocad.algaritm import RobotAlgaritm
-        from robocad.shufflecad import Shufflecad, ShuffleVariable, CameraVariable
+        from robocad.shufflecad import Shufflecad
 
         import time
 
         IS_REAL_ROBOT = True
         robot = RobotAlgaritm(IS_REAL_ROBOT)
         shufflecad = Shufflecad(robot)
-        
+
         # 等待 robocad 初始化
         time.sleep(0.1)
 
         st_time = time.time()
         while time.time() - st_time < 30:
-            if "LeftThumbstick_Y" in shufflecad.joystick_values:
-                raw = shufflecad.joystick_values["LeftThumbstick_Y"]
-                angle = abs(raw) / 200
-                robot.set_angle_servo(angle, 1)
+            raw = shufflecad.joystick_data.left_stick_y
+            angle = abs(raw) / 200
+            robot.set_angle_servo(angle, 1)
             time.sleep(0.1)
 
         time.sleep(0.1)
         robot.stop()
         ```
+
+        :::note
+        可用的手柄值：  
+        - *btn_a*;  
+        - *btn_b*;  
+        - *btn_x*;  
+        - *btn_y*;  
+        - *right_shoulder*;  
+        - *left_shoulder*;  
+        - *dpud_up*;  
+        - *dpud_down*;  
+        - *dpud_left*;  
+        - *dpud_right*;  
+        - *left_trigger*;  
+        - *right_trigger*;  
+        - *left_stick_x*;  
+        - *right_stick_y*;  
+        - *right_stick_x*;  
+        - *left_stick_y*;  
+        :::
     </TabItem>
     <TabItem value="java">
         ```java
-        // 使用手柄控制伺服
+        // 使用手柄控制舵机
         import io.github.softv.RobotAlgaritm;
-        import io.github.softv.shufflecad.CameraVariable;
         import io.github.softv.shufflecad.Shufflecad;
 
         import java.io.IOException;
@@ -69,11 +87,10 @@ import TabItem from '@theme/TabItem';
 
                 long stTime = System.currentTimeMillis();
                 while (System.currentTimeMillis() - stTime < 30000) {
-                    if (shufflecad.joystickValues.containsKey("LeftThumbstick_Y")) {
-                        float raw = shufflecad.joystickValues.get("LeftThumbstick_Y");
-                        float angle = Math.abs(raw) / 200;
-                        robot.setAngleServo(angle, 1);
-                    }
+                    float raw = shufflecad.joystickData.LeftStickY;
+                    float angle = Math.abs(raw) / 200;
+                    robot.setAngleServo(angle, 1);
+                
                     Thread.sleep(100);
                 }
 
@@ -82,10 +99,30 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+
+        :::note
+        可用的手柄值：  
+        - *BtnA*;  
+        - *BtnB*;  
+        - *BtnX*;  
+        - *BtnY*;  
+        - *RightShoulder*;  
+        - *LeftShoulder*;  
+        - *DpudUp*;
+        - *DpudDown*; 
+        - *DpudRight*; 
+        - *DpudLeft*;  
+        - *RightTrigger*;
+        - *LeftTrigger*; 
+        - *LeftStickX*;  
+        - *RightStickY*;  
+        - *RightStickX*;  
+        - *LeftStickY*;  
+        :::
     </TabItem>
     <TabItem value="cpp">
         ```cpp
-        // 使用手柄控制伺服
+        // 使用手柄控制舵机
         #include "algaritm.hpp"
         #include "shufflecad.hpp"
 
@@ -113,12 +150,30 @@ import TabItem from '@theme/TabItem';
             robot.stop();
         }
         ```  
-
-        **robocad-cpp**/**RobocadCs** 的手柄状态是通过结构体/对象（`joystick_data`/`JoystickData`）暴露的，每个控件对应一个类型化字段，而不是 Python/Java 使用的字符串键映射表。
+        :::note
+        可用的手柄值：  
+        - *btn_a*;  
+        - *btn_b*;  
+        - *btn_x*;  
+        - *btn_y*;  
+        - *right_shoulder*;  
+        - *left_shoulder*;
+        - *dpad_up*;
+        - *dpad_down*; 
+        - *dpad_left*;
+        - *dpad_right*; 
+        - *right_trigger*;  
+        - *left_trigger*;  
+        - *left_stick_x*;  
+        - *right_stick_x*;  
+        - *right_stick_y*;  
+        - *left_stick_y*;  
+        :::
+        
     </TabItem>
     <TabItem value="cs">
         ```csharp
-        // 使用手柄控制伺服
+        // 使用手柄控制舵机
         using RobocadCs;
 
         class Program
@@ -147,28 +202,28 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+        :::note
+        可用的手柄值：  
+        - *BtnA*;  
+        - *BtnB*;  
+        - *BtnX*;  
+        - *BtnY*;  
+        - *RightShoulder*;  
+        - *LeftShoulder*;  
+        - *DpudUp*;
+        - *DpudDown*; 
+        - *DpudRight*; 
+        - *DpudLeft*;  
+        - *RightTrigger*;
+        - *LeftTrigger*; 
+        - *LeftStickX*;  
+        - *RightStickY*;  
+        - *RightStickX*;  
+        - *LeftStickY*;  
+        :::
     </TabItem>
     <TabItem value="labview">
-        **TODO:** 😇
+        **待完成：** 😇
     </TabItem>
 </Tabs>   
 
-:::note
-可用的手柄值键：  
-- *A*;  
-- *X*;  
-- *Y*;  
-- *B*;  
-- *RightShoulder*;  
-- *LeftShoulder*;  
-- *DPad_Up*;  
-- *DPad_Down*;  
-- *DPad_Left*;  
-- *DPad_Right*;  
-- *LeftTrigger*;  
-- *RightTrigger*;  
-- *LeftThumbstick_X*;  
-- *LeftThumbstick_Y*;  
-- *RightThumbstick_X*;  
-- *RightThumbstick_Y*;  
-:::

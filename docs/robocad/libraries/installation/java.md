@@ -3,10 +3,9 @@ id: java
 title: Java
 ---
 
-
 # Java
 
-This guide shows you how to install **robocad4J** library.  
+This guide shows you how to configure a project with IntelliJ IDEA 2025 and install **robocad4J** library.  
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,12 +16,12 @@ import TabItem from '@theme/TabItem';
         {label: 'Maven', value: 'Maven'},
     ]}>
     <TabItem value="Maven">
-        Open up **IntelliJ** and open *pom.xml* file:
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/intellij1.png" />
+        Open **IntelliJ IDEA** and create a new Maven project. If you don't have JDK installed, it is recommended to use JDK 11, e.g., Microsoft OpenJDK 11.0.29:
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/intellij-create-project.png" />
         </div>
 
-        Paste this into *dependencies* tag:  
+        After creating a project, you have to configure `pom.xml` file in the project's root. Create `<dependencies>` anywhere inside `<project>` and paste this dependency:  
         ```xml
         <dependency>
             <groupId>io.github.soft-v</groupId>
@@ -31,16 +30,16 @@ import TabItem from '@theme/TabItem';
         </dependency>
         ```  
 
-        Paste this into *project* tag:
+        If you wish to work with the actual robot, don't forget to paste this into the `<project>`:
         ```xml
         <build>
             <finalName>UserBuiltJar</finalName>
         </build>
         ```  
 
-        You should also use *Java SDK* of version 11 and lang version 11 (you can check it here: *File → Project Structure*). You should also have target bytecode version of 11. You can do this here: *File → Settings… → Build, Execution, Deployment → Compiler → Java Compiler*:
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/intellij2.png" />
+        To work with the actual robot, after configuring the `pom.xml` file, make sure you use SDK version 11 and the language level is set to 11. You can check this by going to Project Structure *(File → Project Stricture)* or by using the shortcut `Ctrl + Alt + Shift + S`.
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/intellij-sdk.png" />
         </div>
         
         Now you can use **robocad4J** library!
