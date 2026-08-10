@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 <img src="/docshome/img/algaritm-kit/shield/shield-pwm-overview.png"/>
 
 要使用舵机，首先将信号线从主控制器上的某个 PWM 端口连接到舵机电源模块的 **I**（输入）端口。
-
-<img src="/docshome/img/algaritm-kit/shield/shield-servo-connection.png"/>
-
+<div style={{ marginBottom: "10px"}}>
+    <img src="/docshome/img/algaritm-kit/shield/shield-servo-connection.png"/>
+</div>
 然后，将舵机直接插入舵机电源模块的 **O**（输出）端口。
 
 <img src="/docshome/img/algaritm-kit/other/servo-power-block-servo-connection.PNG"/>
@@ -155,7 +155,7 @@ import TabItem from '@theme/TabItem';
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo-overview.PNG"/>
 
-电机驱动板上的附加舵机输出使用与标准相同的 3 针舵机接口。与主控制器上的舵机端口一样，它们也必须通过舵机电源模块连接，以确保供电稳定。
+电机驱动板上的附加舵机输出使用与标准相同的 3 针舵机接口。与主控制器上的舵机端口不同，它们无需通过舵机电源模块连接——可以直接连接舵机。
 
 <img src="/docshome/img/algaritm-kit/driver/driver-additional-servo.PNG"/>
 

@@ -26,7 +26,7 @@ title: Algaritm 套件概述
 
 除直流电机外，该板还支持两个标准 PWM 控制的舵机输出，以及两个专用的步进电机端口。
 
-在电机控制器与扩展板之间的通信方面，控制器提供了一个 USB Type-C 接口用于快速配置和实时监控，同时还配有一条符合 CAN 2.0 标准的总线，支持具有高抗噪能力的多节点网络。
+在电机控制器与扩展板之间的通信方面，控制器提供了一个 USB Type-C 接口用于快速配置和实时监控。
 
 
 <img src="/docshome/img/algaritm-kit/driver/driver-overview.png"/>

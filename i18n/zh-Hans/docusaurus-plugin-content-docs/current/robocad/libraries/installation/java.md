@@ -5,47 +5,43 @@ title: Java
 
 # Java
 
-这些指南将向您展示如何安装 **robocad4J** 库。  
+本指南将向您展示如何在 IntelliJ IDEA 2025 中配置项目并安装 **robocad4J** 库。  
 
-import Tabs from '@theme/Tabs';  
-import TabItem from '@theme/TabItem';  
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<Tabs  
-    defaultValue="Maven"  
-    values={[  
-        {label: 'Maven', value: 'Maven'},  
-    ]}>  
-    <TabItem value="Maven">  
-        打开 **IntelliJ** 并打开 *pom.xml* 文件：  
-        <div style={{textAlign: 'left'}}>  
-            <img src="/docshome/img/robocad/libraries/installation/intellij1.png" />  
-        </div>  
+<Tabs
+    defaultValue="Maven"
+    values={[
+        {label: 'Maven', value: 'Maven'},
+    ]}>
+    <TabItem value="Maven">
+        打开 **IntelliJ IDEA** 并创建一个新的 Maven 项目。如果您尚未安装 JDK，建议使用 JDK 11，例如 Microsoft OpenJDK 11.0.29：
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/intellij-create-project.png" />
+        </div>
 
-        将此内容粘贴到 *dependencies* 标签中：  
-        ```xml  
-        <dependency>  
-            <groupId>io.github.soft-v</groupId>  
-            <artifactId>robocad4J</artifactId>  
-            <version>LATEST</version>  
-        </dependency>  
+        创建项目后，需要配置项目根目录下的 `pom.xml` 文件。在 `<project>` 内的任意位置创建 `<dependencies>` 标签，并粘贴以下依赖项：  
+        ```xml
+        <dependency>
+            <groupId>io.github.soft-v</groupId>
+            <artifactId>robocad4J</artifactId>
+            <version>LATEST</version>
+        </dependency>
         ```  
 
-        将此内容粘贴到 *build* 标签中:
+        如果您希望在真实机器人上运行，别忘了在 `<project>` 中粘贴以下内容：
         ```xml
         <build>
             <finalName>UserBuiltJar</finalName>
         </build>
-        ```
+        ```  
 
-        您还需要使用 Java SDK 11 以及 Java 11 语言版本（可在以下位置检查：文件 → 项目结构）。 同时，请将目标字节码版本设置为 11。 设置路径如下：文件 → 设置 → 构建、执行、部署 → 编译器 → Java 编译器。
-        <div style={{textAlign: 'left'}}>  
-            <img src="/docshome/img/robocad/libraries/installation/intellij2.png" />  
-        </div>  
-
-        要从模拟器使用摄像头，您应当[编译或下载预编译的 OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html)，并在程序开头加载所需库。例如：
-        ```java
-        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
-        ```
-
-    </TabItem>  
-</Tabs>  
+        若要在真实机器人上运行，配置好 `pom.xml` 文件后，请确保使用的 SDK 版本为 11，且语言级别也设置为 11。您可以在 Project Structure 中检查 *(File → Project Structure)*，或使用快捷键 `Ctrl + Alt + Shift + S`。
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/intellij-sdk.png" />
+        </div>
+        
+        现在，您可以使用 **robocad4J** 库了！
+    </TabItem>
+</Tabs>

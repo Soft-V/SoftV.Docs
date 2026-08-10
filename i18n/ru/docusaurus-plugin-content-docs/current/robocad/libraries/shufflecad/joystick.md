@@ -3,9 +3,9 @@ id: joystick
 title: Работа с джойстиком
 ---
 
-# Работа с джойстиком  
+# Работа с джойстиком
 
-Здесь показаны примеры получения данных джойстика из shufflecad. Для примера будет использован набор Algaritm.  
+Здесь показаны примеры управления сервоприводом с помощью джойстика из shufflecad. В примерах используется набор Algaritm.
 
 #### Пример:
 
@@ -23,36 +23,54 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        # вращение сервопривода с помощью стика
+        # вращение сервопривода с помощью джойстика
         from robocad.algaritm import RobotAlgaritm
-        from robocad.shufflecad import Shufflecad, ShuffleVariable, CameraVariable
+        from robocad.shufflecad import Shufflecad
 
         import time
 
         IS_REAL_ROBOT = True
         robot = RobotAlgaritm(IS_REAL_ROBOT)
         shufflecad = Shufflecad(robot)
-        
+
         # ждем, пока robocad инициализируется
         time.sleep(0.1)
 
         st_time = time.time()
         while time.time() - st_time < 30:
-            if "LeftThumbstick_Y" in shufflecad.joystick_values:
-                raw = shufflecad.joystick_values["LeftThumbstick_Y"]
-                angle = abs(raw) / 200
-                robot.set_angle_servo(angle, 1)
+            raw = shufflecad.joystick_data.left_stick_y
+            angle = abs(raw) / 200
+            robot.set_angle_servo(angle, 1)
             time.sleep(0.1)
 
         time.sleep(0.1)
         robot.stop()
         ```
+
+        :::note
+        Доступные значения джойстика:  
+        - *btn_a*;  
+        - *btn_b*;  
+        - *btn_x*;  
+        - *btn_y*;  
+        - *right_shoulder*;  
+        - *left_shoulder*;  
+        - *dpud_up*;  
+        - *dpud_down*;  
+        - *dpud_left*;  
+        - *dpud_right*;  
+        - *left_trigger*;  
+        - *right_trigger*;  
+        - *left_stick_x*;  
+        - *right_stick_y*;  
+        - *right_stick_x*;  
+        - *left_stick_y*;  
+        :::
     </TabItem>
     <TabItem value="java">
         ```java
-        // кручение сервопривода с помощью стика
+        // вращение сервопривода с помощью джойстика
         import io.github.softv.RobotAlgaritm;
-        import io.github.softv.shufflecad.CameraVariable;
         import io.github.softv.shufflecad.Shufflecad;
 
         import java.io.IOException;
@@ -69,11 +87,10 @@ import TabItem from '@theme/TabItem';
 
                 long stTime = System.currentTimeMillis();
                 while (System.currentTimeMillis() - stTime < 30000) {
-                    if (shufflecad.joystickValues.containsKey("LeftThumbstick_Y")) {
-                        float raw = shufflecad.joystickValues.get("LeftThumbstick_Y");
-                        float angle = Math.abs(raw) / 200;
-                        robot.setAngleServo(angle, 1);
-                    }
+                    float raw = shufflecad.joystickData.LeftStickY;
+                    float angle = Math.abs(raw) / 200;
+                    robot.setAngleServo(angle, 1);
+                
                     Thread.sleep(100);
                 }
 
@@ -82,10 +99,30 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+
+        :::note
+        Доступные значения джойстика:  
+        - *BtnA*;  
+        - *BtnB*;  
+        - *BtnX*;  
+        - *BtnY*;  
+        - *RightShoulder*;  
+        - *LeftShoulder*;  
+        - *DpudUp*;
+        - *DpudDown*; 
+        - *DpudRight*; 
+        - *DpudLeft*;  
+        - *RightTrigger*;
+        - *LeftTrigger*; 
+        - *LeftStickX*;  
+        - *RightStickY*;  
+        - *RightStickX*;  
+        - *LeftStickY*;  
+        :::
     </TabItem>
     <TabItem value="cpp">
         ```cpp
-        // вращение сервопривода с помощью стика
+        // вращение сервопривода с помощью джойстика
         #include "algaritm.hpp"
         #include "shufflecad.hpp"
 
@@ -113,12 +150,30 @@ import TabItem from '@theme/TabItem';
             robot.stop();
         }
         ```  
-
-        Состояние джойстика в **robocad-cpp**/**RobocadCs** представлено структурой/объектом (`joystick_data`/`JoystickData`) с типизированным полем для каждого элемента управления, а не строковым словарем, как в Python/Java.
+        :::note
+        Доступные значения джойстика:  
+        - *btn_a*;  
+        - *btn_b*;  
+        - *btn_x*;  
+        - *btn_y*;  
+        - *right_shoulder*;  
+        - *left_shoulder*;
+        - *dpad_up*;
+        - *dpad_down*; 
+        - *dpad_left*;
+        - *dpad_right*; 
+        - *right_trigger*;  
+        - *left_trigger*;  
+        - *left_stick_x*;  
+        - *right_stick_x*;  
+        - *right_stick_y*;  
+        - *left_stick_y*;  
+        :::
+        
     </TabItem>
     <TabItem value="cs">
         ```csharp
-        // вращение сервопривода с помощью стика
+        // вращение сервопривода с помощью джойстика
         using RobocadCs;
 
         class Program
@@ -147,28 +202,28 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```
+        :::note
+        Доступные значения джойстика:  
+        - *BtnA*;  
+        - *BtnB*;  
+        - *BtnX*;  
+        - *BtnY*;  
+        - *RightShoulder*;  
+        - *LeftShoulder*;  
+        - *DpudUp*;
+        - *DpudDown*; 
+        - *DpudRight*; 
+        - *DpudLeft*;  
+        - *RightTrigger*;
+        - *LeftTrigger*; 
+        - *LeftStickX*;  
+        - *RightStickY*;  
+        - *RightStickX*;  
+        - *LeftStickY*;  
+        :::
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇
     </TabItem>
 </Tabs>   
 
-:::note
-Доступные ключи значений джойстика:  
-- *A*;  
-- *X*;  
-- *Y*;  
-- *B*;  
-- *RightShoulder*;  
-- *LeftShoulder*;  
-- *DPad_Up*;  
-- *DPad_Down*;  
-- *DPad_Left*;  
-- *DPad_Right*;  
-- *LeftTrigger*;  
-- *RightTrigger*;  
-- *LeftThumbstick_X*;  
-- *LeftThumbstick_Y*;  
-- *RightThumbstick_X*;  
-- *RightThumbstick_Y*;  
-:::

@@ -5,7 +5,7 @@ title: Java
 
 # Java
 
-Эта инструкция показывает, как установить библиотеку **robocad4J**.
+Эта инструкция показывает, как настроить проект в IntelliJ IDEA 2025 и установить библиотеку **robocad4J**.  
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,13 +16,12 @@ import TabItem from '@theme/TabItem';
         {label: 'Maven', value: 'Maven'},
     ]}>
     <TabItem value="Maven">
-        Откройте **IntelliJ** и откройте файл *pom.xml*:
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/intellij1.png" />
+        Откройте **IntelliJ IDEA** и создайте новый Maven-проект. Если у вас не установлен JDK, рекомендуется использовать JDK 11, например, Microsoft OpenJDK 11.0.29:
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/intellij-create-project.png" />
         </div>
 
-        Вставьте это в тег *dependencies*:  
-
+        После создания проекта нужно настроить файл `pom.xml` в корне проекта. Создайте тег `<dependencies>` в любом месте внутри `<project>` и вставьте туда эту зависимость:  
         ```xml
         <dependency>
             <groupId>io.github.soft-v</groupId>
@@ -31,23 +30,18 @@ import TabItem from '@theme/TabItem';
         </dependency>
         ```  
 
-        Вставьте это в тег *project*:
+        Если вы планируете работать с настоящим роботом, не забудьте вставить это в `<project>`:
         ```xml
         <build>
             <finalName>UserBuiltJar</finalName>
         </build>
         ```  
 
-        Вы также должны использовать *Java SDK* версии 11 и указать язык версии 11 (вы можете проверить это здесь: *File → Project Structure*). Кроме того, необходимо указать целевую версию байт-кода как 11. Это можно сделать здесь: *File → Settings… → Build, Execution, Deployment → Compiler → Java Compiler*:
-        <div style={{textAlign: 'left'}}>
-            <img src="/docshome/img/robocad/libraries/installation/intellij2.png" />
+        Для работы с настоящим роботом после настройки файла `pom.xml` убедитесь, что используется SDK версии 11, а уровень языка установлен на 11. Проверить это можно в Project Structure *(File → Project Structure)* или с помощью сочетания клавиш `Ctrl + Alt + Shift + S`.
+        <div style={{textAlign: 'center'}}>
+            <img src="/docshome/img/robocad/libraries/installation/intellij-sdk.png" />
         </div>
-
-        Чтобы работать с камерой из симулятора, вам следует [скомпилировать или скачать предварительно собранную версию OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html) и загрузить требуемую библиотеку в начале вашей программы. Например:
-        ```java
-        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
-        ```
-
+        
         Теперь вы можете использовать библиотеку **robocad4J**!
     </TabItem>
 </Tabs>

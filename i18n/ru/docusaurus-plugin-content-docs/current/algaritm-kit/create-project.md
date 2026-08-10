@@ -3,7 +3,6 @@ id: create-project
 title: Создание начального проекта
 ---
 
-
 # Создание начального проекта
 
 На этой странице показан пример настройки проекта для запуска, если вы не используете шаблон проекта:
@@ -86,7 +85,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Убедитесь, что цель CMake линкуется с `robocad-cpp` (см. [установку](../installation/cpp)) и с **OpenCV**, среда выполнения которой должна быть доступна при запуске для поддержки камеры.
+        Убедитесь, что CMake-таргет линкуется с `robocad-cpp` (см. [установку](../installation/cpp)) и с **OpenCV**, рантайм которой должен быть доступен при запуске для поддержки камеры.
     </TabItem>
     <TabItem value="cs">
         ```csharp
@@ -108,7 +107,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Убедитесь, что проект ссылается на NuGet-пакет **RobocadCs** (см. [установку](../installation/cs)).
+        Убедитесь, что в проекте добавлен NuGet-пакет **RobocadCs** (см. [установку](../installation/cs)).
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇
