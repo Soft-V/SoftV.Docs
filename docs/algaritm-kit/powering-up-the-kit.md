@@ -2,6 +2,7 @@
 id: powering-up-the-kit
 title: Connecting controllers
 ---
+
 # Connecting controllers
 
 # Powering up the kit

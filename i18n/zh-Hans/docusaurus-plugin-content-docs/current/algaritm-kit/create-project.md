@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        请确保你的 CMake 目标链接到 `robocad-cpp`（参见[安装说明](../installation/cpp)），并链接到 **OpenCV**，其运行时库需要在执行时可被发现，以支持摄像头功能。
+        请确保你的 CMake 目标链接到 `robocad-cpp`（参见[安装说明](../robocad/libraries/installation/cpp)），并链接到 **OpenCV**，其运行时库需要在执行时可被发现，以支持摄像头功能。
     </TabItem>
     <TabItem value="cs">
         ```csharp

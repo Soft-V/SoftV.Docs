@@ -1,24 +1,40 @@
 ---
-id: connecting-analog
-title: Connecting analog sensors
+id: connecting-servo
+title: Connecting servo
 ---
 
-# Connecting analog sensors
+# Connecting servo
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The TCRT5000 is a versatile reflective optical sensor that comes with the kit. Its working principle is simple: it emits infrared light and measures how much is reflected back. This makes it perfect for projects like line-following robots, where the sensor can distinguish between a black line and a white background.
+The VMX Robotics Controller provides multiple options for connecting and controlling servos, ranging from direct PWM control to specialized servo power modules.
 
-<div style={{ paddingBottom: "10px" }}>
-    <img src="/docshome/img/algaritm-kit/other/tcrt5000-line-follower-sensor.PNG"/>
+The VMX features dedicated PWM outputs designed specifically for servo control, with each port supporting standard RC‑type servo signals. The ports use the same standard 3‑pin servo connector found on most hobby‑grade servos, providing signal, power, and ground through a single interface.
+
+<div style ={{ textAlign: "center" }}>
+    <img src="/docshome/img/studica-kit/vmx/vmx-high-current-dio-overview.png"/>
 </div>
 
-Use the standard 3‑pin cables supplied with the kit to connect the line following sensors to the analog input port. Make sure to observe the correct pinout.
+To connect servos, start by using a standard 3‑pin cable to connect the Servo Power Block to the VMX — plug one end into the VMX's PWM port and the other into the INPUT port on the power block. 
 
-<img src="/docshome/img/algaritm-kit/shield/shield-tcrt5000-connection.PNG"/>
+<div style ={{ textAlign: "center" }}>
+    <img src="/docshome/img/studica-kit/vmx/vmx-connecting-servo.png"/>
+</div>
 
-The code snippet below reads the values from the analog sensor connected to port 1 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that sensor is functioning properly and that the connections have been made correctly.
+Next, connect your servos to the OUTPUT ports on the Servo Power Block. 
+
+<div style ={{ textAlign: "center" }}>
+    <img src="/docshome/img/studica-kit/other/servo-with-power-block.png"/>
+</div>
+
+The final wiring diagram is shown in the image below.
+
+<div style ={{ textAlign: "center" }}>
+    <img src="/docshome/img/studica-kit/other/servo-connection-assembly.png"/>
+</div>
+
+Use the code snippet below to set servo angles and ensure correct servo connection, as shown in the example.
 
 <Tabs
     defaultValue="python"
@@ -31,19 +47,19 @@ The code snippet below reads the values from the analog sensor connected to port
     ]}>
     <TabItem value="python">  
         ```python
-        from robocad.algaritm import RobotAlgaritm
+        from robocad.studica import RobotVmxTitan
         from robocad.shufflecad import Shufflecad, ShuffleVariable
         import time
 
-        robot = RobotAlgaritm(True)
+        robot: RobotVmxTitan = RobotVmxTitan(True)
         shufflecad = Shufflecad(robot)
         time.sleep(1)
 
-        ir1_line_follower: ShuffleVariable = shufflecad.add_var(ShuffleVariable("ir1_line_follower", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.OUT_VAR))
+        servo_0: ShuffleVariable = shufflecad.add_var(ShuffleVariable("servo_0", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.IN_VAR))
 
         start_time = time.time()
         while time.time() - start_time < 60:
-            ir1_line_follower.set_float(robot.analog_2())
+            robot.set_angle_hcdio(servo_0.get_float(), 1)
             time.sleep(0.02)
 
         shufflecad.stop()
@@ -52,22 +68,22 @@ The code snippet below reads the values from the analog sensor connected to port
     </TabItem>
     <TabItem value="java">
         ```java
-        import io.github.softv.RobotAlgaritm;
+        import io.github.softv.RobotVmxTitan;
         import io.github.softv.shufflecad.ShuffleVariable;
         import io.github.softv.shufflecad.Shufflecad;
         import java.io.IOException;
 
         public class Main {
             public static void main(String[] args) throws IOException, InterruptedException {
-                RobotAlgaritm robot = new RobotAlgaritm(true);
+                RobotVmxTitan robot = new RobotVmxTitan(true);
                 Shufflecad shufflecad = new Shufflecad(robot);
                 Thread.sleep(1000);
 
-                ShuffleVariable ir1LineFollower = (ShuffleVariable)shufflecad.addVar(new ShuffleVariable("ir1LineFollower", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.OUT_VAR));
+                ShuffleVariable servo0 = (ShuffleVariable)shufflecad.addVar(new ShuffleVariable("servo0", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.IN_VAR));
 
                 long startTime = System.currentTimeMillis();
                 while(System.currentTimeMillis() - startTime < 60_000) {
-                    ir1LineFollower.setFloat(robot.getAnalog2());
+                    robot.setAngleHCDIO(servo0.getFloat(), 1);
                     Thread.sleep(20);
                 }
 
@@ -79,22 +95,22 @@ The code snippet below reads the values from the analog sensor connected to port
     </TabItem>
     <TabItem value="cpp">
         ```cpp
-        #include "algaritm.hpp"
+        #include "studica.hpp"
         #include "shufflecad.hpp"
 
         #include <thread>
         #include <chrono>
 
         int main() {
-            RobotAlgaritm robot(true);
+            RobotVmxTitan robot(true);
             Shufflecad shufflecad(&robot);
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-            ShuffleVariable* ir1_line_follower = shufflecad.add_var(new ShuffleVariable("ir1_line_follower", ShuffleVariable::FLOAT_TYPE, ShuffleVariable::OUT_VAR));
+            ShuffleVariable* servo_0 = shufflecad.add_var(new ShuffleVariable("servo0", ShuffleVariable::FLOAT_TYPE, ShuffleVariable::IN_VAR));
 
             auto start_time = std::chrono::steady_clock::now();
             while (std::chrono::steady_clock::now() - start_time < std::chrono::seconds(60)) {
-                ir1_line_follower->set_float(robot.get_analog_1());
+                robot.set_servo_angle(servo_0->get_float(), 1);
                 std::this_thread::sleep_for(std::chrono::milliseconds(20));
             }
 
@@ -111,16 +127,16 @@ The code snippet below reads the values from the analog sensor connected to port
         {
             public static void Main(string[] args)
             {
-                RobotAlgaritm robot = new RobotAlgaritm(true);
+                RobotVMXTitan robot = new RobotVMXTitan(true);
                 Shufflecad shufflecad = new Shufflecad(robot);
                 Thread.Sleep(1000);
 
-                var ir1LineFollower = shufflecad.AddVar(new ShuffleVariable("ir1LineFollower", ShuffleVariable.FloatType, ShuffleVariable.OutVar));
+                var servo0 = shufflecad.AddVar(new ShuffleVariable("servo0", ShuffleVariable.FloatType, ShuffleVariable.InVar));
 
                 long startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                 while (DateTimeOffset.Now.ToUnixTimeMilliseconds() - startTime < 60_000)
                 {
-                    ir1LineFollower.SetFloat(robot.Analog1);
+                    robot.SetAngleHcdio(servo0.GetFloat(), 1);
                     Thread.Sleep(20);
                 }
 
@@ -136,11 +152,5 @@ The code snippet below reads the values from the analog sensor connected to port
 </Tabs>
 
 :::note
-TCRT5000 line following sensor pinout:
-- Black — GND
-- White — OUT (A1)
-- Red — VCC (5V)
-
-See the image below for the example.
-<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.png"/>
+VMX HCDIO ports are **write-only**. There are 10 ports available in robocadV library. Numeration starts from 1.
 :::

@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Make sure your CMake target links against `robocad-cpp` (see [installation](../installation/cpp)) and against **OpenCV**, whose runtime should be discoverable at execution time for camera support.
+        Make sure your CMake target links against `robocad-cpp` (see [installation](../robocad/libraries/installation/cpp)) and against **OpenCV**, whose runtime should be discoverable at execution time for camera support.
     </TabItem>
     <TabItem value="cs">
         ```csharp

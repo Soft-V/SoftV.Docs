@@ -142,5 +142,5 @@ TCRT5000 — универсальный оптический рефлектор�
 - Красный — VCC (5V)
 
 Пример см. на изображении ниже.
-<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.PNG"/>
+<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.png"/>
 :::

@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
     <TabItem value="cpp">
         To use the **robocad** libraries you need to:
         - [MSVC v143](https://visualstudio.microsoft.com/ru/downloads/) installed on your machine;
-        - Install and IDE you prefer, e.g., [CLion](https://www.jetbrains.com/ru-ru/clion/download/);
+        - Install an IDE you prefer, e.g., [CLion](https://www.jetbrains.com/ru-ru/clion/download/);
         - [Install the robocad-cpp library](../robocad/libraries/installation/cpp) after installing the IDE. 
     </TabItem>
     <TabItem value="cs">

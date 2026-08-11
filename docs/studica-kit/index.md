@@ -5,7 +5,12 @@ title: Working with the Studica Kit
 
 # Working with the Studica Kit
 
-import {DocsCardList} from '../../src/components/DocsCard';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+These guides show how to use the **robocadV** libraries with examples for the Algaritm kit.
 
-<DocsCardList list={useCurrentSidebarCategory().items} />
+You can use sample projects for your preferred programming language:
+
+- [Python](https://github.com/Soft-V/sample-robocad-py/tree/main/studica)
+- [Java](https://github.com/Soft-V/sample-robocad4J/tree/main/studica)
+- [C++](https://github.com/Soft-V/sample-robocad-cpp/tree/main/studica)
+- [C#](https://github.com/Soft-V/sample-robocad-cs/tree/main/studica)
+- [LabVIEW](https://github.com/Soft-V/sample-robocadLV)

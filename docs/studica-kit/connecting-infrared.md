@@ -1,24 +1,25 @@
 ---
-id: connecting-analog
-title: Connecting analog sensors
+id: connecting-infrared
+title: Connecting infrared sensors
 ---
-
-# Connecting analog sensors
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The TCRT5000 is a versatile reflective optical sensor that comes with the kit. Its working principle is simple: it emits infrared light and measures how much is reflected back. This makes it perfect for projects like line-following robots, where the sensor can distinguish between a black line and a white background.
+# Connecting infrared sensors
 
-<div style={{ paddingBottom: "10px" }}>
-    <img src="/docshome/img/algaritm-kit/other/tcrt5000-line-follower-sensor.PNG"/>
+
+The board features 4 dedicated analog sensor ports with a standardized 3-pin layout: **GND**, **5V**, and **S** (signal). This configuration ensures compatibility with a wide range of analog sensors, such as infrared sensors. The onboard 5V supply provides sufficient power for infrared distance sensors shipped with the kit, eliminating the need for external power sources and making sensor setup straightforward.
+
+<div style={{ textAlign: "center" }}>
+    <img src="/docshome/img/studica-kit/vmx/vmx-analog-overview.png"/>
 </div>
 
-Use the standard 3‑pin cables supplied with the kit to connect the line following sensors to the analog input port. Make sure to observe the correct pinout.
+Use the standard 3‑pin cables supplied with the kit to connect infrared sensors to the analog input ports. Make sure to observe the correct pinout.
 
-<img src="/docshome/img/algaritm-kit/shield/shield-tcrt5000-connection.PNG"/>
+<img src="/docshome/img/studica-kit/vmx/vmx-connecting-analog.png"/>
 
-The code snippet below reads the values from the analog sensor connected to port 1 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that sensor is functioning properly and that the connections have been made correctly.
+To help you get started, the code snippet below reads the values from the infrared analog sensor connected to port 0 (as shown in the example above) and sends them to shufflecad. This provides a quick and easy way to verify that sensor is functioning properly and that the connection has been made correctly.
 
 <Tabs
     defaultValue="python"
@@ -31,19 +32,19 @@ The code snippet below reads the values from the analog sensor connected to port
     ]}>
     <TabItem value="python">  
         ```python
-        from robocad.algaritm import RobotAlgaritm
+        from robocad.studica import RobotVmxTitan
         from robocad.shufflecad import Shufflecad, ShuffleVariable
         import time
 
-        robot = RobotAlgaritm(True)
+        robot = RobotVmxTitan(True)
         shufflecad = Shufflecad(robot)
         time.sleep(1)
 
-        ir1_line_follower: ShuffleVariable = shufflecad.add_var(ShuffleVariable("ir1_line_follower", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.OUT_VAR))
+        ir0: ShuffleVariable = shufflecad.add_var(ShuffleVariable("ir0", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.OUT_VAR))
 
         start_time = time.time()
         while time.time() - start_time < 60:
-            ir1_line_follower.set_float(robot.analog_2())
+            ir0.set_float(robot.analog_1())
             time.sleep(0.02)
 
         shufflecad.stop()
@@ -52,22 +53,22 @@ The code snippet below reads the values from the analog sensor connected to port
     </TabItem>
     <TabItem value="java">
         ```java
-        import io.github.softv.RobotAlgaritm;
+        import io.github.softv.RobotVmxTitan;
         import io.github.softv.shufflecad.ShuffleVariable;
         import io.github.softv.shufflecad.Shufflecad;
         import java.io.IOException;
 
         public class Main {
             public static void main(String[] args) throws IOException, InterruptedException {
-                RobotAlgaritm robot = new RobotAlgaritm(true);
+                RobotVmxTitan robot = new RobotVmxTitan(true);
                 Shufflecad shufflecad = new Shufflecad(robot);
                 Thread.sleep(1000);
 
-                ShuffleVariable ir1LineFollower = (ShuffleVariable)shufflecad.addVar(new ShuffleVariable("ir1LineFollower", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.OUT_VAR));
-
+                ShuffleVariable ir0 = (ShuffleVariable)shufflecad.addVar(new ShuffleVariable("ir0", ShuffleVariable.FLOAT_TYPE, ShuffleVariable.OUT_VAR));
+            
                 long startTime = System.currentTimeMillis();
                 while(System.currentTimeMillis() - startTime < 60_000) {
-                    ir1LineFollower.setFloat(robot.getAnalog2());
+                    ir0.setFloat(robot.getAnalog1());
                     Thread.sleep(20);
                 }
 
@@ -79,22 +80,22 @@ The code snippet below reads the values from the analog sensor connected to port
     </TabItem>
     <TabItem value="cpp">
         ```cpp
-        #include "algaritm.hpp"
+        #include "studica.hpp"
         #include "shufflecad.hpp"
 
         #include <thread>
         #include <chrono>
 
         int main() {
-            RobotAlgaritm robot(true);
+            RobotVmxTitan robot(true);
             Shufflecad shufflecad(&robot);
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-            ShuffleVariable* ir1_line_follower = shufflecad.add_var(new ShuffleVariable("ir1_line_follower", ShuffleVariable::FLOAT_TYPE, ShuffleVariable::OUT_VAR));
+            ShuffleVariable* ir0 = shufflecad.add_var(new ShuffleVariable("ir0", ShuffleVariable::FLOAT_TYPE, ShuffleVariable::OUT_VAR));
 
             auto start_time = std::chrono::steady_clock::now();
             while (std::chrono::steady_clock::now() - start_time < std::chrono::seconds(60)) {
-                ir1_line_follower->set_float(robot.get_analog_1());
+                ir0->set_float(robot.get_analog_1());
                 std::this_thread::sleep_for(std::chrono::milliseconds(20));
             }
 
@@ -111,16 +112,16 @@ The code snippet below reads the values from the analog sensor connected to port
         {
             public static void Main(string[] args)
             {
-                RobotAlgaritm robot = new RobotAlgaritm(true);
+                RobotVMXTitan robot = new RobotVMXTitan(true);
                 Shufflecad shufflecad = new Shufflecad(robot);
                 Thread.Sleep(1000);
 
-                var ir1LineFollower = shufflecad.AddVar(new ShuffleVariable("ir1LineFollower", ShuffleVariable.FloatType, ShuffleVariable.OutVar));
+                var ir0 = shufflecad.AddVar(new ShuffleVariable("ir0", ShuffleVariable.FloatType, ShuffleVariable.OutVar));
 
                 long startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                 while (DateTimeOffset.Now.ToUnixTimeMilliseconds() - startTime < 60_000)
                 {
-                    ir1LineFollower.SetFloat(robot.Analog1);
+                    ir0.SetFloat(robot.Analog1);
                     Thread.Sleep(20);
                 }
 
@@ -136,11 +137,14 @@ The code snippet below reads the values from the analog sensor connected to port
 </Tabs>
 
 :::note
-TCRT5000 line following sensor pinout:
+Sharp GP2Y0A41S sensor pinout:
+
+- White — signal
 - Black — GND
-- White — OUT (A1)
-- Red — VCC (5V)
+- Red — VCC
 
 See the image below for the example.
-<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.png"/>
+<div style={{marginRight: 50, marginLeft: 50}}>
+    <img src="/docshome/img/studica-kit/other/sharp-infrared.png"/>   
+</div>
 :::
