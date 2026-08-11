@@ -107,7 +107,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Убедитесь, что в проекте добавлен NuGet-пакет **RobocadCs** (см. [установку](../installation/cs)).
+        Убедитесь, что в проекте добавлен NuGet-пакет **RobocadCs** (см. [установку](../robocad/libraries/installation/cs)).
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

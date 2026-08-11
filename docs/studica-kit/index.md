@@ -5,7 +5,7 @@ title: Working with the Studica Kit
 
 # Working with the Studica Kit
 
-These guides show how to use the **robocadV** libraries with examples for the Algaritm kit.
+These guides show how to use the **robocadV** libraries with examples for the Studica kit.
 
 You can use sample projects for your preferred programming language:
 

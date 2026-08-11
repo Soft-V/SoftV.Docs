@@ -107,7 +107,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Make sure your project references the **RobocadCs** NuGet package (see [installation](../installation/cs)).
+        Make sure your project references the **RobocadCs** NuGet package (see [installation](../robocad/libraries/installation/cs)).
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

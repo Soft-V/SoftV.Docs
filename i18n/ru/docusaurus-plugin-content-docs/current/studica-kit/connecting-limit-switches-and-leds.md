@@ -1,22 +1,22 @@
 ---
 id: connecting-limit-switches-and-leds
-title: Connecting buttons and LEDs
+title: Подключение кнопок и LED
 ---
 
-# Connecting limit switches and LEDs
+# Подключение кнопок и LED
 
-# Connecting limit switch
+# Подключение кнопок
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Each motor port is equipped with two limit switch inputs, labeled Lim.H and Lim.L on the board. Both ports serve the same purpose — they are designed for connecting end‑stop switches that detect when a mechanism has reached the limit of its travel. These inputs do not have predefined functions; you can assign them in software to stop or reverse the motor when a switch is triggered.
+Каждый порт мотора оснащён двумя входами для концевых выключателей, обозначенными на плате как Lim.H и Lim.L. Оба порта выполняют одну и ту же функцию — они предназначены для подключения концевых выключателей, которые определяют, когда механизм достиг предела своего хода. Эти входы не имеют предопределённых функций; вы можете назначить их в программном обеспечении для остановки или реверса двигателя при срабатывании концевика.
 
-Use the standard 3‑pin cables supplied with the kit to connect limit switch to its port. Unlike other connections, these ports are not polarity-sensitive — it doesn't matter which side of the wire goes where. You can connect them in any orientation.
+Используйте стандартные 3-пиновые кабели, входящие в набор, для подключения концевых выключателей к соответствующим портам. В отличие от других подключений, эти порты не чувствительны к полярности — не имеет значения, какая сторона провода куда подключается. Вы можете подключать их в любой ориентации.
 
 <img src="/docshome/img/studica-kit/titan/titan-connecting-button.png"/>
 
-Use the code snippet below to verify correct connection of limit switch. According to the example above, the limit switch is connected to **M2 Lim. H** port.
+Используйте приведённый ниже фрагмент кода, чтобы проверить правильность подключения концевого выключателя. Согласно примеру выше, концевой выключатель подключён к порту **M2 Lim. H**.
 
 <Tabs
     defaultValue="python"
@@ -134,16 +134,16 @@ Use the code snippet below to verify correct connection of limit switch. Accordi
 </Tabs>
 
 :::note
-The upper contact will always be the Common wire. The remaining two contacts are:
-- NO — Normally opened: LOW when idle, HIGH when pressed
-- NC — Normally closed: HIGH when idle, LOW when pressed
+Верхний контакт всегда является общим проводом (Common). Остальные два контакта:
+- NO (Normally Open — нормально разомкнутый): LOW в состоянии покоя, HIGH при нажатии;
+- NC (Normally Closed — нормально замкнутый): HIGH в состоянии покоя, LOW при нажатии.
 
-See the image below for the example.
+Пример см. на изображении ниже.
 <img src="/docshome/img/studica-kit/other/limit-switch-pinout.png"/>
 :::
 
 :::note
-Titan limit ports are **read-only** and are arranged in the following order:
+Порты концевиков на Titan доступны **только для чтения** и расположены в следующем порядке:
 
 - **M0:**
     - Lim. H — 0
@@ -159,18 +159,19 @@ Titan limit ports are **read-only** and are arranged in the following order:
     - Lim. L — 7
 :::
 
-# Connecting LEDs
+# Подключение LED
 
-For simple indicator LEDs (e.g., status lights), you can connect them directly to the VMX using the High-Current DIO Ports. These ports provide power, ground, and a signal pin that can be configured as a digital output.
+Для простых индикаторных светодиодов (например, светодиодов состояния) вы можете подключать их напрямую к VMX, используя порты High‑Current DIO. Эти порты обеспечивают питание, землю и сигнальный контакт, который можно настроить как цифровой выход.
 
 <img src="/docshome/img/studica-kit/vmx/vmx-high-current-dio-overview.png"/>
 
-Use the standard 3‑pin cable to connect the LED to the VMX's High‑Current DIO Header. For this connection, you only need the signal wire and ground (GND) — the power line can be left unconnected.
+Используйте стандартный 3-пиновый кабель для подключения светодиода к разъёму High‑Current DIO на VMX. Для этого подключения вам понадобятся только сигнальный провод и земля (GND) — линию питания можно оставить неподключённой.
 
 <div style={{ marginBottom: "10px" }}>
     <img src="/docshome/img/studica-kit/vmx/vmx-connecting-led.png"/>
 </div>
-Use the code snippet below to set led state and ensure correct LED connection, as shown in the example.
+
+Используйте приведённый ниже фрагмент кода, чтобы установить состояние светодиода и проверить правильность его подключения, как показано в примере.
 
 <Tabs
     defaultValue="python"
@@ -288,5 +289,5 @@ Use the code snippet below to set led state and ensure correct LED connection, a
 </Tabs>
 
 :::note
-VMX HCDIO ports are **write-only**. There are 10 ports available in robocadV library. Numeration starts from 1.
+Порты HCDIO на VMX доступны **только для записи**. В библиотеке robocadV доступно 10 портов. Нумерация начинается с 1.
 :::

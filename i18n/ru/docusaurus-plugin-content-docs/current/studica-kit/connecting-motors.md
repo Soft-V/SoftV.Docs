@@ -1,20 +1,20 @@
 ---
 id: connecting-motors
-title: Connecting motors
+title: Подключение моторов
 ---
 
-# Connecting motors
+# Подключение моторов
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The Titan Quad Motor Controller provides four DC motor outputs, labeled M0, M1, M2, and M3 on the board. Each motor channel is designed to drive motors up to 20A, with a built‑in fuse box that requires a 20A fuse to be inserted before power can be applied.
+Контроллер Titan Quad Motor Controller предоставляет четыре выхода для двигателей постоянного тока, обозначенных на плате как M0, M1, M2 и M3. Каждый канал рассчитан на управление двигателями с током до 20 А и оснащён встроенным отсеком для предохранителей, в который необходимо установить предохранитель на 20 А перед подачей питания.
 
-The motors in the kit come with Anderson Powerpole connectors pre-installed for power connection.
+Моторы, входящие в набор, поставляются с предустановленными разъёмами Anderson Powerpole для подключения питания.
 
 <img src="/docshome/img/studica-kit/titan/titan-connecting-motor.png"/>
 
-Using the code snippet below you can manually set speed to the motor connected in the example using shufflecad.
+Используя приведённый ниже фрагмент кода, вы можете вручную установить скорость двигателя, подключённого в примере, с помощью shufflecad.
 
 <Tabs
     defaultValue="python"
@@ -132,4 +132,4 @@ Using the code snippet below you can manually set speed to the motor connected i
     </TabItem>
 </Tabs>
 
-Our library includes a built‑in PID controller to help you achieve smooth and accurate motor regulation. For a complete guide on working with encoders and using the PID controller, refer to the [Connecting encoders](../studica-kit/connecting-encoders) page.
+Наша библиотека включает встроенный ПИД-регулятор, который помогает добиться плавного и точного управления двигателями. Полное руководство по работе с энкодерами и использованию ПИД-регулятора приведено на странице [Подключение энкодеров](../studica-kit/connecting-encoders).
