@@ -129,7 +129,7 @@ const sidebars = {
     },
     {
       'type': 'category',
-      'label': 'Working with Studica kit',
+      'label': 'Studica-Get-Started',
       'link': {
         'type': 'doc',
         'id': 'studica-kit/index',
