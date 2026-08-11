@@ -139,7 +139,7 @@ import TabItem from '@theme/TabItem';
 - NC — 常闭：静止时为 HIGH，按下时为 LOW
 
 请参见下方示例图片。
-<img src="/docshome/img/algaritm-kit/other/limit-switch-pinout.PNG"/>
+<img src="/docshome/img/algaritm-kit/other/limit-switch-pinout.png"/>
 :::
 
 :::note

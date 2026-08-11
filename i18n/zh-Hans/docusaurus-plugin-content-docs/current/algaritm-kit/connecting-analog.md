@@ -142,5 +142,5 @@ TCRT5000 循线传感器引脚定义：
 - 红色 — VCC (5V)
 
 请参见下方示例图片。
-<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.PNG"/>
+<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.png"/>
 :::

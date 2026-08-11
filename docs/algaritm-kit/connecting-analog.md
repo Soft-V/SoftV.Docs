@@ -142,5 +142,5 @@ TCRT5000 line following sensor pinout:
 - Red — VCC (5V)
 
 See the image below for the example.
-<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.PNG"/>
+<img src="/docshome/img/algaritm-kit/other/tcrt5000-pinout.png"/>
 :::

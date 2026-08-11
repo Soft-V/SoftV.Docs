@@ -5,8 +5,7 @@ title: Индикация
 
 # Индикация  
 
-Здесь представлены цвета пульсирующей индикации контроллеров и их обозначения. 
-
+Ниже приведены цвета пульсирующей индикации контроллеров и их обозначения.
 <table>
     <thead>
         <tr>
@@ -22,12 +21,12 @@ title: Индикация
             <td><img className="img-lang" src="/docshome/img/indication/status-0.png" width="32"/></td>
         </tr>
         <tr>
-            <td><b>Нет подключения/Не запущена программа</b></td>
+            <td><b>Нет связи/Программа не запущена</b></td>
             <td><img className="img-lang" src="/docshome/img/indication/status-2.png" width="32"/></td>
             <td><img className="img-lang" src="/docshome/img/indication/status-2.png" width="32"/></td>
         </tr>
         <tr>
-            <td><b>Программа работает</b></td>
+            <td><b>Программа запущена</b></td>
             <td><img className="img-lang" src="/docshome/img/indication/status-4.png" width="32"/></td>
             <td><img className="img-lang" src="/docshome/img/indication/status-1.png" width="32"/></td>
         </tr>

@@ -3,11 +3,9 @@ id: create-project
 title: 创建初始项目
 ---
 
-# 创建初始项目  
+# Создание начального проекта  
 
-:::note
-在这些示例中，将使用 VS Code 和 IntelliJ。
-:::  
+如果你不使用项目模板，本页展示了如何配置一个可运行的项目示例：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,20 +15,102 @@ import TabItem from '@theme/TabItem';
     values={[
         {label: 'Python', value: 'python'},
         {label: 'Java', value: 'java'},
+        {label: 'C++', value: 'cpp'},
+        {label: 'C#', value: 'cs'},
         {label: 'LabVIEW', value: 'labview'},
     ]}>
     <TabItem value="python">  
-        - 在文件浏览器中创建文件夹并在 VS Code 中打开；  
-        - 创建 *main.py* 文件（您可以自己选择文件和子文件夹的名称）；  
-        - 编写 [用于使用套件的初始程序](../robocad/libraries/studica/setup)。
+        ```python
+        from robocad.algaritm import RobotVmxTitan
+
+        import time
+
+        IS_REAL_ROBOT = True
+        robot = RobotVmxTitan(IS_REAL_ROBOT)
+        
+        # 在此处放置你的代码
+
+        time.sleep(0.1)
+        robot.stop()
+        ```
     </TabItem>
     <TabItem value="java">
-        - 打开 IntelliJ 并点击创建新项目；  
-        - 选择名称、路径并指定 Maven 作为构建系统；  
-        - 配置 [*pom.xml* 文件](../robocad/libraries/installation/java)；
-        - 编写 [用于使用套件的初始程序](../robocad/libraries/studica/setup)。
+        ```java
+        import io.github.softv.RobotVmxTitan;
+
+        import java.io.IOException;
+
+        public class Main {
+            final static boolean IS_REAL_ROBOT = true;
+
+            public static void main(String[] args) throws IOException, InterruptedException {
+                RobotVmxTitan robot = new RobotVmxTitan(IS_REAL_ROBOT);
+
+                // 在此处放置你的代码
+
+                Thread.sleep(100);
+                robot.stop();
+            }
+        }
+        ```  
+
+        请确保你的 **pom.xml** 文件中包含以下内容：
+        ```xml
+        <build>
+            <finalName>UserBuiltJar</finalName>
+        </build>
+        ```  
+
+        要在模拟器中使用摄像头，你需要[编译或下载预编译的 OpenCV](https://docs.opencv.org/5.0/tutorials/introduction/general_install/general_install.html)，并在程序开头加载所需的库。   
+
+        例如：
+        ```java
+        System.load("C:\\opencv\\build\\java\\x64\\opencv_java490.dll");
+        ```
+    </TabItem>
+    <TabItem value="cpp">
+        ```cpp
+        #include "studica.hpp"
+
+        #include <thread>
+        #include <chrono>
+
+        int main() {
+            const bool IS_REAL_ROBOT = true;
+            RobotVmxTitan robot(IS_REAL_ROBOT);
+
+            // 在此处放置你的代码
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            robot.stop();
+        }
+        ```  
+
+        请确保你的 CMake 目标链接到 `robocad-cpp`（参见[安装说明](../robocad/libraries/installation/cpp)），并链接到 **OpenCV**，其运行时库需要在执行时可被发现，以支持摄像头功能。
+    </TabItem>
+    <TabItem value="cs">
+        ```csharp
+        using RobocadCs;
+
+        class Program
+        {
+            const bool IsRealRobot = true;
+
+            static void Main(string[] args)
+            {
+                var robot = new RobotVMXTitan(IsRealRobot);
+
+                // 在此处放置你的代码
+
+                Thread.Sleep(100);
+                robot.Stop();
+            }
+        }
+        ```  
+
+        请确保你的项目引用了 **RobocadCs** NuGet 包（参见[安装说明](../installation/cs)）。
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇
     </TabItem>
-</Tabs>
+</Tabs>   

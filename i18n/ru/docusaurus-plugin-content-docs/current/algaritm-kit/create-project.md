@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Убедитесь, что CMake-таргет линкуется с `robocad-cpp` (см. [установку](../installation/cpp)) и с **OpenCV**, рантайм которой должен быть доступен при запуске для поддержки камеры.
+        Убедитесь, что CMake-таргет линкуется с `robocad-cpp` (см. [установку](../robocad/libraries/installation/cpp)) и с **OpenCV**, рантайм которой должен быть доступен при запуске для поддержки камеры.
     </TabItem>
     <TabItem value="cs">
         ```csharp
@@ -107,7 +107,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-        Убедитесь, что в проекте добавлен NuGet-пакет **RobocadCs** (см. [установку](../installation/cs)).
+        Убедитесь, что в проекте добавлен NuGet-пакет **RobocadCs** (см. [установку](../robocad/libraries/installation/cs)).
     </TabItem>
     <TabItem value="labview">
         **TODO:** 😇

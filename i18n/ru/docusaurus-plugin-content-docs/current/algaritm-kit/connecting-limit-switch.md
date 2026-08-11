@@ -139,7 +139,7 @@ import TabItem from '@theme/TabItem';
 - NC — Normally closed: HIGH в покое, LOW при нажатии
 
 Пример см. на изображении ниже.
-<img src="/docshome/img/algaritm-kit/other/limit-switch-pinout.PNG"/>
+<img src="/docshome/img/algaritm-kit/other/limit-switch-pinout.png"/>
 :::
 
 :::note

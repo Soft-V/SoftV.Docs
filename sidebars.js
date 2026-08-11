@@ -52,27 +52,6 @@ const sidebars = {
           'items': [
             {
               'type': 'category',
-              'label': 'Studica',
-              'link': {
-                'type': 'doc',
-                'id': 'robocad/libraries/studica/index',
-              },
-              'items': [
-                'robocad/libraries/studica/setup',
-                'robocad/libraries/studica/motors',
-                'robocad/libraries/studica/encoders',
-                'robocad/libraries/studica/infrared',
-                'robocad/libraries/studica/ultrasound',
-                'robocad/libraries/studica/imu',
-                'robocad/libraries/studica/titan-limits',
-                'robocad/libraries/studica/analog',
-                'robocad/libraries/studica/vmx-flex',
-                'robocad/libraries/studica/vmx-hcdio',
-                'robocad/libraries/studica/camera',
-              ],
-            },
-            {
-              'type': 'category',
               'label': 'Shufflecad-robocad',
               'link': {
                 'type': 'doc',
@@ -150,7 +129,7 @@ const sidebars = {
     },
     {
       'type': 'category',
-      'label': 'Working with Studica kit',
+      'label': 'Studica-Get-Started',
       'link': {
         'type': 'doc',
         'id': 'studica-kit/index',
@@ -159,6 +138,17 @@ const sidebars = {
         'studica-kit/get-started',
         'studica-kit/download-required',
         'studica-kit/create-project',
+        'studica-kit/kit-overview',
+        'studica-kit/powering-up-the-kit',
+        'studica-kit/connecting-infrared',
+        'studica-kit/connecting-analog',
+        'studica-kit/connecting-ultrasonic',
+        'studica-kit/using-imu',
+        'studica-kit/connecting-limit-switches-and-leds',
+        'studica-kit/connecting-servo',
+        'studica-kit/connecting-camera',
+        'studica-kit/connecting-motors',
+        'studica-kit/connecting-encoders',
         'studica-kit/indication',
       ],
     },

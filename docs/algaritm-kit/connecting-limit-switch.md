@@ -139,7 +139,7 @@ The upper contact will always be the Common wire. The remaining two contacts are
 - NC — Normally closed: HIGH when idle, LOW when pressed
 
 See the image below for the example.
-<img src="/docshome/img/algaritm-kit/other/limit-switch-pinout.PNG"/>
+<img src="/docshome/img/algaritm-kit/other/limit-switch-pinout.png"/>
 :::
 
 :::note

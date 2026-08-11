@@ -14,7 +14,7 @@ title: Обзор набора Algaritmica
 - Проводные интерфейсы UART, SPI, I2C для высокоскоростного обмена данными с периферийными микросхемами и модулями.
 
 <div style={{paddingBottom:'30px'}}>
-    <img src="/static/img/algaritm-kit/shield/shield-overview.png"/>
+    <img src="/docshome/img/algaritm-kit/shield/shield-overview.png"/>
 </div>
 
 Контроллер двигателей — это четырёхканальная плата драйвера, предназначенная для требовательных робототехнических и автоматизационных задач.
