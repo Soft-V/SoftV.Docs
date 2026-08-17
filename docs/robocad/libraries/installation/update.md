@@ -83,7 +83,7 @@ After downloading the image, install it on the device's SD card in a convenient 
 <h2>Updating the library</h2>
 
 <Tabs
-	defaultValue="studica"
+	defaultValue="studica"git 
 	values={[
 		{label: 'Studica', value: 'studica'},
 		{label: 'Algaritm', value: 'algaritm'},
