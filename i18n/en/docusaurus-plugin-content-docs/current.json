@@ -22,5 +22,9 @@
   "sidebar.documentationSidebar.category.Algaritm-Get-Started": {
     "message": "Working with Algaritm kit",
     "description": "-"
+  },
+  "sidebar.documentationSidebar.category.Studica-Get-Started": {
+    "message": "Working with Studica kit",
+    "description": "-"
   }
 }

@@ -20,83 +20,57 @@ const sidebars = {
     },
     {
       'type': 'category',
-      'label': 'robocadV',
+      'label': 'robocad',
       'link': {
         'type': 'doc',
         'id': 'robocad/index',
       },
       'items': [
-        'robocad/get-started',
-        {
-          'type': 'category',
-          'label': 'Installation',
-          'link': {
-            'type': 'doc',
-            'id': 'robocad/libraries/installation/index',
-          },
-          'items': [
-            'robocad/libraries/installation/python',
-            'robocad/libraries/installation/java',
-            'robocad/libraries/installation/cpp',
-            'robocad/libraries/installation/cs',
-            'robocad/libraries/installation/labview',
-          ],
-        },
-        {
-          'type': 'category',
-          'label': 'Libraries',
-          'link': {
-            'type': 'doc',
-            'id': 'robocad/libraries/index',
-          },
-          'items': [
-            {
-              'type': 'category',
-              'label': 'Shufflecad-robocad',
-              'link': {
-                'type': 'doc',
-                'id': 'robocad/libraries/shufflecad/index',
-              },
-              'items': [
-                'robocad/libraries/shufflecad/vars',
-                'robocad/libraries/shufflecad/camera',
-                'robocad/libraries/shufflecad/joystick',
-                'robocad/libraries/shufflecad/logs',
-              ],
-            },
-            {
-              'type': 'category',
-              'label': 'Update',
-              'link': {
-                'type': 'doc',
-                'id': 'robocad/libraries/update/index',
-              },
-              'items': [
-                'robocad/libraries/update/image',
-                'robocad/libraries/update/python',
-                'robocad/libraries/update/java',
-                'robocad/libraries/update/cpp',
-                'robocad/libraries/update/cs',
-              ],
-            },
-          ],
-        },
+        'robocad/libraries/installation/python',
+        'robocad/libraries/installation/java',
+        'robocad/libraries/installation/cpp',
+        'robocad/libraries/installation/cs',
+        'robocad/libraries/installation/labview',
+        'robocad/libraries/installation/update-libraries',
       ],
     },
     {
       'type': 'category',
-      'label': 'Shufflecad',
+      'label': 'shufflecad',
       'link': {
         'type': 'doc',
         'id': 'shufflecad/index',
       },
       'items': [
-        'shufflecad/get-started',
-        'shufflecad/start-project',
-        'shufflecad/front-panel',
-        'shufflecad/cameras',
-        'shufflecad/joystick',
-        'shufflecad/logs',
+        {
+          'type': 'category',
+          'label': 'shufflecad-app',
+          'link': {
+            'type': 'doc',
+            'id': 'shufflecad/index',
+          },
+          'items': [
+            'shufflecad/start-project',
+            'shufflecad/front-panel',
+            'shufflecad/cameras',
+            'shufflecad/joystick',
+            'shufflecad/logs',
+          ],
+        },
+        {
+          'type': 'category',
+          'label': 'shufflecad-robocad',
+          'link': {
+            'type': 'doc',
+            'id': 'robocad/libraries/shufflecad/index',
+          },
+          'items': [
+            'robocad/libraries/shufflecad/vars',
+            'robocad/libraries/shufflecad/camera',
+            'robocad/libraries/shufflecad/joystick',
+            'robocad/libraries/shufflecad/logs',
+          ],
+        },
       ],
     },
     {
