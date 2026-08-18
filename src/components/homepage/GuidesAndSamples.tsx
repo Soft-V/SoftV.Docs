@@ -46,6 +46,14 @@ const samples: Sample[] = [
     source: 'https://github.com/Soft-V/robocad4J',
   },
   {
+    title: 'robocadCpp',
+    source: 'https://github.com/Soft-V/robocad-cpp',
+  },
+  {
+    title: 'robocadCs',
+    source: 'https://github.com/Soft-V/robocad-cs',
+  },
+  {
     title: 'robocadLV',
     source: 'https://github.com/Soft-V/robocadLV',
   },
