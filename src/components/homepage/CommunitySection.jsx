@@ -17,6 +17,7 @@ const githubUsernames = [
   'SodiumHydrocarbonate',
   'c3n9',
   '1exsize1',
+  'sqrol',
   'bbaton',
 ];
 
