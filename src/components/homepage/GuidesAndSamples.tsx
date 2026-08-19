@@ -29,6 +29,11 @@ const guides: Guide[] = [
     text: 'Shuffleboard and Driver Station in one app',
     link: '/docs/shufflecad',
   },
+  {
+    title: 'Admin Panel',
+    text: 'Tool to manage competitions',
+    link: '/docs/admin-panel/',
+  },
 ];
 
 interface Sample {

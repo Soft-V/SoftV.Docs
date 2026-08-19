@@ -73,6 +73,19 @@ const sidebars = {
         },
       ],
     },
+
+    {
+      'type': 'category',
+      'label': 'Admin panel',
+      'link': {
+        'type': 'doc',
+        'id': 'admin-panel/index',
+      },
+      'items': [
+        'admin-panel/admin-panel-overview'
+      ],
+    },
+
     {
       'type': 'category',
       'label': 'Algaritm-Get-Started',
