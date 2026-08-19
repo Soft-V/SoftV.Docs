@@ -3,31 +3,37 @@ id: robocad
 title: Симулятор robocadV
 ---
 
-# Установка симулятора robocadV
-Это руководство покажет вам как установить **Robocad**.
-Сначала нужно активировать лицензию Robocad.
+Это руководство покажет вам как установить **robocadV**.
+
+## Активация лицензии
+
+Сначала нужно активировать лицензию robocadV.
+
 Для активации лицензии вам нужно авторизоваться в SoftHub.
-После авторизации нажимаем на кнопку **Activation**.
+После авторизации нажимаем на кнопку **Активация**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad1.png"/>
 </div>
-Далее нажимаем на кнопку **Not available**.
+Далее нажимаем на кнопку **Недоступные**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad2.png"/>
 </div>
-И нажимаем на кнопку **Activate**.
+И нажимаем на кнопку **Активировать**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad3.png"/>
 </div>
-Вводим ключ активации лицензии Robocad, и нажимаем **Ok**.
+Вводим ключ активации и нажимаем **Ok**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad4.png"/>
 </div>
-Теперь нужно перейти в главное меню SoftHub.
+
+## Установка симулятора
+
+Возвращаемся в главное меню SoftHub.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad5.png"/>
 </div>
-Листаем вниз и находим robocadV, нажимаем на кнопку **Install**.
+Листаем вниз и находим robocadV, нажимаем на кнопку **Установка**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad6.png"/>
 </div>
@@ -35,15 +41,15 @@ title: Симулятор robocadV
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad7.png"/>
 </div>
-Начнется установка Robocad
+Начнется установка robocadV
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad8.png"/>
 </div>
-По окончанию загрузки, нажимаем на кнопку **Start**.
+По окончанию загрузки, нажимаем на кнопку **Запустить**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad9.png"/>
 </div>
-Теперь вы можете использовать Robocad!
+Теперь вы можете использовать **robocadV**!
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad10.png"/>
 </div>

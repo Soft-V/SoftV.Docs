@@ -1,10 +1,12 @@
 ---
 id: auth
-title: Authentication
+title: Authorization in SoftHub
 ---
 
-# Authorization in SoftHub
-This guide will show you how to login to SoftHub.
+This guide will show you how to create an account or login to SoftHub.
+
+## Register
+
 Open the SoftHub application.
 The application looks as following: 
 <div style={{textAlign: 'left'}}>
@@ -37,21 +39,21 @@ And press the **Ok** button.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth7.png"/>
 </div>
-Next, you must log into your account by clicking on the **Log in** button.
+You have succesfully registered a SoftHub account!
+
+## Login
+
+If you want to log into an existing account, click the **Log in** button.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth8.png"/>
 </div>
 Here you also need to enter your registered account details:
-- E-mail address;
-- Password.
+- **E-mail address**;
+- **Password**.
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth9.png"/>
 </div>
-And press the **Ok** button.
+And press the **Ok** button. You have successfully logged into your account!
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth10.png"/>
-</div>
-You have successfully logged into your account!
-<div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/auth11.png"/>
 </div>

@@ -4,9 +4,9 @@ title: 开始
 ---
 
 # 安装 SoftHub
-本指南将告诉你如何安装**软汇通**
-要下载 SoftHub 应用程序，请访问 https://softv.su/
-网站外观如下： 
+本指南将向您介绍如何安装 **SoftHub**。
+要下载 SoftHub 应用程序，请访问 https://softv.su/。
+网站如下图所示：
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started1.png"/>
 </div>
@@ -18,7 +18,7 @@ title: 开始
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started3.png"/>
 </div>
-然后，打开下载的文件，点击 **Next >**
+然后，打开下载的文件并点击 **Next**。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started4.png"/>
 </div>
@@ -26,23 +26,11 @@ title: 开始
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started5.png"/>
 </div>
-点击**Browse**按钮。
+接下来，点击**Install**。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/get-started6.png"/>
 </div>
-选择文件夹，然后按 **OK**。
-<div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/get-started7.png"/>
-</div>
-现在点击 **Next >** 按钮。
-<div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/get-started8.png"/>
-</div>
-接下来，点击**Install**。
-<div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/get-started9.png"/>
-</div>
 现在，您可以使用 SoftHub！
 <div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/get-started10.png"/>
+<img src="/docshome/img/softhub/get-started7.png"/>
 </div>

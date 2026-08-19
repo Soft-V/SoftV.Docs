@@ -1,11 +1,19 @@
 ---
 id: index
 title: SoftHub
+keywords:
+  - robocad
+  - robocadV
+  - docs
+  - documentation
+  - SoftHub
+  - softhub
+  - download
 ---
 
 # SoftHub
 
-以下是使用 SoftHub 的方法
+本指南将向您介绍如何使用 SoftHub。
 
 import {DocsCardList} from '../../../../../src/components/DocsCard';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

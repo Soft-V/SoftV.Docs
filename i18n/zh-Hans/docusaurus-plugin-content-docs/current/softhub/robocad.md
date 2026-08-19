@@ -3,10 +3,11 @@ id: robocad
 title: robocadV 模拟器
 ---
 
-# 安装 robocadV 模拟器
-本指南将向您介绍如何安装 Robocad。
-首先，您需要激活 Robocad 许可证。
-要激活许可证，您需要登录SoftHub。
+本指南将向您介绍如何安装 **robocadV**。
+
+## 激活许可证
+
+您需要登录 SoftHub 才能激活许可证。
 授权后，点击**Activation**按钮。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad1.png"/>
@@ -19,15 +20,18 @@ title: robocadV 模拟器
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad3.png"/>
 </div>
-输入 Robocad 许可证激活密钥，然后点击 **Ok**。
+输入 robocadV 许可证激活密钥，然后点击 **Ok**。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad4.png"/>
 </div>
-现在，您需要进入 SoftHub 主菜单。
+
+## 安装应用程序
+
+返回 SoftHub 主菜单。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad5.png"/>
 </div>
-向下滚动，找到 robocadV，点击 **Install**。
+向下滚动，找到 **robocadV**，然后点击 **Install**。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad6.png"/>
 </div>
@@ -35,7 +39,7 @@ title: robocadV 模拟器
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad7.png"/>
 </div>
-开始安装 Robocad
+**robocadV** 将开始安装。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad8.png"/>
 </div>
@@ -43,7 +47,7 @@ title: robocadV 模拟器
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad9.png"/>
 </div>
-现在，您可以使用 Robocad 了！
+现在，您可以使用 **robocadV** 模拟器了！
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/robocad10.png"/>
 </div>

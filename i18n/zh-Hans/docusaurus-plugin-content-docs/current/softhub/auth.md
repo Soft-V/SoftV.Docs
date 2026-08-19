@@ -1,10 +1,12 @@
 ---
 id: auth
-title: 鉴别
+title: SoftHub 中的授权
 ---
 
-# SoftHub 中的授权
-本指南将向您介绍如何在 SoftHub 中授权。
+本指南将向您介绍如何创建 SoftHub 账户或登录。
+
+## 注册
+
 打开 SoftHub 应用程序。
 应用程序如下所示：
 <div style={{textAlign: 'left'}}>
@@ -37,21 +39,21 @@ title: 鉴别
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth7.png"/>
 </div>
-接下来，您需要点击**Log in**按钮登录您的账户。
+您已成功注册 SoftHub 账户！
+
+## 登录
+
+如果您想登录已有账户，请点击 **Log in** 按钮。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth8.png"/>
 </div>
-您还需要在此输入您的注册账户详细信息：
-- 电子邮件地址；
-- 密码。
+您还需要在此输入已注册账户的信息：
+- **电子邮件地址**；
+- **密码**。
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth9.png"/>
 </div>
-然后点击 **Ok** 按钮。
+然后点击 **Ok** 按钮。您已成功登录账户！
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth10.png"/>
-</div>
-您已成功登录账户！
-<div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/auth11.png"/>
 </div>
