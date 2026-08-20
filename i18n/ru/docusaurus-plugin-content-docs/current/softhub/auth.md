@@ -52,11 +52,7 @@ title: Авторизация в SoftHub
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth9.png"/>
 </div>
-И нажать на кнопку **Ok**.
+И нажать на кнопку **Ok**. Вы успешно вошли в аккаунт!
 <div style={{textAlign: 'left'}}>
 <img src="/docshome/img/softhub/auth10.png"/>
-</div>
-Вы успешно вошли в аккаунт!
-<div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/auth11.png"/>
 </div>
