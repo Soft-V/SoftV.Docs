@@ -8,7 +8,7 @@ This guide shows you how to install **SoftHub**.
 To download the SoftHub application, you need to go to https://softv.su/.
 The website looks like the following: 
 <div style={{textAlign: 'left'}}>
-<img src="/docshome/img/softhub/get-started1.png"/>
+<img src="/docshome/img/softhub/get-started.png"/>
 </div>
 Next, you need to click on **Programs**.
 <div style={{textAlign: 'left'}}>
