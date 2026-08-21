@@ -3,12 +3,12 @@ id: index
 title: shufflecad
 ---
 
-# Добро пожаловать в shufflecad
+# Welcome to shufflecad
 
-**shufflecad** — это настольная среда для робота.
-Она позволяет запускать пользовательские программы, наблюдать за их жизненным циклом и управлять ими так же легко, как деталями в конструкторе.
-Приложение предоставляет визуальную панель управления — переменные превращаются в индикаторы и элементы управления, которые можно менять на лету для отладки.
+**shufflecad** is a desktop environment for the robot.
+It allows you to run user programs, observe their lifecycle, and manage them as easily as moving pieces in a builder.
+The application provides a visual control panel — variables become indicators and controls you can change on the fly for debugging.
 
-**shufflecad** показывает взгляд робота на окружающий мир — видеопотоки с камеры и результаты обработки изображений — позволяя увидеть, что робот «видит» и «понимает». Все действия, ошибки и решения собираются в удобном логгере, превращая непонятные сообщения в наглядную историю выполнения.
+**shufflecad** shows the robot's view of the world — camera streams and image processing results — letting you see what the robot "sees" and "understands". All actions, errors, and decisions are collected in a convenient logger, turning obscure messages into a clear execution history.
 
-Это больше, чем просто инструмент: **shufflecad — это интерфейс между идеями разработчика и поведением робота, позволяющий визуализировать, настраивать и запускать интеллект машины.**
+This is more than a tool: **shufflecad is the interface between the developer's ideas and the robot's behavior, enabling you to visualize, tune, and run the machine's intelligence.**

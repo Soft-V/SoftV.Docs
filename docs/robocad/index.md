@@ -8,26 +8,26 @@ keywords:
   - documentation
 ---
 
-# Добро пожаловать в robocad
+# Welcome to robocad
 
-### Ультрасовременный симулятор мобильных роботов
-Погрузитесь в мир будущего робототехники с **robocad** — передовым симулятором, который воплощает ваши роботизированные мечты в реальность! Независимо от того, являетесь ли вы студентом, преподавателем, энтузиастом или профессионалом, robocad предлагает интуитивную и захватывающую платформу для проектирования, тестирования и соревнований с мобильными роботами.
+### State-of-the-art mobile robot simulator
+Dive into the future of robotics with **robocad** — an advanced simulator that turns your robotic dreams into reality! Whether you are a student, educator, enthusiast, or professional, robocad offers an intuitive and exciting platform for designing, testing, and competing with mobile robots.
 
-### Где творчество встречается с инновациями
-С robocad возможности безграничны. Наш мощный **конструктор роботов** позволяет создавать роботов с нуля, комбинируя датчики, приводы и шасси для создания идеальной машины для любых задач. В то же время **конструктор полей** дает возможность проектировать собственные среды — от полигонов с препятствиями до сложных тестовых полей, — гарантируя, что ваши роботы готовы к любому сценарию.
+### Where creativity meets innovation
+With robocad, the possibilities are endless. Our powerful **robot builder** allows you to create robots from scratch, combining sensors, actuators, and chassis to build the perfect machine for any task. At the same time, the **field builder** gives you the ability to design your own environments — from obstacle courses to complex test fields — ensuring your robots are ready for any scenario.
 
-### Учитесь, тестируйте и достигайте успеха
-robocad — это не просто симулятор, это ваш личный наставник в мире робототехники. Наши **уроки** разработаны для пошагового изучения основ робототехники, программирования и искусственного интеллекта, а **тестовые поля** предоставляют идеальную площадку для оттачивания ваших навыков. Независимо от того, изучаете ли вы базовые принципы навигации или осваиваете сложные алгоритмы автономного управления, robocad всегда рядом.
+### Learn, test, and succeed
+robocad is not just a simulator; it is your personal mentor in the world of robotics. Our **tutorials** are designed for step-by-step learning of the fundamentals of robotics, programming, and artificial intelligence, while the **test fields** provide the perfect playground for honing your skills. Whether you are learning basic navigation principles or mastering complex autonomous control algorithms, robocad is always by your side.
 
-### Соревнуйтесь и побеждайте
-Покажите свои навыки в действии с помощью **инструментов управления соревнованиями** от robocad. Организуйте виртуальные робототехнические состязания, создавайте испытания и наблюдайте, как участники раздвигают границы инноваций. Соревнуйтесь с друзьями, коллегами или всем миром — адреналин победы стал более доступным, чем когда-либо!
+### Compete and win
+Put your skills into action with robocad's **competition management tools**. Organize virtual robotics competitions, create challenges, and watch participants push the boundaries of innovation. Compete with friends, colleagues, or the whole world — the thrill of victory is more accessible than ever!
 
-### Почему стоит выбрать robocad?
- - **Удобный интерфейс:** Разработанный для новичков и профессионалов, robocad делает робототехнику доступной каждому.
- - **Реалистичные симуляции:** Испытайте максимально приближенный к реальности опыт робототехники без ограничений оборудования.
- - **Безграничные возможности:** От образования до исследований, robocad — ваш ключ к будущему мобильных роботов.
+### Why choose robocad?
+ - **User-friendly interface:** Designed for both beginners and professionals, robocad makes robotics accessible to everyone.
+ - **Realistic simulations:** Experience highly realistic simulations without hardware limitations.
+ - **Endless possibilities:** From education to research, robocad is your key to the future of mobile robots.
 
-### Присоединяйтесь к революции робототехники
-robocad — это не просто симулятор, это сообщество мечтателей, создателей и новаторов. Независимо от того, готовитесь ли вы к робототехническому соревнованию, обучаете новое поколение инженеров или просто изучаете свою страсть к робототехнике, robocad — это идеальный инструмент для воплощения ваших идей в реальность.
+### Join the robotics revolution
+robocad is more than just a simulator; it is a community of dreamers, creators, and innovators. Whether you are preparing for a robotics competition, educating the next generation of engineers, or simply exploring your passion for robotics, robocad is the perfect tool to bring your ideas to life.
 
-**Готовы взять управление в свои руки?** Погрузитесь в robocad и начните создавать будущее уже сегодня!
+**Ready to take the controls?** Dive into robocad and start building the future today!
