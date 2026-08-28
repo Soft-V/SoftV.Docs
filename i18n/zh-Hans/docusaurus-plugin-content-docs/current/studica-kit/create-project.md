@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
     ]}>
     <TabItem value="python">  
         ```python
-        from robocad.algaritm import RobotVmxTitan
+        from robocad.studica import RobotVmxTitan
 
         import time
 
