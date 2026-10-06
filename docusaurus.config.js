@@ -13,6 +13,10 @@ const config = {
   tagline: 'Soft V products documentation / robocadV documentation',
   url: 'https://softv.su',
   baseUrl: '/docshome/',
+  customFields: {
+    // Public API URL, embedded at build/start time. Never put a secret here.
+    assistantApiUrl: process.env.DOCS_ASSISTANT_API_URL || 'https://softv.su/assistant-api',
+  },
   organizationName: 'soft-v', // Usually your GitHub org/user name.
   projectName: 'soft-v', // Usually your repo name.
   onBrokenLinks: "ignore",

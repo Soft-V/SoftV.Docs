@@ -1,5 +1,9 @@
 # Dependencies
 /node_modules
+**/node_modules/
+# The assistant backend is maintained outside this public repository.
+/assistant/
+/.task-cache/
 
 # Production
 /build
