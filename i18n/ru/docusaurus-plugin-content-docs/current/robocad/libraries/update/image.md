@@ -58,6 +58,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
             </thead>
             <tbody>
                 <tr>
+                    <td><b>1.4</b></td>
+                    <td>
+                        <pre className="pre-lang"><img className="img-lang" src="https://raw.githubusercontent.com/CADindustries/container/refs/heads/main/langs/opencv.svg" 
+                             width="32"/><span className="span-lang">  [OpenCV](https://opencv.org/) 4.9.0</span></pre>
+                        <pre className="pre-lang"><img className="img-lang" src="https://raw.githubusercontent.com/CADindustries/container/refs/heads/main/langs/python.svg" 
+                             width="32"/><span className="span-lang">  [robocad-py](https://github.com/Soft-V/robocad-py) 1.4.6</span></pre>
+                        <pre className="pre-lang"><img className="img-lang" src="https://raw.githubusercontent.com/CADindustries/container/refs/heads/main/langs/java.svg" 
+                             width="32"/><span className="span-lang">  [robocad4J](https://github.com/Soft-V/robocad4J) 1.4.3</span></pre>
+                        <pre className="pre-lang"><img className="img-lang" src="https://raw.githubusercontent.com/CADindustries/container/refs/heads/main/langs/csharp.svg" 
+                             width="32"/><span className="span-lang">  [robocad-cs](https://github.com/Soft-V/robocad-cs) 1.4.2</span></pre>
+                        <pre className="pre-lang"><img className="img-lang" src="https://raw.githubusercontent.com/CADindustries/container/refs/heads/main/langs/cpp.svg" 
+                             width="32"/><span className="span-lang">  [robocad-cpp](https://github.com/Soft-V/robocad-cpp) 1.4.0</span></pre>
+                    </td>
+                    <td><Link to="https://cloud.mail.ru/public/gcTd/j75JJuWUV"><b>Скачать</b></Link></td>
+                </tr>
+                <tr>
                     <td><b>1.3</b></td>
                     <td>
                         <pre className="pre-lang"><img className="img-lang" src="https://raw.githubusercontent.com/CADindustries/container/refs/heads/main/langs/opencv.svg" 
